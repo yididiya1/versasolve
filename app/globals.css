@@ -1,0 +1,160 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* ─── Scroll reveal ──────────────────────────────────────────── */
+.reveal {
+  animation: revealUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-play-state: paused;
+}
+.reveal.in-view {
+  animation-play-state: running;
+}
+.reveal-d1 { animation-delay: 0.08s; }
+.reveal-d2 { animation-delay: 0.16s; }
+.reveal-d3 { animation-delay: 0.24s; }
+.reveal-d4 { animation-delay: 0.32s; }
+.reveal-d5 { animation-delay: 0.42s; }
+
+@keyframes revealUp {
+  from { opacity: 0; transform: translateY(36px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── Hero animated background ──────────────────────────────── */
+
+/* Floating gradient orbs */
+.hero-orb {
+  position: absolute;
+  border-radius: 50%;
+  will-change: transform;
+  pointer-events: none;
+}
+
+/* Orb 1 — large amber, top-right anchor */
+.hero-orb-1 {
+  width: 820px; height: 820px;
+  top: -260px; right: -160px;
+  background: radial-gradient(circle at 50% 50%,
+    rgba(212,149,58,0.48) 0%,
+    rgba(212,149,58,0.18) 35%,
+    transparent 70%);
+  filter: blur(85px);
+  animation: orbDrift1 22s ease-in-out infinite;
+}
+
+/* Orb 2 — rust, bottom-left anchor */
+.hero-orb-2 {
+  width: 640px; height: 640px;
+  bottom: -180px; left: -120px;
+  background: radial-gradient(circle at 50% 50%,
+    rgba(191,94,58,0.42) 0%,
+    rgba(191,94,58,0.14) 40%,
+    transparent 70%);
+  filter: blur(95px);
+  animation: orbDrift2 29s ease-in-out infinite;
+}
+
+/* Orb 3 — gold, mid-right floating */
+.hero-orb-3 {
+  width: 400px; height: 400px;
+  top: 30%; right: 15%;
+  background: radial-gradient(circle at 50% 50%,
+    rgba(229,176,94,0.36) 0%,
+    transparent 65%);
+  filter: blur(72px);
+  animation: orbDrift3 18s ease-in-out infinite;
+}
+
+/* Orb 4 — deep warm ellipse, central breathing glow */
+.hero-orb-4 {
+  width: 960px; height: 440px;
+  top: 50%; left: 50%;
+  background: radial-gradient(ellipse at 50% 50%,
+    rgba(150,80,25,0.28) 0%,
+    transparent 65%);
+  filter: blur(110px);
+  animation: orbDrift4 15s ease-in-out infinite;
+}
+
+/* Orb 5 — small accent, top-left */
+.hero-orb-5 {
+  width: 320px; height: 320px;
+  top: 15%; left: 4%;
+  background: radial-gradient(circle at 50% 50%,
+    rgba(212,149,58,0.22) 0%,
+    transparent 65%);
+  filter: blur(62px);
+  animation: orbDrift5 17s ease-in-out infinite 2s;
+}
+
+@keyframes orbDrift1 {
+  0%,100% { transform: translate(0px,   0px)   scale(1);    }
+  20%     { transform: translate(-55px, 60px)  scale(1.07); }
+  40%     { transform: translate(50px,  -75px) scale(0.93); }
+  60%     { transform: translate(-25px, 85px)  scale(1.05); }
+  80%     { transform: translate(75px,  25px)  scale(0.97); }
+}
+
+@keyframes orbDrift2 {
+  0%,100% { transform: translate(0px,   0px)   scale(1);    }
+  25%     { transform: translate(90px,  -65px) scale(1.13); }
+  50%     { transform: translate(-45px, 55px)  scale(0.88); }
+  75%     { transform: translate(55px,  50px)  scale(1.08); }
+}
+
+@keyframes orbDrift3 {
+  0%,100% { transform: translate(0px,   0px)   scale(1);   }
+  33%     { transform: translate(-95px, 65px)  scale(1.22); }
+  66%     { transform: translate(65px,  -85px) scale(0.83); }
+}
+
+@keyframes orbDrift4 {
+  0%,100% { transform: translate(-50%, -50%) scale(1);    opacity: 0.85; }
+  50%     { transform: translate(-50%, -50%) scale(1.32); opacity: 1;    }
+}
+
+@keyframes orbDrift5 {
+  0%,100% { transform: translate(0px,  0px)  scale(1);    }
+  50%     { transform: translate(45px, 65px) scale(1.16); }
+}
+
+/* Diagonal light sweep — cinematic lens-flare pass */
+.hero-light-sweep {
+  position: absolute;
+  top: -20%; left: 0;
+  width: 28%;
+  height: 140%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(229,176,94,0.035) 35%,
+    rgba(212,149,58,0.075) 50%,
+    rgba(229,176,94,0.035) 65%,
+    transparent 100%
+  );
+  transform: rotate(22deg) translateX(-160%);
+  animation: lightSweep 14s ease-in-out infinite 1s;
+  pointer-events: none;
+}
+
+@keyframes lightSweep {
+  0%,100% { transform: rotate(22deg) translateX(-160%); opacity: 0; }
+  4%      { opacity: 1; }
+  46%     { opacity: 1; }
+  52%     { transform: rotate(22deg) translateX(370%);  opacity: 0; }
+}
+
+/* ─── Scrollbar ───────────────────────────────────────────────── */
+::-webkit-scrollbar           { width: 3px; }
+::-webkit-scrollbar-track     { background: #0d0a06; }
+::-webkit-scrollbar-thumb     { background: #d4953a; border-radius: 3px; }
+
+/* ─── Base ────────────────────────────────────────────────────── */
+html { scroll-behavior: smooth; }
+
+*  { box-sizing: border-box; }
+
+/* Prevent layout shift for font loading */
+.font-display { font-display: swap; }
