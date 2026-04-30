@@ -35,7 +35,7 @@ export default function Hero() {
             className="font-display italic font-semibold text-cream leading-[0.88] tracking-[-3px] select-none"
             style={{ fontSize: 'clamp(58px, 9.5vw, 134px)' }}
           >
-            <span className="block">Cultivating</span>
+            <span className="block">Solutions</span>
             <span
               className="block text-gold"
               style={{
@@ -43,13 +43,13 @@ export default function Hero() {
                 textShadow: '0 0 120px rgba(212,149,58,0.25)',
               }}
             >
-              Solutions
+              That
             </span>
             <span
               className="block text-cream"
               style={{ fontSize: 'clamp(46px, 7.6vw, 108px)' }}
             >
-              to Empower
+              Empower
             </span>
             <span
               className="block"
