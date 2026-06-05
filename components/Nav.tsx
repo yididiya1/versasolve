@@ -1,39 +1,18 @@
 'use client'
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 
-const serviceItems = [
-  {
-    href: '/services/digital-branding',
-    symbol: '◈',
-    name: 'Digital Branding Optimization',
-    desc: 'Logos, web design & promotional videos',
-    color: 'gold',
-  },
-  {
-    href: '/services/impact-driven',
-    symbol: '◉',
-    name: 'Impact-Driven Solutions',
-    desc: 'Community projects & grant writing',
-    color: 'rust',
-  },
+const navLinks = [
+  { label: 'Home', href: '/' },
+  { label: 'Services', href: '/#services' },
+  { label: 'Work', href: '/#portfolio' },
+  { label: 'About', href: '/#about' },
+  { label: 'Contact', href: '/#contact' },
 ]
 
 export default function Nav() {
-  const [scrolled, setScrolled]           = useState(false)
-  const [menuOpen, setMenuOpen]           = useState(false)
-  const [servicesOpen, setServicesOpen]   = useState(false)
-  const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
-  const dropdownRef  = useRef<HTMLLIElement>(null)
-  const closeTimer   = useRef<ReturnType<typeof setTimeout> | null>(null)
-
-  const openServices = () => {
-    if (closeTimer.current) clearTimeout(closeTimer.current)
-    setServicesOpen(true)
-  }
-  const scheduleClose = () => {
-    closeTimer.current = setTimeout(() => setServicesOpen(false), 150)
-  }
+  const [scrolled, setScrolled] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 48)
@@ -41,209 +20,113 @@ export default function Nav() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  /* Close desktop dropdown on outside click */
-  useEffect(() => {
-    const handler = (e: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
-        setServicesOpen(false)
-      }
-    }
-    document.addEventListener('mousedown', handler)
-    return () => document.removeEventListener('mousedown', handler)
-  }, [])
-
-  const closeMobile = () => {
-    setMenuOpen(false)
-    setMobileServicesOpen(false)
-  }
-
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-14 xl:px-20 h-[76px] transition-all duration-500 ${
+        className={`fixed top-0 left-0 right-0 z-50 text-[#F6F0E6] transition-all duration-500 ${
           scrolled
-            ? 'bg-ink/95 backdrop-blur-xl border-b border-gold/10 shadow-[0_4px_40px_rgba(0,0,0,0.4)]'
+            ? 'bg-[#120E09]/90 backdrop-blur-xl border-b border-[#E8A33D]/10 shadow-[0_8px_30px_rgba(0,0,0,.45)]'
             : 'bg-transparent'
         }`}
       >
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-3 no-underline group">
-          <div className="w-10 h-10 rounded-[10px] bg-gradient-to-br from-gold to-gold-light grid place-items-center font-display font-bold text-ink text-[15px] italic tracking-tight shadow-[0_0_20px_rgba(212,149,58,0.3)] group-hover:shadow-[0_0_30px_rgba(212,149,58,0.5)] transition-shadow duration-300">
-            VS
-          </div>
-          <span className="font-display font-semibold text-[19px] text-cream tracking-tight italic">
-            Versa<span className="text-gold">Solve</span>
-          </span>
-        </Link>
-
-        {/* Desktop nav */}
-        <ul className="hidden md:flex items-center gap-7 list-none">
-
-          {/* Services dropdown */}
-          <li
-            ref={dropdownRef}
-            className="relative"
-            onMouseEnter={openServices}
-            onMouseLeave={scheduleClose}
-          >
-            <button
-              onClick={() => setServicesOpen(!servicesOpen)}
-              className="flex items-center gap-1.5 font-body text-[13.5px] text-warm hover:text-cream transition-colors duration-200 cursor-pointer bg-transparent border-none p-0"
-            >
-              Services
-              <svg
-                width="12" height="12" viewBox="0 0 12 12" fill="none"
-                className={`transition-transform duration-200 ${servicesOpen ? 'rotate-180' : ''}`}
-                aria-hidden
-              >
-                <path d="M2 4l4 4 4-4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </button>
-
-            {/* Dropdown panel — pt-3 acts as a hover bridge (no dead gap) */}
-            <div
-              className={`absolute top-full left-1/2 -translate-x-1/2 pt-3 w-[310px] transition-all duration-200 origin-top ${
-                servicesOpen
-                  ? 'opacity-100 scale-100 pointer-events-auto'
-                  : 'opacity-0 scale-95 pointer-events-none'
-              }`}
-            >
-              {/* Visual panel */}
-              <div
-                className="rounded-2xl p-2"
+        <div className="mx-auto max-w-7xl px-6 sm:px-8">
+          <div className="flex items-center justify-between py-5">
+            <Link href="/" className="flex items-center gap-3 no-underline">
+              <span
+                className="grid h-10 w-10 place-items-center rounded-xl font-serif text-lg font-semibold text-[#1A140D]"
                 style={{
-                  background: 'rgba(19,16,9,0.98)',
-                  border: '1px solid rgba(212,149,58,0.14)',
-                  boxShadow: '0 24px 60px rgba(0,0,0,0.55)',
-                  backdropFilter: 'blur(20px)',
+                  background: 'linear-gradient(135deg,#F0B454 0%,#D98A2B 48%,#C75B39 100%)',
+                  boxShadow: '0 8px 24px rgba(216,138,43,.32), inset 0 1px 0 rgba(255,255,255,.4)',
                 }}
               >
-              {serviceItems.map((item) => (
+                VS
+              </span>
+              <span className="font-serif text-xl font-medium">
+                Versa<span className="text-[#E8A33D]">Solve</span>
+              </span>
+            </Link>
+
+            <div className="hidden items-center gap-1 md:flex">
+              {navLinks.map((item) => (
                 <Link
-                  key={item.href}
+                  key={item.label}
                   href={item.href}
-                  onClick={() => setServicesOpen(false)}
-                  className="flex items-start gap-3.5 px-4 py-3.5 rounded-xl hover:bg-white/[0.04] transition-colors duration-150 no-underline group/item"
+                  className="rounded-lg px-4 py-2 text-[15px] font-medium text-[#B6A990] no-underline transition hover:bg-white/5 hover:text-[#F6F0E6]"
                 >
-                  <span
-                    className={`text-[18px] flex-shrink-0 mt-0.5 transition-colors duration-150 ${
-                      item.color === 'gold'
-                        ? 'text-gold/50 group-hover/item:text-gold/80'
-                        : 'text-rust/50 group-hover/item:text-rust/80'
-                    }`}
-                  >
-                    {item.symbol}
-                  </span>
-                  <div>
-                    <p className="font-body font-semibold text-[13.5px] text-cream leading-tight mb-0.5">
-                      {item.name}
-                    </p>
-                    <p className="font-mono text-[10px] tracking-wide text-warm/60">
-                      {item.desc}
-                    </p>
-                  </div>
+                  {item.label}
                 </Link>
               ))}
-              </div>
             </div>
-          </li>
 
-          {/* Other nav links */}
-          {['Approach', 'About', 'Contact'].map((item) => (
-            <li key={item}>
+            <div className="flex items-center gap-3">
               <Link
-                href={`/#${item.toLowerCase()}`}
-                className="font-body text-[13.5px] text-warm hover:text-cream transition-colors duration-200 no-underline tracking-wide"
+                href="/#contact"
+                className="hidden rounded-xl border border-[#E8A33D]/20 bg-white/[.02] px-[18px] py-[11px] text-[15px] font-semibold no-underline transition hover:bg-white/5 sm:inline-flex"
               >
-                {item}
+                Sign in
               </Link>
-            </li>
-          ))}
+              <Link
+                href="/#contact"
+                className="group hidden items-center gap-2 rounded-xl px-[22px] py-3 text-[15px] font-semibold text-[#1A140D] no-underline transition hover:-translate-y-px md:inline-flex"
+                style={{
+                  background: 'linear-gradient(135deg,#F0B454 0%,#D98A2B 48%,#C75B39 100%)',
+                  boxShadow: '0 10px 28px rgba(216,138,43,.28), inset 0 1px 0 rgba(255,255,255,.45)',
+                }}
+              >
+                Start the journey
+                <ArrowRight className="transition group-hover:translate-x-0.5" />
+              </Link>
 
-          <li>
-            <Link
-              href="/#contact"
-              className="font-body font-semibold text-[13px] bg-gold text-ink px-6 py-2.5 rounded-full hover:bg-gold-light transition-all duration-200 hover:-translate-y-px hover:shadow-[0_6px_24px_rgba(212,149,58,0.4)] no-underline inline-block"
-            >
-              Book Free Call
-            </Link>
-          </li>
-        </ul>
-
-        {/* Hamburger */}
-        <button
-          className="md:hidden flex flex-col gap-[5px] p-2"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle menu"
-        >
-          <span className={`block w-5 h-[1.5px] bg-cream origin-center transition-all duration-300 ${menuOpen ? 'rotate-45 translate-y-[6.5px]' : ''}`} />
-          <span className={`block w-5 h-[1.5px] bg-cream transition-all duration-300 ${menuOpen ? 'opacity-0 scale-x-0' : ''}`} />
-          <span className={`block w-5 h-[1.5px] bg-cream origin-center transition-all duration-300 ${menuOpen ? '-rotate-45 -translate-y-[6.5px]' : ''}`} />
-        </button>
+              {/* Hamburger */}
+              <button
+                className="flex flex-col gap-[5px] p-2 md:hidden"
+                onClick={() => setMenuOpen(!menuOpen)}
+                aria-label="Toggle menu"
+              >
+                <span className={`block h-[1.5px] w-5 origin-center bg-[#F6F0E6] transition-all duration-300 ${menuOpen ? 'translate-y-[6.5px] rotate-45' : ''}`} />
+                <span className={`block h-[1.5px] w-5 bg-[#F6F0E6] transition-all duration-300 ${menuOpen ? 'scale-x-0 opacity-0' : ''}`} />
+                <span className={`block h-[1.5px] w-5 origin-center bg-[#F6F0E6] transition-all duration-300 ${menuOpen ? '-translate-y-[6.5px] -rotate-45' : ''}`} />
+              </button>
+            </div>
+          </div>
+        </div>
       </nav>
 
       {/* Mobile menu */}
       <div
-        className={`fixed top-[76px] left-0 right-0 z-40 bg-ink/98 backdrop-blur-xl border-b border-gold/10 transition-all duration-300 md:hidden ${
-          menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none -translate-y-2'
+        className={`fixed left-0 right-0 top-[72px] z-40 border-b border-[#E8A33D]/10 bg-[#120E09]/95 backdrop-blur-xl transition-all duration-300 md:hidden ${
+          menuOpen ? 'pointer-events-auto opacity-100' : 'pointer-events-none -translate-y-2 opacity-0'
         }`}
       >
-        <div className="flex flex-col px-6 py-5 gap-1">
-
-          {/* Mobile services toggle */}
-          <button
-            onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-            className="flex items-center justify-between font-body text-base text-cream py-3.5 border-b border-white/5 bg-transparent border-x-0 border-t-0 rounded-none w-full text-left"
-          >
-            Services
-            <svg
-              width="12" height="12" viewBox="0 0 12 12" fill="none"
-              className={`transition-transform duration-200 ${mobileServicesOpen ? 'rotate-180' : ''}`}
-              aria-hidden
-            >
-              <path d="M2 4l4 4 4-4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </button>
-
-          {/* Mobile service sub-links */}
-          {mobileServicesOpen && (
-            <div className="flex flex-col mb-1 border-b border-white/5 pb-1">
-              {serviceItems.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  onClick={closeMobile}
-                  className="flex items-center gap-2.5 pl-4 py-3 no-underline"
-                >
-                  <span className={`text-[14px] ${item.color === 'gold' ? 'text-gold/60' : 'text-rust/60'}`}>
-                    {item.symbol}
-                  </span>
-                  <span className="font-body text-[14px] text-cream/80">{item.name}</span>
-                </Link>
-              ))}
-            </div>
-          )}
-
-          {['Approach', 'About', 'Contact'].map((item) => (
+        <div className="flex flex-col gap-1 px-6 py-5">
+          {navLinks.map((item) => (
             <Link
-              key={item}
-              href={`/#${item.toLowerCase()}`}
-              onClick={closeMobile}
-              className="font-body text-base text-cream py-3.5 border-b border-white/5 no-underline hover:text-gold transition-colors duration-200"
+              key={item.label}
+              href={item.href}
+              onClick={() => setMenuOpen(false)}
+              className="border-b border-white/[.06] py-3.5 text-base text-[#B6A990] no-underline transition-colors hover:text-[#F6F0E6]"
             >
-              {item}
+              {item.label}
             </Link>
           ))}
-
           <Link
             href="/#contact"
-            onClick={closeMobile}
-            className="mt-4 font-body font-semibold text-sm bg-gold text-ink px-6 py-3 rounded-full text-center no-underline"
+            onClick={() => setMenuOpen(false)}
+            className="mt-4 rounded-xl px-6 py-3 text-center text-sm font-semibold text-[#1A140D] no-underline"
+            style={{ background: 'linear-gradient(135deg,#F0B454 0%,#D98A2B 48%,#C75B39 100%)' }}
           >
-            Book Free Call
+            Start the journey
           </Link>
         </div>
       </div>
     </>
+  )
+}
+
+function ArrowRight({ className = '' }: { className?: string }) {
+  return (
+    <svg className={className} width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+      <path d="M5 12h14M13 6l6 6-6 6" />
+    </svg>
   )
 }

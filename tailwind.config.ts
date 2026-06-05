@@ -17,19 +17,57 @@ const config: Config = {
         gold: {
           DEFAULT: '#d4953a',
           light: '#e5b05e',
-          dark: '#b07830',
+          dark: '#a06a1f',
+          deep: '#7a4f15',
           pale: '#f2d9a8',
         },
         rust: {
           DEFAULT: '#bf5e3a',
           light: '#d07558',
+          dark: '#8a3f22',
+        },
+        // Natural complementary accents — break the warm duotone
+        sage: {
+          DEFAULT: '#4f9e72',
+          light: '#88c79f',
+          dark: '#3a7457',
+        },
+        azure: {
+          DEFAULT: '#3a8fc9',
+          light: '#7cc3f0',
+          dark: '#2f6ea3',
+        },
+        plum: {
+          DEFAULT: '#8b6fd6',
+          light: '#b79bf0',
+          dark: '#6f54b8',
         },
         cream: '#ece7dd',
         warm: '#7a6d5c',
+        // Light theme palette
+        page: {
+          DEFAULT: '#faf5ec',
+          soft: '#f3ead8',
+        },
+        paper: {
+          DEFAULT: '#ffffff',
+          warm: '#fdf8ed',
+        },
+        deep: {
+          DEFAULT: '#2a1f12',
+          soft: '#4a3a28',
+          mute: '#7a6650',
+        },
+        edge: {
+          DEFAULT: '#e7dfd0',
+          soft: '#efe7d5',
+        },
       },
       fontFamily: {
-        display: ['var(--font-cormorant)', 'Georgia', 'serif'],
-        body: ['var(--font-jost)', 'system-ui', 'sans-serif'],
+        display: ['var(--font-fraunces)', 'Georgia', 'serif'],
+        serif: ['var(--font-fraunces)', 'Georgia', 'serif'],
+        body: ['var(--font-hanken)', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-hanken)', 'system-ui', 'sans-serif'],
         mono: ['var(--font-space-mono)', 'Menlo', 'monospace'],
       },
       keyframes: {

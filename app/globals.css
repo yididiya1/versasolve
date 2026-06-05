@@ -146,10 +146,101 @@
   52%     { transform: rotate(22deg) translateX(370%);  opacity: 0; }
 }
 
+/* ─── Modern SaaS design system ──────────────────────────────── */
+
+/* Warm gradient text — matches the Hero accent ("solutions") */
+.text-gradient-warm {
+  background: linear-gradient(135deg, #c8862a 0%, #d98a2b 45%, #bf5e3a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.text-gradient-rust {
+  background: linear-gradient(135deg, #bf5e3a 0%, #a64a2a 55%, #8a3f22 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Faint grid overlay for light sections (echoes the Hero grid) */
+.grid-faint {
+  background-image:
+    linear-gradient(rgba(42, 31, 18, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(42, 31, 18, 0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 35%, black, transparent 75%);
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 35%, black, transparent 75%);
+}
+
+/* Light glass card surface */
+.glass-card {
+  background: linear-gradient(165deg, rgba(255, 255, 255, 0.88), rgba(253, 248, 237, 0.72));
+  border: 1px solid rgba(160, 106, 31, 0.14);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.65),
+    0 18px 48px -26px rgba(42, 31, 18, 0.3);
+}
+
+/* Hover-lift behaviour for interactive cards */
+.card-lift {
+  transition: transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1),
+    border-color 0.4s ease, box-shadow 0.4s ease;
+}
+.card-lift:hover {
+  transform: translateY(-5px);
+  border-color: rgba(216, 138, 43, 0.42);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.7),
+    0 30px 64px -26px rgba(42, 31, 18, 0.38);
+}
+
+/* Gold gradient pill button — matches the Hero CTA */
+.btn-warm {
+  background: linear-gradient(135deg, #f0b454 0%, #d98a2b 48%, #c75b39 100%);
+  color: #1a140d;
+  box-shadow:
+    0 10px 28px rgba(216, 138, 43, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.45);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+.btn-warm:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.04);
+}
+
+/* Pill eyebrow badge */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(216, 138, 43, 0.28);
+  background: rgba(232, 163, 61, 0.07);
+  padding: 0.4rem 0.95rem 0.4rem 0.75rem;
+}
+.eyebrow-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #f0b454, #c75b39);
+  flex-shrink: 0;
+}
+
+/* Dark glass panel — matches the Hero floating panels */
+.panel-dark {
+  background: linear-gradient(165deg, #211a11, #1a140d);
+  border: 1px solid rgba(232, 163, 61, 0.14);
+  box-shadow:
+    0 30px 70px -20px rgba(0, 0, 0, 0.7),
+    inset 0 1px 0 rgba(245, 239, 230, 0.05);
+}
+
 /* ─── Scrollbar ───────────────────────────────────────────────── */
 ::-webkit-scrollbar           { width: 3px; }
-::-webkit-scrollbar-track     { background: #0d0a06; }
-::-webkit-scrollbar-thumb     { background: #d4953a; border-radius: 3px; }
+::-webkit-scrollbar-track     { background: #f3ead8; }
+::-webkit-scrollbar-thumb     { background: #c8862a; border-radius: 3px; }
 
 /* ─── Base ────────────────────────────────────────────────────── */
 html { scroll-behavior: smooth; }

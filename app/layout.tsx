@@ -1,22 +1,22 @@
 import type { Metadata } from 'next'
-import { Cormorant_Garamond, Jost, Space_Mono } from 'next/font/google'
+import { Fraunces, Hanken_Grotesk, Space_Mono } from 'next/font/google'
 import './globals.css'
 import ScrollRevealProvider from '@/components/ScrollRevealProvider'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 
-const cormorant = Cormorant_Garamond({
+const fraunces = Fraunces({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
   style: ['normal', 'italic'],
-  variable: '--font-cormorant',
+  variable: '--font-fraunces',
   display: 'swap',
 })
 
-const jost = Jost({
+const hanken = Hanken_Grotesk({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700'],
-  variable: '--font-jost',
+  variable: '--font-hanken',
   display: 'swap',
 })
 
@@ -37,9 +37,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html
       lang="en"
-      className={`${cormorant.variable} ${jost.variable} ${spaceMono.variable}`}
+      className={`${fraunces.variable} ${hanken.variable} ${spaceMono.variable}`}
     >
-      <body className="font-body bg-ink text-cream antialiased overflow-x-hidden">
+      <body className="font-body bg-page text-deep antialiased overflow-x-hidden">
         <ScrollRevealProvider />
         <Nav />
         {children}

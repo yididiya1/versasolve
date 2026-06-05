@@ -43,30 +43,38 @@ export default function Contact() {
       id="contact"
       className="relative bg-ink-surface py-24 md:py-36 px-6 md:px-14 xl:px-24 overflow-hidden"
     >
-      {/* Central warm glow */}
-      <div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] pointer-events-none"
-        style={{
-          background:
-            'radial-gradient(ellipse, rgba(212,149,58,0.08) 0%, transparent 65%)',
-        }}
-      />
+      {/* Atmosphere */}
+      <div className="pointer-events-none absolute inset-0">
+        <div
+          className="absolute top-1/2 left-1/2 h-[500px] w-[700px] -translate-x-1/2 -translate-y-1/2"
+          style={{ background: 'radial-gradient(ellipse, rgba(212,149,58,0.1) 0%, transparent 65%)' }}
+        />
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage:
+              'linear-gradient(rgba(245,239,230,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(245,239,230,.05) 1px, transparent 1px)',
+            backgroundSize: '64px 64px',
+            WebkitMaskImage: 'radial-gradient(ellipse 60% 60% at 50% 40%, black, transparent 75%)',
+            maskImage: 'radial-gradient(ellipse 60% 60% at 50% 40%, black, transparent 75%)',
+          }}
+        />
+      </div>
 
       <div className="relative z-10 max-w-[1400px] mx-auto">
         <div className="max-w-3xl mx-auto text-center">
 
-          <p className="font-mono text-[11px] tracking-[3px] uppercase text-gold flex items-center justify-center gap-3 mb-4 reveal">
-            <span className="block w-6 h-px bg-gold" />
-            Get In Touch
-            <span className="block w-6 h-px bg-gold" />
-          </p>
+          <span className="eyebrow mb-5 reveal" style={{ borderColor: 'rgba(232,163,61,0.22)', background: 'rgba(232,163,61,0.06)' }}>
+            <span className="h-1.5 w-1.5 rounded-full bg-[#5BD08A] ring-4 ring-[#5BD08A]/20" />
+            <span className="font-mono text-[10.5px] uppercase tracking-[2.5px] text-gold">Get In Touch</span>
+          </span>
 
           <h2
             className="font-display italic font-semibold text-cream leading-[0.97] tracking-tight mb-5 reveal reveal-d1"
             style={{ fontSize: 'clamp(38px, 6vw, 80px)' }}
           >
             Ready to Build<br />
-            <span className="text-gold">Something</span><br />
+            <span className="text-gradient-warm">Something</span><br />
             Extraordinary?
           </h2>
 
@@ -82,10 +90,10 @@ export default function Contact() {
               <a
                 key={opt.action}
                 href={opt.href}
-                className={`group flex flex-col items-center text-center gap-4 p-7 rounded-2xl  border border-white border-opacity-10 transition-all duration-300 hover:-translate-y-1 no-underline ${
+                className={`panel-dark group flex flex-col items-center text-center gap-4 p-7 rounded-2xl transition-all duration-300 hover:-translate-y-1.5 no-underline ${
                   opt.accent === 'gold'
-                    ? 'bg-ink-card border-gold/12 hover:border-gold/30 hover:shadow-[0_16px_48px_rgba(212,149,58,0.1)]'
-                    : 'bg-ink-card border-rust/12 hover:border-rust/30 hover:shadow-[0_16px_48px_rgba(191,94,58,0.1)]'
+                    ? 'hover:border-gold/35 hover:shadow-[0_22px_56px_rgba(212,149,58,0.16)]'
+                    : 'hover:border-rust/35 hover:shadow-[0_22px_56px_rgba(191,94,58,0.16)]'
                 }`}
               >
                 <div

@@ -1,0 +1,162 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 680" width="700" height="680" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+
+  <defs>
+    <!-- Gold → Rust gradient (used for logo lockup + accent square) -->
+    <linearGradient id="goldRust" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a06a1f"/>
+      <stop offset="50%" stop-color="#d4953a"/>
+      <stop offset="100%" stop-color="#bf5e3a"/>
+    </linearGradient>
+
+    <!-- Soft card shadow -->
+    <filter id="cardShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="6"/>
+      <feOffset dx="0" dy="6" result="offsetblur"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.18"/></feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Stronger shadow for the centerpiece card -->
+    <filter id="cardShadowLg" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="14"/>
+      <feOffset dx="0" dy="18"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.22"/></feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- ── Top-left card: Logo Identity (rotated -3°) ───────────────────────── -->
+  <g transform="translate(0,16) rotate(-3, 80, 88)" filter="url(#cardShadow)">
+    <rect x="0" y="0" width="160" height="176" rx="16" fill="#ffffff" stroke="#e7dfd0"/>
+    <rect x="14" y="14" width="132" height="132" rx="12" fill="url(#goldRust)"/>
+    <text x="80" y="98" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-weight="700" font-size="56" fill="#ffffff">◆</text>
+    <text x="14" y="160" font-family="ui-monospace, 'Menlo', monospace" font-size="9" letter-spacing="1.5" fill="#7a6650">SERVICE 01A</text>
+    <text x="14" y="172" font-family="system-ui, sans-serif" font-weight="600" font-size="12" fill="#2a1f12">Logo &amp; Identity</text>
+  </g>
+
+  <!-- ── Top-right card: Brand Palette (rotated +3°) ──────────────────────── -->
+  <g transform="translate(520,0) rotate(3, 85, 65)" filter="url(#cardShadow)">
+    <rect x="0" y="0" width="170" height="130" rx="16" fill="#ffffff" stroke="#e7dfd0"/>
+    <text x="14" y="28" font-family="ui-monospace, 'Menlo', monospace" font-size="9" letter-spacing="1.5" fill="#7a6650">BRAND PALETTE</text>
+    <g transform="translate(14, 42)">
+      <rect x="0"   y="0" width="33" height="33" rx="5" fill="#a06a1f"/>
+      <rect x="37"  y="0" width="33" height="33" rx="5" fill="#d4953a"/>
+      <rect x="74"  y="0" width="33" height="33" rx="5" fill="#bf5e3a"/>
+      <rect x="111" y="0" width="33" height="33" rx="5" fill="#2a1f12"/>
+    </g>
+    <text x="14" y="105" font-family="ui-monospace, 'Menlo', monospace" font-size="9" letter-spacing="1.5" fill="#a06a1f">4 SWATCHES</text>
+  </g>
+
+  <!-- ── Bottom-left card: Community Impact (rotated -2°) ─────────────────── -->
+  <g transform="translate(8,510) rotate(-2, 85, 60)" filter="url(#cardShadow)">
+    <rect x="0" y="0" width="170" height="118" rx="16" fill="#ffffff" stroke="#e7dfd0"/>
+    <!-- Icon -->
+    <circle cx="26" cy="26" r="13" fill="#bf5e3a" fill-opacity="0.15"/>
+    <path d="M26 33 C 21 30, 17 27, 17 23 a 4.5 4.5 0 0 1 9 -0.5 a 4.5 4.5 0 0 1 9 0.5 C 35 27, 31 30, 26 33 Z"
+          fill="none" stroke="#8a3f22" stroke-width="1.3" stroke-linejoin="round"/>
+    <text x="46" y="30" font-family="ui-monospace, 'Menlo', monospace" font-size="9" letter-spacing="1.5" fill="#8a3f22">COMMUNITY IMPACT</text>
+    <text x="14" y="78" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-weight="600" font-size="32" fill="#2a1f12">+12K</text>
+    <text x="14" y="100" font-family="system-ui, sans-serif" font-size="11" fill="#7a6650">Lives reached across 5 continents</text>
+  </g>
+
+  <!-- ── Bottom-right card: Grants Secured (rotated +2°) ──────────────────── -->
+  <g transform="translate(540,540) rotate(2, 80, 55)" filter="url(#cardShadow)">
+    <rect x="0" y="0" width="160" height="118" rx="16" fill="#ffffff" stroke="#e7dfd0"/>
+    <!-- Icon -->
+    <circle cx="26" cy="26" r="13" fill="#d4953a" fill-opacity="0.18"/>
+    <circle cx="26" cy="26" r="7" fill="none" stroke="#a06a1f" stroke-width="1.3"/>
+    <text x="26" y="30" text-anchor="middle" font-family="Georgia, serif" font-weight="600" font-size="11" fill="#a06a1f">$</text>
+    <text x="46" y="30" font-family="ui-monospace, 'Menlo', monospace" font-size="9" letter-spacing="1.5" fill="#a06a1f">GRANTS SECURED</text>
+    <text x="14" y="78" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-weight="600" font-size="30" fill="#2a1f12">$850K+</text>
+    <text x="14" y="100" font-family="system-ui, sans-serif" font-size="11" fill="#7a6650">Funded through strategic proposals</text>
+  </g>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <!-- ── CENTER: Brand Identity Project ───────────────────────────────────── -->
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <g transform="translate(190,130)" filter="url(#cardShadowLg)">
+    <!-- Card body -->
+    <rect x="0" y="0" width="320" height="420" rx="24" fill="#ffffff" stroke="#e7dfd0"/>
+
+    <!-- ── Header row ── -->
+    <circle cx="22" cy="32" r="4" fill="#a06a1f"/>
+    <text x="34" y="36" font-family="system-ui, sans-serif" font-weight="600" font-size="12" fill="#2a1f12">Brand Identity Project</text>
+    <circle cx="290" cy="32" r="1.5" fill="#7a6650"/>
+    <circle cx="297" cy="32" r="1.5" fill="#7a6650"/>
+    <circle cx="304" cy="32" r="1.5" fill="#7a6650"/>
+    <!-- Divider -->
+    <line x1="20" y1="56" x2="300" y2="56" stroke="#e7dfd0" stroke-opacity="0.7"/>
+
+    <!-- ── Gold gradient logo lockup block ── -->
+    <g transform="translate(20, 72)">
+      <rect x="0" y="0" width="280" height="120" rx="16" fill="url(#goldRust)"/>
+      <!-- White VS tile -->
+      <rect x="20" y="20" width="48" height="48" rx="12" fill="#ffffff" fill-opacity="0.95"/>
+      <text x="44" y="54" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-weight="700" font-size="20" fill="#2a1f12">VS</text>
+      <!-- Wordmark -->
+      <text x="82" y="46" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-weight="600" font-size="22" fill="#ffffff">VersaSolve</text>
+      <text x="82" y="62" font-family="ui-monospace, 'Menlo', monospace" font-size="9" letter-spacing="2" fill="#ffffff" fill-opacity="0.85">CONSULTING GROUP</text>
+      <!-- Progress bar -->
+      <rect x="20" y="92" width="200" height="4" rx="2" fill="#ffffff" fill-opacity="0.3"/>
+      <rect x="20" y="92" width="174" height="4" rx="2" fill="#ffffff" fill-opacity="0.9"/>
+      <text x="230" y="97" font-family="ui-monospace, 'Menlo', monospace" font-weight="700" font-size="10" fill="#ffffff">87%</text>
+    </g>
+
+    <!-- ── Deliverable checklist ── -->
+    <g transform="translate(20, 215)" font-family="system-ui, sans-serif" font-size="12">
+      <!-- Item 1 (checked) -->
+      <circle cx="8" cy="8" r="8" fill="#a06a1f"/>
+      <path d="M4 8 L7 11 L12 5.5" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <text x="24" y="12" fill="#4a3a28" text-decoration="line-through" opacity="0.6">Logo &amp; wordmark</text>
+
+      <!-- Item 2 (checked) -->
+      <g transform="translate(0, 26)">
+        <circle cx="8" cy="8" r="8" fill="#a06a1f"/>
+        <path d="M4 8 L7 11 L12 5.5" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <text x="24" y="12" fill="#4a3a28" text-decoration="line-through" opacity="0.6">Brand color palette</text>
+      </g>
+
+      <!-- Item 3 (checked) -->
+      <g transform="translate(0, 52)">
+        <circle cx="8" cy="8" r="8" fill="#a06a1f"/>
+        <path d="M4 8 L7 11 L12 5.5" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <text x="24" y="12" fill="#4a3a28" text-decoration="line-through" opacity="0.6">Typography system</text>
+      </g>
+
+      <!-- Item 4 (pending) -->
+      <g transform="translate(0, 78)">
+        <circle cx="8" cy="8" r="7.2" fill="#ffffff" stroke="#a06a1f" stroke-width="1.6"/>
+        <text x="24" y="12" font-weight="500" fill="#2a1f12">Web design</text>
+      </g>
+    </g>
+
+    <!-- ── Footer button ── -->
+    <g transform="translate(20, 340)">
+      <rect x="0" y="0" width="280" height="42" rx="12" fill="#f3ead8"/>
+      <text x="16" y="26" font-family="system-ui, sans-serif" font-weight="500" font-size="12" fill="#2a1f12">View all deliverables</text>
+      <path d="M252 21 h12 M260 17 l4 4 l-4 4" stroke="#2a1f12" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </g>
+  </g>
+
+  <!-- ── Rating badge (floats top-right of center card) ───────────────────── -->
+  <g transform="translate(480,110)" filter="url(#cardShadow)">
+    <rect x="0" y="0" width="98" height="52" rx="12" fill="#ffffff" stroke="#e7dfd0"/>
+    <!-- 5 gold stars -->
+    <g fill="#d4953a" transform="translate(10, 12)">
+      <path d="M5 0l1.5 3.5L10 4l-2.5 2.5L8 10 5 8 2 10l.5-3.5L0 4l3.5-.5z"/>
+      <g transform="translate(12,0)"><path d="M5 0l1.5 3.5L10 4l-2.5 2.5L8 10 5 8 2 10l.5-3.5L0 4l3.5-.5z"/></g>
+      <g transform="translate(24,0)"><path d="M5 0l1.5 3.5L10 4l-2.5 2.5L8 10 5 8 2 10l.5-3.5L0 4l3.5-.5z"/></g>
+      <g transform="translate(36,0)"><path d="M5 0l1.5 3.5L10 4l-2.5 2.5L8 10 5 8 2 10l.5-3.5L0 4l3.5-.5z"/></g>
+      <g transform="translate(48,0)"><path d="M5 0l1.5 3.5L10 4l-2.5 2.5L8 10 5 8 2 10l.5-3.5L0 4l3.5-.5z"/></g>
+    </g>
+    <text x="68" y="21" font-family="ui-monospace, 'Menlo', monospace" font-weight="700" font-size="10" fill="#2a1f12">5.0</text>
+    <text x="10" y="40" font-family="ui-monospace, 'Menlo', monospace" font-size="8" letter-spacing="1" fill="#7a6650">50+ CLIENTS</text>
+  </g>
+
+</svg>

@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 440" width="440" height="440">
+
+  <defs>
+    <!-- Center disk soft fill -->
+    <linearGradient id="centerFill" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d4953a" stop-opacity="0.20"/>
+      <stop offset="100%" stop-color="#bf5e3a" stop-opacity="0.10"/>
+    </linearGradient>
+
+    <!-- Warm radial glow behind center -->
+    <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"  stop-color="#d4953a" stop-opacity="0.45"/>
+      <stop offset="55%" stop-color="#d4953a" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#d4953a" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="glowBlur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="16"/>
+    </filter>
+  </defs>
+
+  <!-- ── Warm glow behind centerpiece ───────────────────────────────────── -->
+  <circle cx="220" cy="220" r="92" fill="url(#centerGlow)" filter="url(#glowBlur)"/>
+
+  <!-- ── Outermost ring (dashed, rotates slow clockwise) ────────────────── -->
+  <g>
+    <circle cx="220" cy="220" r="180" fill="none" stroke="#a06a1f" stroke-opacity="0.22" stroke-width="1" stroke-dasharray="4 7"/>
+    <!-- Floating dot on the ring -->
+    <circle cx="220" cy="40" r="4" fill="#a06a1f" fill-opacity="0.6"/>
+    <animateTransform attributeName="transform" type="rotate" from="0 220 220" to="360 220 220" dur="22s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- ── Middle ring (solid, rotates reverse) ──────────────────────────── -->
+  <g>
+    <circle cx="220" cy="220" r="140" fill="none" stroke="#a06a1f" stroke-opacity="0.28" stroke-width="1"/>
+    <!-- Floating rust dot on the ring -->
+    <circle cx="220" cy="360" r="3" fill="#bf5e3a" fill-opacity="0.7"/>
+    <animateTransform attributeName="transform" type="rotate" from="0 220 220" to="-360 220 220" dur="30s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- ── Inner ring (solid, rotates clockwise) ─────────────────────────── -->
+  <g>
+    <circle cx="220" cy="220" r="100" fill="none" stroke="#a06a1f" stroke-opacity="0.34" stroke-width="1"/>
+    <animateTransform attributeName="transform" type="rotate" from="0 220 220" to="360 220 220" dur="22s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- ── Center disk with gradient + border ────────────────────────────── -->
+  <circle cx="220" cy="220" r="62" fill="url(#centerFill)" stroke="#a06a1f" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="220" y="236" text-anchor="middle"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-style="italic" font-weight="600" font-size="42"
+        fill="#7a4f15">VS</text>
+
+  <!-- ── Floating labels around the rings ──────────────────────────────── -->
+  <!-- Holistic — angle -35°, distance 160 → (351, 128) -->
+  <text x="351" y="132" text-anchor="middle"
+        font-family="ui-monospace, 'Menlo', monospace"
+        font-size="10" letter-spacing="1.5"
+        fill="#7a6650">HOLISTIC</text>
+
+  <!-- Expertise — angle 90°, distance 160 → (220, 380) -->
+  <text x="220" y="384" text-anchor="middle"
+        font-family="ui-monospace, 'Menlo', monospace"
+        font-size="10" letter-spacing="1.5"
+        fill="#7a6650">EXPERTISE</text>
+
+  <!-- Partnership — angle 210°, distance 160 → (81, 140) -->
+  <text x="81" y="144" text-anchor="middle"
+        font-family="ui-monospace, 'Menlo', monospace"
+        font-size="10" letter-spacing="1.5"
+        fill="#7a6650">PARTNERSHIP</text>
+
+</svg>

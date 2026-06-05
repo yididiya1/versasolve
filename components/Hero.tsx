@@ -1,131 +1,243 @@
-import HeroBackground from '@/components/HeroBackground'
+"use client";
+
+import { useState } from "react";
+import Image from "next/image";
 
 export default function Hero() {
+  const [aiState, setAiState] = useState<"idle" | "applied" | "skipped">("idle");
+
   return (
-    <section
-      id="home"
-      className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-ink"
-    >
-      {/*
-        ── Background ──────────────────────────────────────────────
-        Animated gradient mesh + optional video layer.
-        To add a real video: drop your .mp4 into /public/ and pass
-        videoSrc="/your-file.mp4" to HeroBackground below.
-        ─────────────────────────────────────────────────────────── */}
-      {/* To use a real video: <HeroBackground videoSrc="/hero-bg.mp4" /> */}
-      <HeroBackground />
+    <section className="relative overflow-hidden bg-[#120E09] text-[#F6F0E6]">
+      {/* ---- background photo ---- */}
+      <div className="pointer-events-none absolute inset-0 z-0">
+        <Image
+          src="/images/hero-bg.jpg"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center opacity-[0.8]"
+        />
+        {/* darkening + warmth overlay so copy stays readable and it blends into the section */}
+        <div className="absolute inset-0"
+          style={{ background: "linear-gradient(90deg, #120E09 0%, rgba(18,14,9,.82) 24%, rgba(18,14,9,.32) 58%, rgba(18,14,9,.5) 100%)" }} />
+        <div className="absolute inset-0"
+          style={{ background: "linear-gradient(180deg, #120E09 0%, transparent 18%, transparent 72%, #120E09 100%)" }} />
+      </div>
 
-      {/* ── Content ── */}
-      <div className="relative z-10 px-6 md:px-14 xl:px-24 pt-28 pb-16 max-w-[1400px] mx-auto w-full">
+      {/* ---- atmosphere ---- */}
+      <div className="pointer-events-none absolute inset-0 z-0">
+        {/* warm glow top-right */}
+        <div className="absolute -top-[25%] right-[-8%] h-[90%] w-[60%] rounded-full blur-2xl"
+          style={{ background: "radial-gradient(circle at center, rgba(232,163,61,.22), rgba(199,91,57,.08) 40%, transparent 64%)" }} />
+        {/* warm glow bottom-left */}
+        <div className="absolute -bottom-[30%] left-[-12%] h-[70%] w-[50%] rounded-full blur-2xl"
+          style={{ background: "radial-gradient(circle at center, rgba(199,91,57,.16), transparent 60%)" }} />
+        {/* faint grid */}
+        <div className="absolute inset-0 opacity-50"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(245,239,230,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(245,239,230,.05) 1px, transparent 1px)",
+            backgroundSize: "64px 64px",
+            WebkitMaskImage: "radial-gradient(circle at 72% 32%, black, transparent 70%)",
+            maskImage: "radial-gradient(circle at 72% 32%, black, transparent 70%)",
+          }} />
+      </div>
 
-        {/* Badge */}
-        <div
-          className="[animation:fadeUp_0.7s_cubic-bezier(0.16,1,0.3,1)_0.05s_both] inline-flex items-center gap-2.5 mb-10 px-4 py-[7px] rounded-full border border-gold/20 bg-gold/6"
-          style={{ background: 'rgba(212,149,58,0.06)' }}
-        >
-          <span className="w-[7px] h-[7px] rounded-full bg-gold animate-dot-pulse flex-shrink-0" />
-          <span className="font-mono text-[10.5px] text-gold/80 tracking-[2.5px] uppercase">
-            Consulting · Branding · Community Impact
-          </span>
-        </div>
+      <div className="relative z-10 mx-auto max-w-7xl px-6 sm:px-8">
+        {/* ---- hero grid ---- */}
+        <div className="grid items-center gap-12 pb-14 pt-28 md:grid-cols-[1.05fr_.95fr] md:pb-20 md:pt-32">
+          {/* left: copy */}
+          <div>
+            <div className="hero-rise inline-flex items-center gap-2.5 rounded-full border border-[#E8A33D]/20 bg-[#E8A33D]/[.05] py-[7px] pl-3.5 pr-3 text-[13.5px] font-medium text-[#B6A990]"
+              style={{ animationDelay: "50ms" }}>
+              <span className="rounded-full px-2 py-[3px] text-[11px] font-bold tracking-wide text-[#1A140D]"
+                style={{ background: "linear-gradient(135deg,#F0B454 0%,#D98A2B 48%,#C75B39 100%)" }}>NEW</span>
+              <span className="h-1.5 w-1.5 rounded-full bg-[#5BD08A] ring-4 ring-[#5BD08A]/20" />
+              AI-powered brand &amp; growth platform
+            </div>
 
-        {/* ── Main headline ── */}
-        <div className="[animation:fadeUp_0.9s_cubic-bezier(0.16,1,0.3,1)_0.15s_both]">
-          <h1
-            className="font-display italic font-semibold text-cream leading-[0.88] tracking-[-3px] select-none"
-            style={{ fontSize: 'clamp(58px, 9.5vw, 134px)' }}
-          >
-            <span className="block">Solutions</span>
-            <span
-              className="block text-gold"
-              style={{
-                WebkitTextStroke: '0px',
-                textShadow: '0 0 120px rgba(212,149,58,0.25)',
-              }}
-            >
-              That
-            </span>
-            <span
-              className="block text-cream"
-              style={{ fontSize: 'clamp(46px, 7.6vw, 108px)' }}
-            >
-              Empower
-            </span>
-            <span
-              className="block"
-              style={{
-                fontSize: 'clamp(46px, 7.6vw, 108px)',
-                color: 'transparent',
-                WebkitTextStroke: '1.5px rgba(236,231,221,0.45)',
-              }}
-            >
-              Organizations
-            </span>
-          </h1>
-        </div>
+            <h1 className="mt-7 font-serif text-[clamp(2.75rem,5.5vw,5rem)] font-normal leading-[1.0] tracking-[-0.02em]">
+              <span className="hero-rise block" style={{ animationDelay: "120ms" }}>Empowering</span>
+              <span className="hero-rise block" style={{ animationDelay: "200ms" }}>
+                <span className="bg-gradient-to-br from-[#F0B454] via-[#D98A2B] to-[#C75B39] bg-clip-text italic text-transparent">solutions</span> for
+              </span>
+              <span className="hero-rise block" style={{ animationDelay: "280ms" }}>brands &amp; communities</span>
+            </h1>
 
-        {/* ── Subtitle row ── */}
-        <div className="[animation:fadeUp_0.85s_cubic-bezier(0.16,1,0.3,1)_0.3s_both] mt-10 flex flex-col lg:flex-row lg:items-end gap-8 lg:gap-14">
-          <div className="hidden lg:block w-14 h-px bg-gold/35 flex-shrink-0 mb-1.5" />
-          <p className="font-body text-[17px] leading-relaxed text-warm max-w-[420px]">
-            VersaSolve Consulting leverages organizational culture strategies and
-            digital branding optimization to help businesses and nonprofits build
-            brands that last — and communities that thrive.
-          </p>
-          <div className="flex gap-3 flex-wrap lg:ml-auto flex-shrink-0">
-            <a
-              href="#contact"
-              className="inline-flex items-center gap-2 bg-gold hover:bg-gold-light text-ink font-body font-semibold text-[14px] px-7 py-3.5 rounded-full transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(212,149,58,0.45)] no-underline"
-            >
-              Start the Journey
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden>
-                <path
-                  d="M2 7h10M8 3.5 11.5 7 8 10.5"
-                  stroke="currentColor"
-                  strokeWidth="1.8"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </a>
-            <a
-              href="#services"
-              className="inline-flex items-center gap-2 border border-cream/12 text-cream font-body font-medium text-[14px] px-7 py-3.5 rounded-full hover:bg-cream/5 hover:border-cream/20 transition-all duration-200 no-underline"
-            >
-              Our Services
-            </a>
+            <p className="hero-rise mt-6 max-w-[480px] text-[18px] leading-relaxed text-[#B6A990]" style={{ animationDelay: "400ms" }}>
+              VersaSolve helps businesses and nonprofits build <b className="font-semibold text-[#F6F0E6]">brands that last</b> and{" "}
+              <b className="font-semibold text-[#F6F0E6]">communities that thrive</b> — combining strategic consulting with AI-driven digital optimization.
+            </p>
+
+            <div className="hero-rise mt-9 flex flex-wrap items-center gap-3.5" style={{ animationDelay: "500ms" }}>
+              <a href="#" className="group inline-flex items-center gap-2 rounded-[13px] px-7 py-[15px] text-base font-semibold text-[#1A140D] transition hover:-translate-y-px"
+                style={{ background: "linear-gradient(135deg,#F0B454 0%,#D98A2B 48%,#C75B39 100%)", boxShadow: "0 10px 28px rgba(216,138,43,.28), inset 0 1px 0 rgba(255,255,255,.45)" }}>
+                Start the journey
+                <ArrowRight className="transition group-hover:translate-x-0.5" />
+              </a>
+              <a href="#" className="inline-flex items-center gap-2 rounded-[13px] border border-[#E8A33D]/25 bg-white/[.02] px-7 py-[15px] text-base font-semibold transition hover:bg-white/5">
+                <PlayIcon />
+                Watch demo
+              </a>
+            </div>
+
+            <div className="hero-rise mt-11 flex flex-wrap items-center gap-7" style={{ animationDelay: "620ms" }}>
+              <Stat top={<span className="tracking-[2px] text-[#E8A33D]">★★★★★</span>} label="5.0 from 50+ clients" />
+              <Divider />
+              <Stat top="+12K" label="Lives reached" />
+              <Divider />
+              <Stat top="$850K+" label="Grants secured" />
+            </div>
+          </div>
+
+          {/* right: product visual */}
+          <div className="hero-fade relative h-[540px]">
+            {/* main dashboard */}
+            <div className="panel absolute left-3.5 top-12 w-[360px] p-[22px] animate-[float_8s_ease-in-out_infinite]">
+              <div className="mb-[18px] flex items-center justify-between">
+                <div className="flex items-center gap-2.5 text-sm font-semibold">
+                  <span className="grid h-[26px] w-[26px] place-items-center rounded-lg font-serif text-xs font-bold text-[#1A140D]"
+                    style={{ background: "linear-gradient(135deg,#F0B454 0%,#D98A2B 48%,#C75B39 100%)" }}>VS</span>
+                  Growth Dashboard
+                </div>
+                <span className="flex items-center gap-1.5 text-[11px] text-[#B6A990]">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#5BD08A] animate-pulse" /> Live
+                </span>
+              </div>
+              <div className="mb-1 text-[12.5px] text-[#B6A990]">Brand reach · last 30 days</div>
+              <div className="flex items-baseline gap-2.5 font-serif text-[33px] font-medium leading-none">
+                18.4K
+                <span className="rounded-md bg-[#5BD08A]/10 px-2 py-[3px] font-sans text-[13px] font-semibold text-[#5BD08A]">↑ 23%</span>
+              </div>
+              <div className="mb-1.5 mt-4 h-24">
+                <div className="flex h-full items-end gap-2">
+                  {[42, 58, 48, 70, 62, 82, 100].map((h, i) => (
+                    <div key={i} className="flex-1 overflow-hidden rounded-t-md"
+                      style={{
+                        height: `${h}%`,
+                        background: i === 6
+                          ? "linear-gradient(135deg,#F0B454 0%,#D98A2B 48%,#C75B39 100%)"
+                          : "linear-gradient(180deg, rgba(232,163,61,.55), rgba(232,163,61,.08))",
+                      }} />
+                  ))}
+                </div>
+                <div className="mt-2 flex justify-between text-[10px] text-[#7E7460]">
+                  {["W1", "W2", "W3", "W4", "W5", "W6", "Now"].map((w) => <span key={w}>{w}</span>)}
+                </div>
+              </div>
+              <div className="mt-4 flex gap-2 border-t border-white/[.08] pt-3.5">
+                {[["Web", "8.9K"], ["Social", "5.2K"], ["Community", "4.3K"]].map(([l, v]) => (
+                  <div key={l} className="flex-1 rounded-xl border border-white/[.08] bg-white/[.03] px-3 py-2.5">
+                    <div className="mb-1 text-[11px] text-[#7E7460]">{l}</div>
+                    <div className="text-[15px] font-semibold">{v}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* AI card */}
+            <div className="panel absolute right-1.5 top-0 w-[248px] p-[18px] animate-[float_9s_ease-in-out_infinite_.6s]">
+              <div className="mb-3 flex items-center gap-2.5">
+                <div className="grid h-[30px] w-[30px] place-items-center rounded-[9px] border border-[#E8A33D]/20"
+                  style={{ background: "linear-gradient(135deg, rgba(232,163,61,.25), rgba(199,91,57,.18))" }}>
+                  <SparkIcon />
+                </div>
+                <div>
+                  <div className="text-[13px] font-semibold">AI Brand Assist</div>
+                  <div className="text-[11px] text-[#7E7460]">Brand voice · web copy</div>
+                </div>
+              </div>
+              <div className="rounded-xl border border-white/[.08] bg-white/[.03] p-3 text-[12.5px] leading-[1.55] text-[#B6A990]">
+                {aiState === "idle" && (<>Rewrote in <span className="font-semibold text-[#E8A33D]">your brand voice</span> — warm, direct, origin-led. Est. <span className="font-semibold text-[#E8A33D]">+14%</span> engagement.</>)}
+                {aiState === "applied" && (<>✓ <span className="font-semibold text-[#E8A33D]">Applied.</span> Re-check engagement in ~2 weeks to see impact.</>)}
+                {aiState === "skipped" && (<>Skipped. We&apos;ll surface the next opportunity for you.</>)}
+              </div>
+              {aiState === "idle" && (
+                <div className="mt-3 flex gap-2">
+                  <button onClick={() => setAiState("applied")}
+                    className="flex-1 rounded-[9px] py-2 text-xs font-semibold text-[#1A140D] transition hover:brightness-110"
+                    style={{ background: "linear-gradient(135deg,#F0B454 0%,#D98A2B 48%,#C75B39 100%)" }}>Apply</button>
+                  <button onClick={() => setAiState("skipped")}
+                    className="flex-1 rounded-[9px] border border-white/[.08] bg-white/[.04] py-2 text-xs font-semibold text-[#B6A990] transition hover:bg-white/[.07]">Skip</button>
+                </div>
+              )}
+            </div>
+
+            {/* brand palette */}
+            <div className="panel absolute bottom-[180px] right-0 w-[134px] p-[13px] px-[15px] animate-[float_8.5s_ease-in-out_infinite_.9s]">
+              <div className="mb-2.5 text-[10px] uppercase tracking-[.6px] text-[#7E7460]">Brand palette</div>
+              <div className="flex gap-1.5">
+                {["#A66A23", "#E8A33D", "#C75B39", "#2A2115"].map((c) => (
+                  <div key={c} className="h-[23px] w-[23px] rounded-[7px] border border-white/10" style={{ background: c }} />
+                ))}
+              </div>
+            </div>
+
+            {/* impact tile */}
+            <Tile className="bottom-[84px] left-0 w-[174px]" accent="#C75B39"
+              icon={<HeartIcon />} label="Community Impact" big="+12K" sub="lives reached, 5 continents" />
+
+            {/* grants tile */}
+            <Tile className="bottom-1 right-[18px] w-[182px]" accent="#E8A33D"
+              icon={<CoinIcon />} label="Grants Secured" big="$850K+" sub="via strategic proposals" />
           </div>
         </div>
-
-        {/* ── Stats ── */}
-        <div className="[animation:fadeUp_0.85s_cubic-bezier(0.16,1,0.3,1)_0.45s_both] mt-14 pt-7 border-t border-gold/10 flex flex-wrap gap-8 md:gap-14">
-          {(
-            [
-              { num: '5+', label: 'Continents Reached' },
-              { num: '2', label: 'Pillars of Excellence' },
-              { num: '100%', label: 'Mission-Driven' },
-            ] as const
-          ).map(({ num, label }) => (
-            <div key={label} className="flex flex-col gap-1">
-              <span className="font-display italic font-semibold text-[38px] text-gold leading-none">
-                {num}
-              </span>
-              <span className="font-mono text-[10px] text-warm tracking-[2px] uppercase">
-                {label}
-              </span>
-            </div>
-          ))}
-        </div>
       </div>
 
-      {/* Vertical label — desktop only */}
-      <div className="hidden xl:flex absolute right-10 top-1/2 -translate-y-1/2 items-center gap-3 -rotate-90 origin-center pointer-events-none select-none">
-        <div className="w-16 h-px bg-gold/20" />
-        <span className="font-mono text-[10px] text-warm/50 tracking-[3px] uppercase whitespace-nowrap">
-          VersaSolve Consulting
-        </span>
-        <div className="w-16 h-px bg-gold/20" />
-      </div>
+      {/* keyframes + shared panel style */}
+      <style jsx global>{`
+        .panel {
+          background: linear-gradient(165deg, #211A11, #1A140D);
+          border: 1px solid rgba(232, 163, 61, 0.14);
+          border-radius: 18px;
+          box-shadow: 0 30px 70px -20px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(245, 239, 230, 0.05);
+        }
+        @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-11px); } }
+        @keyframes heroRise { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes heroFade { from { opacity: 0; transform: scale(.97); } to { opacity: 1; transform: scale(1); } }
+        .hero-rise { opacity: 0; animation: heroRise .9s cubic-bezier(.2,.7,.2,1) forwards; }
+        .hero-fade { opacity: 0; animation: heroFade 1.1s .35s ease forwards; }
+      `}</style>
     </section>
-  )
+  );
+}
+
+/* ---------- small pieces ---------- */
+function Stat({ top, label }: { top: React.ReactNode; label: string }) {
+  return (
+    <div>
+      <div className="font-serif text-[27px] font-medium leading-none">{top}</div>
+      <div className="mt-1.5 text-[13px] text-[#7E7460]">{label}</div>
+    </div>
+  );
+}
+function Divider() { return <div className="h-9 w-px bg-white/[.08]" />; }
+function Tile({ className, accent, icon, label, big, sub }: { className: string; accent: string; icon: React.ReactNode; label: string; big: string; sub: string; }) {
+  return (
+    <div className={`panel absolute p-[15px] px-4 animate-[float_7.5s_ease-in-out_infinite_.3s] ${className}`}>
+      <div className="mb-2 flex items-center gap-[7px] text-[11px] font-semibold uppercase tracking-[.4px]" style={{ color: accent }}>
+        {icon}{label}
+      </div>
+      <div className="font-serif text-[25px] font-semibold leading-none">{big}</div>
+      <div className="mt-1.5 text-[11.5px] text-[#7E7460]">{sub}</div>
+    </div>
+  );
+}
+
+/* ---------- icons ---------- */
+function ArrowRight({ className = "" }: { className?: string }) {
+  return (<svg className={className} width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M13 6l6 6-6 6" /></svg>);
+}
+function PlayIcon() {
+  return (<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="9" /><path d="M10 9l5 3-5 3V9z" fill="currentColor" stroke="none" /></svg>);
+}
+function SparkIcon() {
+  return (<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E8A33D" strokeWidth="2"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9L12 3z" /></svg>);
+}
+function HeartIcon() {
+  return (<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7-4.5-9.5-9C1 9 2.5 5.5 6 5.5c2 0 3.2 1.2 4 2.3.8-1.1 2-2.3 4-2.3 3.5 0 5 3.5 3.5 6.5C19 16.5 12 21 12 21z" /></svg>);
+}
+function CoinIcon() {
+  return (<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="9" /><path d="M12 7v10M9.5 9.5h3.5a1.8 1.8 0 010 3.5H10a1.8 1.8 0 000 3.5h4" /></svg>);
 }
