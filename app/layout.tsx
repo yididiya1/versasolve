@@ -28,9 +28,9 @@ const spaceMono = Space_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'VersaSolve Consulting — Cultivating Solutions To Empower Organizations',
+  title: 'VersaSolve Consulting Consulting — Digital Branding Optimization',
   description:
-    'VersaSolve Consulting leverages organizational culture strategies, digital branding optimization, and impact-driven solutions to help businesses and nonprofits thrive.',
+    'VersaSolve Consulting Consulting helps nonprofits, small businesses, and mission-driven organizations build stronger digital foundations through strategy, branding, web design, AI-assisted insights, and ongoing support.',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

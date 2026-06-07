@@ -99,7 +99,7 @@ export default function About() {
                 His passion for cultural understanding has taken him to five continents —
                 North and South America, Europe, Asia, and Africa — including a profound
                 study abroad at the University of Winchester, London. That global lens
-                informs every strategy VersaSolve builds.
+                informs every strategy VersaSolve Consulting builds.
               </p>
             </div>
 
@@ -117,7 +117,9 @@ export default function About() {
             </div>
 
             <a
-              href="#contact"
+              href="https://calendar.app.google/TRNg4J99aZ2spjC88"
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn-warm reveal reveal-d4 inline-flex items-center gap-2 font-body font-semibold text-[14px] px-7 py-3.5 rounded-full no-underline"
             >
               Work With Abedom
@@ -145,20 +147,19 @@ export default function About() {
           <div className="relative">
             <span className="eyebrow mb-4">
               <span className="eyebrow-dot" />
-              <span className="font-mono text-[10.5px] uppercase tracking-[2.5px] text-gold-dark">Our Vision</span>
+              <span className="font-mono text-[10.5px] uppercase tracking-[2.5px] text-gold-dark">Mission &amp; Vision</span>
             </span>
             <h3
               className="font-display italic font-semibold text-deep leading-[1.0] tracking-tight mt-4 mb-5"
               style={{ fontSize: 'clamp(26px, 3.2vw, 42px)' }}
             >
-              A future where organizations thrive through{' '}
-              <span className="text-gradient-warm">empowered cultures</span>
+              A future where every organization grows with clarity, confidence, and{' '}
+              <span className="text-gradient-warm">purpose</span>
             </h3>
             <p className="font-body text-[15.5px] leading-relaxed text-deep-soft border-l-2 border-gold-dark/30 pl-6">
-              At VersaSolve Consulting, we envision a future where organizations thrive through
-              empowered cultures and optimized digital brands. By blending strategic innovation
-              with community-driven excellence, we create lasting solutions that drive success,
-              impact, and sustainable growth — for every client, in every community we touch.
+              Our mission is to empower organizations through digital branding optimization,
+              AI-assisted insights, and sustainable systems that strengthen visibility, credibility,
+              and long-term impact — meeting every organization where they are, regardless of size or budget.
             </p>
           </div>
 
@@ -166,7 +167,7 @@ export default function About() {
           <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-edge shadow-[0_20px_50px_-20px_rgba(42,31,18,0.4)]">
             <Image
               src="/images/community.jpg"
-              alt="The VersaSolve team collaborating with a partner organization"
+              alt="The VersaSolve Consulting team collaborating with a partner organization"
               fill
               sizes="(max-width: 768px) 100vw, 45vw"
               className="object-cover"

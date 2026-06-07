@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import PromoVideos from './PromoVideos'
 
 type Project = {
   name: string
@@ -29,6 +30,24 @@ const projects: Project[] = [
     desc: 'A vibrant storefront and program site celebrating the craft and stories of New American women artisans.',
     accent: 'gold',
     image: '/porfolio/portfolio0.png',
+  },
+  {
+    name: 'Everwell Allyship',
+    domain: 'everwellallyship.org',
+    href: '#',
+    tagline: 'Building Healthier Futures Together',
+    desc: 'A warm, trustworthy site for a healthcare allyship mobilizing professionals to expand access to care and health education across the community.',
+    accent: 'rust',
+    image: '/porfolio/portfolio5.png',
+  },
+  {
+    name: 'University of Southern Maine — ROCC',
+    domain: 'usm.maine.edu',
+    href: '#',
+    tagline: 'Comprehensive marketing & web strategy for higher education',
+    desc: 'Marketing and web strategy support for the Recovery Oriented Campus Center — surfacing programs, events, and student impact.',
+    accent: 'gold',
+    image: '/porfolio/portfolio6.png',
   },
   {
     name: 'Meridian CFO',
@@ -137,27 +156,40 @@ export default function Portfolio() {
         <div className="grid-faint absolute inset-0" />
       </div>
 
-      <div className="relative z-10 max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-[0.85fr_2fr] gap-12 lg:gap-16">
+      <div className="relative z-10 max-w-[1400px] mx-auto">
         {/* Header */}
-        <div className="lg:sticky lg:top-28 lg:self-start">
-          <span className="eyebrow mb-5 reveal">
-            <span className="eyebrow-dot" />
-            <span className="font-mono text-[10.5px] uppercase tracking-[2.5px] text-gold-dark">Our Work</span>
-          </span>
-          <h2
-            className="font-display italic font-semibold text-deep leading-[1.0] tracking-tight mb-5 reveal reveal-d1"
-            style={{ fontSize: 'clamp(36px, 4.5vw, 58px)' }}
-          >
-            Our <span className="text-gradient-warm">Portfolio</span>
-          </h2>
-          <p className="font-body text-[15.5px] leading-relaxed text-deep-soft max-w-sm reveal reveal-d2">
-            From identity systems to community initiatives, every project we take on is a
-            partnership — and every result reflects the strategy, intention, and craft behind it.
+        <div className="flex flex-col lg:flex-row lg:items-end gap-8 lg:gap-20 mb-14 reveal">
+          <div>
+            <span className="eyebrow mb-5">
+              <span className="eyebrow-dot" />
+              <span className="font-mono text-[10.5px] uppercase tracking-[2.5px] text-gold-dark">Our Work</span>
+            </span>
+            <h2
+              className="font-display italic font-semibold text-deep leading-[1.0] tracking-tight"
+              style={{ fontSize: 'clamp(36px, 4.5vw, 58px)' }}
+            >
+              Our <span className="text-gradient-warm">Portfolio</span>
+            </h2>
+          </div>
+          <p className="font-body text-[15.5px] leading-relaxed text-deep-soft lg:max-w-sm lg:pb-1.5">
+            From promotional films to full websites, every project we take on is a partnership —
+            and every result reflects the strategy, intention, and craft behind it.
           </p>
         </div>
 
-        {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        {/* Promotional media */}
+        <div className="mb-6 flex items-center gap-3 reveal">
+          <span className="font-mono text-[10.5px] uppercase tracking-[2.5px] text-gold-dark">Promotional Media</span>
+          <span className="h-px flex-1 bg-edge" />
+        </div>
+        <PromoVideos />
+
+        {/* Websites */}
+        <div className="mt-16 mb-6 flex items-center gap-3 reveal">
+          <span className="font-mono text-[10.5px] uppercase tracking-[2.5px] text-gold-dark">Websites</span>
+          <span className="h-px flex-1 bg-edge" />
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((p, i) => (
             <a
               key={p.name}

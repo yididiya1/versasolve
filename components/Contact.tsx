@@ -20,7 +20,7 @@ const options = [
     ),
     label: 'Free Consultation',
     action: 'Schedule 15-Min Call',
-    href: '#',
+    href: 'https://calendar.app.google/TRNg4J99aZ2spjC88',
     accent: 'rust',
   },
   {
@@ -79,9 +79,9 @@ export default function Contact() {
           </h2>
 
           <p className="font-body text-[16.5px] leading-relaxed text-warm mb-12 max-w-lg mx-auto reveal reveal-d2">
-            Thank you for your interest in VersaSolve Consulting. We&apos;re here to help
-            you drive excellence through Organizational Culture Strategies and Digital
-            Branding Optimization. Let&apos;s start building your vision.
+            Whether you&apos;re launching a new organization, refreshing your brand, or building
+            systems for long-term growth, we&apos;ll help you move from digital uncertainty to
+            digital clarity. Let&apos;s build a stronger digital foundation together.
           </p>
 
           {/* Contact option cards */}
@@ -90,6 +90,8 @@ export default function Contact() {
               <a
                 key={opt.action}
                 href={opt.href}
+                target={opt.href.startsWith('http') ? '_blank' : undefined}
+                rel={opt.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                 className={`panel-dark group flex flex-col items-center text-center gap-4 p-7 rounded-2xl transition-all duration-300 hover:-translate-y-1.5 no-underline ${
                   opt.accent === 'gold'
                     ? 'hover:border-gold/35 hover:shadow-[0_22px_56px_rgba(212,149,58,0.16)]'

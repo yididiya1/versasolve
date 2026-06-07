@@ -7,7 +7,7 @@ const navLinks = [
   { label: 'Services', href: '/#services' },
   { label: 'Work', href: '/#portfolio' },
   { label: 'About', href: '/#about' },
-  { label: 'Contact', href: '/#contact' },
+  { label: 'VersaVantage', href: '/#versavantage' },
 ]
 
 export default function Nav() {
@@ -59,23 +59,19 @@ export default function Nav() {
             </div>
 
             <div className="flex items-center gap-3">
-              <Link
-                href="/#contact"
-                className="hidden rounded-xl border border-[#E8A33D]/20 bg-white/[.02] px-[18px] py-[11px] text-[15px] font-semibold no-underline transition hover:bg-white/5 sm:inline-flex"
-              >
-                Sign in
-              </Link>
-              <Link
-                href="/#contact"
+              <a
+                href="https://calendar.app.google/TRNg4J99aZ2spjC88"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group hidden items-center gap-2 rounded-xl px-[22px] py-3 text-[15px] font-semibold text-[#1A140D] no-underline transition hover:-translate-y-px md:inline-flex"
                 style={{
                   background: 'linear-gradient(135deg,#F0B454 0%,#D98A2B 48%,#C75B39 100%)',
                   boxShadow: '0 10px 28px rgba(216,138,43,.28), inset 0 1px 0 rgba(255,255,255,.45)',
                 }}
               >
-                Start the journey
+                Book a call
                 <ArrowRight className="transition group-hover:translate-x-0.5" />
-              </Link>
+              </a>
 
               {/* Hamburger */}
               <button
@@ -109,14 +105,16 @@ export default function Nav() {
               {item.label}
             </Link>
           ))}
-          <Link
-            href="/#contact"
+          <a
+            href="https://calendar.app.google/TRNg4J99aZ2spjC88"
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={() => setMenuOpen(false)}
             className="mt-4 rounded-xl px-6 py-3 text-center text-sm font-semibold text-[#1A140D] no-underline"
             style={{ background: 'linear-gradient(135deg,#F0B454 0%,#D98A2B 48%,#C75B39 100%)' }}
           >
-            Start the journey
-          </Link>
+            Book a call
+          </a>
         </div>
       </div>
     </>

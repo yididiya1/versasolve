@@ -7,7 +7,7 @@ const steps = [
   {
     num: '02',
     title: 'Expertise & Empowerment',
-    desc: 'Our proven systems and community-built knowledge inform every strategy. We don\'t just deliver results — we equip your team with the tools and understanding to sustain and grow independently long after our engagement ends.',
+    desc: "Our proven systems and community-built knowledge inform every strategy. We don't just deliver results — we equip your team with the tools and understanding to sustain and grow independently long after our engagement ends.",
   },
   {
     num: '03',
@@ -26,7 +26,7 @@ export default function Approach() {
   return (
     <section
       id="approach"
-      className="relative bg-page-soft py-24 md:py-32 px-6 md:px-14 xl:px-24 overflow-hidden"
+      className="relative bg-page py-24 md:py-32 px-6 md:px-14 xl:px-24 overflow-hidden"
     >
       {/* Atmosphere — multi-hue */}
       <div className="pointer-events-none absolute inset-0">

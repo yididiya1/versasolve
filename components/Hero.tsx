@@ -49,13 +49,13 @@ export default function Hero() {
         <div className="grid items-center gap-12 pb-14 pt-28 md:grid-cols-[1.05fr_.95fr] md:pb-20 md:pt-32">
           {/* left: copy */}
           <div>
-            <div className="hero-rise inline-flex items-center gap-2.5 rounded-full border border-[#E8A33D]/20 bg-[#E8A33D]/[.05] py-[7px] pl-3.5 pr-3 text-[13.5px] font-medium text-[#B6A990]"
+            {/* <div className="hero-rise inline-flex items-center gap-2.5 rounded-full border border-[#E8A33D]/20 bg-[#E8A33D]/[.05] py-[7px] pl-3.5 pr-3 text-[13.5px] font-medium text-[#B6A990]"
               style={{ animationDelay: "50ms" }}>
               <span className="rounded-full px-2 py-[3px] text-[11px] font-bold tracking-wide text-[#1A140D]"
                 style={{ background: "linear-gradient(135deg,#F0B454 0%,#D98A2B 48%,#C75B39 100%)" }}>NEW</span>
               <span className="h-1.5 w-1.5 rounded-full bg-[#5BD08A] ring-4 ring-[#5BD08A]/20" />
-              AI-powered brand &amp; growth platform
-            </div>
+              AI-assisted digital branding studio
+            </div> */}
 
             <h1 className="mt-7 font-serif text-[clamp(2.75rem,5.5vw,5rem)] font-normal leading-[1.0] tracking-[-0.02em]">
               <span className="hero-rise block" style={{ animationDelay: "120ms" }}>Empowering</span>
@@ -66,28 +66,30 @@ export default function Hero() {
             </h1>
 
             <p className="hero-rise mt-6 max-w-[480px] text-[18px] leading-relaxed text-[#B6A990]" style={{ animationDelay: "400ms" }}>
-              VersaSolve helps businesses and nonprofits build <b className="font-semibold text-[#F6F0E6]">brands that last</b> and{" "}
-              <b className="font-semibold text-[#F6F0E6]">communities that thrive</b> — combining strategic consulting with AI-driven digital optimization.
+              VersaSolve Consulting helps nonprofits, small businesses, and mission-driven organizations build a{" "}
+              <b className="font-semibold text-[#F6F0E6]">strategic digital presence</b>, combining strategy, branding,
+              and web design with <b className="font-semibold text-[#F6F0E6]">AI-assisted insights</b> and ongoing support.
             </p>
 
             <div className="hero-rise mt-9 flex flex-wrap items-center gap-3.5" style={{ animationDelay: "500ms" }}>
-              <a href="#" className="group inline-flex items-center gap-2 rounded-[13px] px-7 py-[15px] text-base font-semibold text-[#1A140D] transition hover:-translate-y-px"
+              <a href="https://calendar.app.google/TRNg4J99aZ2spjC88" target="_blank" rel="noopener noreferrer"
+                className="group inline-flex items-center gap-2 rounded-[13px] px-7 py-[15px] text-base font-semibold text-[#1A140D] transition hover:-translate-y-px"
                 style={{ background: "linear-gradient(135deg,#F0B454 0%,#D98A2B 48%,#C75B39 100%)", boxShadow: "0 10px 28px rgba(216,138,43,.28), inset 0 1px 0 rgba(255,255,255,.45)" }}>
-                Start the journey
+                Book a free consultation
                 <ArrowRight className="transition group-hover:translate-x-0.5" />
               </a>
-              <a href="#" className="inline-flex items-center gap-2 rounded-[13px] border border-[#E8A33D]/25 bg-white/[.02] px-7 py-[15px] text-base font-semibold transition hover:bg-white/5">
+              <a href="#versavantage" className="inline-flex items-center gap-2 rounded-[13px] border border-[#E8A33D]/25 bg-white/[.02] px-7 py-[15px] text-base font-semibold transition hover:bg-white/5">
                 <PlayIcon />
-                Watch demo
+                Meet VersaVantage
               </a>
             </div>
 
             <div className="hero-rise mt-11 flex flex-wrap items-center gap-7" style={{ animationDelay: "620ms" }}>
-              <Stat top={<span className="tracking-[2px] text-[#E8A33D]">★★★★★</span>} label="5.0 from 50+ clients" />
+              <Stat top="Build" label="Web, branding & media" />
               <Divider />
-              <Stat top="+12K" label="Lives reached" />
+              <Stat top="Maintain" label="VersaCare support" />
               <Divider />
-              <Stat top="$850K+" label="Grants secured" />
+              <Stat top="Scale" label="VersaVantage insights" />
             </div>
           </div>
 
@@ -99,13 +101,13 @@ export default function Hero() {
                 <div className="flex items-center gap-2.5 text-sm font-semibold">
                   <span className="grid h-[26px] w-[26px] place-items-center rounded-lg font-serif text-xs font-bold text-[#1A140D]"
                     style={{ background: "linear-gradient(135deg,#F0B454 0%,#D98A2B 48%,#C75B39 100%)" }}>VS</span>
-                  Growth Dashboard
+                  VersaVantage
                 </div>
                 <span className="flex items-center gap-1.5 text-[11px] text-[#B6A990]">
                   <span className="h-1.5 w-1.5 rounded-full bg-[#5BD08A] animate-pulse" /> Live
                 </span>
               </div>
-              <div className="mb-1 text-[12.5px] text-[#B6A990]">Brand reach · last 30 days</div>
+              <div className="mb-1 text-[12.5px] text-[#B6A990]">Digital presence · last 30 days</div>
               <div className="flex items-baseline gap-2.5 font-serif text-[33px] font-medium leading-none">
                 18.4K
                 <span className="rounded-md bg-[#5BD08A]/10 px-2 py-[3px] font-sans text-[13px] font-semibold text-[#5BD08A]">↑ 23%</span>
@@ -174,13 +176,13 @@ export default function Hero() {
               </div>
             </div>
 
-            {/* impact tile */}
+            {/* versacare tile */}
             <Tile className="bottom-[84px] left-0 w-[174px]" accent="#C75B39"
-              icon={<HeartIcon />} label="Community Impact" big="+12K" sub="lives reached, 5 continents" />
+              icon={<HeartIcon />} label="VersaCare" big="24/7" sub="ongoing digital support" />
 
-            {/* grants tile */}
+            {/* web vitals tile */}
             <Tile className="bottom-1 right-[18px] w-[182px]" accent="#E8A33D"
-              icon={<CoinIcon />} label="Grants Secured" big="$850K+" sub="via strategic proposals" />
+              icon={<CoinIcon />} label="Web Vitals" big="98" sub="performance score" />
           </div>
         </div>
       </div>
