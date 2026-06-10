@@ -8,21 +8,21 @@ export default function Hero() {
 
   return (
     <section className="relative overflow-hidden bg-[#120E09] text-[#F6F0E6]">
-      {/* ---- background photo ---- */}
+      {/* ---- background: connected earth (gold city lights) ---- */}
       <div className="pointer-events-none absolute inset-0 z-0">
         <Image
-          src="/images/hero-bg.jpg"
+          src="/images/hero-earth.jpg"
           alt=""
           fill
           priority
           sizes="100vw"
-          className="object-cover object-center opacity-[0.8]"
+          className="object-cover object-center opacity-[0.85]"
         />
-        {/* darkening + warmth overlay so copy stays readable and it blends into the section */}
+        {/* keep the headline side dark, let the globe glow behind the panels */}
         <div className="absolute inset-0"
-          style={{ background: "linear-gradient(90deg, #120E09 0%, rgba(18,14,9,.82) 24%, rgba(18,14,9,.32) 58%, rgba(18,14,9,.5) 100%)" }} />
+          style={{ background: "linear-gradient(90deg, #120E09 0%, rgba(18,14,9,.82) 28%, rgba(18,14,9,.38) 64%, rgba(18,14,9,.55) 100%)" }} />
         <div className="absolute inset-0"
-          style={{ background: "linear-gradient(180deg, #120E09 0%, transparent 18%, transparent 72%, #120E09 100%)" }} />
+          style={{ background: "linear-gradient(180deg, #120E09 0%, transparent 20%, transparent 70%, #120E09 100%)" }} />
       </div>
 
       {/* ---- atmosphere ---- */}
