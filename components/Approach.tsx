@@ -2,17 +2,17 @@ const steps = [
   {
     num: '01',
     title: 'Holistic Solutions',
-    desc: 'We begin by understanding your full ecosystem — culture, brand, goals, and community. Our integrated approach considers every dimension of your success, delivering strategies that address root causes rather than symptoms.',
+    desc: 'We begin by understanding your full ecosystem , culture, brand, goals, and community. Our integrated approach considers every dimension of your success, delivering strategies that address root causes rather than symptoms.',
   },
   {
     num: '02',
     title: 'Expertise & Empowerment',
-    desc: "Our proven systems and community-built knowledge inform every strategy. We don't just deliver results — we equip your team with the tools and understanding to sustain and grow independently long after our engagement ends.",
+    desc: "Our proven systems and community-built knowledge inform every strategy. We don't just deliver results , we equip your team with the tools and understanding to sustain and grow independently long after our engagement ends.",
   },
   {
     num: '03',
     title: 'Transformative Partnerships',
-    desc: 'We act as long-term partners, not one-time vendors. Every relationship is built on trust, transparency, and a shared commitment to meaningful, lasting impact — for your organization and the communities you serve.',
+    desc: 'We act as long-term partners, not one-time vendors. Every relationship is built on trust, transparency, and a shared commitment to meaningful, lasting impact , for your organization and the communities you serve.',
   },
 ] as const
 
@@ -28,7 +28,7 @@ export default function Approach() {
       id="approach"
       className="relative bg-page py-24 md:py-32 px-6 md:px-14 xl:px-24 overflow-hidden"
     >
-      {/* Atmosphere — multi-hue */}
+      {/* Atmosphere , multi-hue */}
       <div className="pointer-events-none absolute inset-0">
         <div
           className="absolute right-[-4%] top-[8%] h-[420px] w-[420px]"

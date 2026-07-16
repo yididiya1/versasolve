@@ -32,7 +32,7 @@
   pointer-events: none;
 }
 
-/* Orb 1 — large amber, top-right anchor */
+/* Orb 1 , large amber, top-right anchor */
 .hero-orb-1 {
   width: 820px; height: 820px;
   top: -260px; right: -160px;
@@ -44,7 +44,7 @@
   animation: orbDrift1 22s ease-in-out infinite;
 }
 
-/* Orb 2 — rust, bottom-left anchor */
+/* Orb 2 , rust, bottom-left anchor */
 .hero-orb-2 {
   width: 640px; height: 640px;
   bottom: -180px; left: -120px;
@@ -56,7 +56,7 @@
   animation: orbDrift2 29s ease-in-out infinite;
 }
 
-/* Orb 3 — gold, mid-right floating */
+/* Orb 3 , gold, mid-right floating */
 .hero-orb-3 {
   width: 400px; height: 400px;
   top: 30%; right: 15%;
@@ -67,7 +67,7 @@
   animation: orbDrift3 18s ease-in-out infinite;
 }
 
-/* Orb 4 — deep warm ellipse, central breathing glow */
+/* Orb 4 , deep warm ellipse, central breathing glow */
 .hero-orb-4 {
   width: 960px; height: 440px;
   top: 50%; left: 50%;
@@ -78,7 +78,7 @@
   animation: orbDrift4 15s ease-in-out infinite;
 }
 
-/* Orb 5 — small accent, top-left */
+/* Orb 5 , small accent, top-left */
 .hero-orb-5 {
   width: 320px; height: 320px;
   top: 15%; left: 4%;
@@ -120,7 +120,7 @@
   50%     { transform: translate(45px, 65px) scale(1.16); }
 }
 
-/* Diagonal light sweep — cinematic lens-flare pass */
+/* Diagonal light sweep , cinematic lens-flare pass */
 .hero-light-sweep {
   position: absolute;
   top: -20%; left: 0;
@@ -148,7 +148,7 @@
 
 /* ─── Modern SaaS design system ──────────────────────────────── */
 
-/* Warm gradient text — matches the Hero accent ("solutions") */
+/* Warm gradient text , matches the Hero accent ("solutions") */
 .text-gradient-warm {
   background: linear-gradient(135deg, #c8862a 0%, #d98a2b 45%, #bf5e3a 100%);
   -webkit-background-clip: text;
@@ -196,7 +196,7 @@
     0 30px 64px -26px rgba(42, 31, 18, 0.38);
 }
 
-/* Gold gradient pill button — matches the Hero CTA */
+/* Gold gradient pill button , matches the Hero CTA */
 .btn-warm {
   background: linear-gradient(135deg, #f0b454 0%, #d98a2b 48%, #c75b39 100%);
   color: #1a140d;
@@ -228,7 +228,7 @@
   flex-shrink: 0;
 }
 
-/* Dark glass panel — matches the Hero floating panels */
+/* Dark glass panel , matches the Hero floating panels */
 .panel-dark {
   background: linear-gradient(165deg, #211a11, #1a140d);
   border: 1px solid rgba(232, 163, 61, 0.14);

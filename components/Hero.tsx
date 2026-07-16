@@ -11,7 +11,7 @@ export default function Hero() {
       {/* ---- background: connected earth (gold city lights) ---- */}
       <div className="pointer-events-none absolute inset-0 z-0">
         <Image
-          src="/images/hero-earth.jpg"
+          src="/images/bg4.avif"
           alt=""
           fill
           priority
@@ -27,12 +27,12 @@ export default function Hero() {
 
       {/* ---- atmosphere ---- */}
       <div className="pointer-events-none absolute inset-0 z-0">
-        {/* warm glow top-right */}
+        {/* dark wash top-right */}
         <div className="absolute -top-[25%] right-[-8%] h-[90%] w-[60%] rounded-full blur-2xl"
-          style={{ background: "radial-gradient(circle at center, rgba(232,163,61,.22), rgba(199,91,57,.08) 40%, transparent 64%)" }} />
-        {/* warm glow bottom-left */}
+          style={{ background: "radial-gradient(circle at center, rgba(10,7,4,.55), rgba(10,7,4,.22) 42%, transparent 66%)" }} />
+        {/* dark wash bottom-left */}
         <div className="absolute -bottom-[30%] left-[-12%] h-[70%] w-[50%] rounded-full blur-2xl"
-          style={{ background: "radial-gradient(circle at center, rgba(199,91,57,.16), transparent 60%)" }} />
+          style={{ background: "radial-gradient(circle at center, rgba(10,7,4,.45), transparent 60%)" }} />
         {/* faint grid */}
         <div className="absolute inset-0 opacity-50"
           style={{
@@ -151,7 +151,7 @@ export default function Hero() {
                 </div>
               </div>
               <div className="rounded-xl border border-white/[.08] bg-white/[.03] p-3 text-[12.5px] leading-[1.55] text-[#B6A990]">
-                {aiState === "idle" && (<>Rewrote in <span className="font-semibold text-[#E8A33D]">your brand voice</span> — warm, direct, origin-led. Est. <span className="font-semibold text-[#E8A33D]">+14%</span> engagement.</>)}
+                {aiState === "idle" && (<>Rewrote in <span className="font-semibold text-[#E8A33D]">your brand voice</span>, warm, direct, origin-led. Est. <span className="font-semibold text-[#E8A33D]">+14%</span> engagement.</>)}
                 {aiState === "applied" && (<>✓ <span className="font-semibold text-[#E8A33D]">Applied.</span> Re-check engagement in ~2 weeks to see impact.</>)}
                 {aiState === "skipped" && (<>Skipped. We&apos;ll surface the next opportunity for you.</>)}
               </div>

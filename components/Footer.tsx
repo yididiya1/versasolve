@@ -18,9 +18,7 @@ export default function Footer() {
         <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5 no-underline">
-            <div className="w-8 h-8 rounded-[8px] bg-gradient-to-br from-gold to-gold-light grid place-items-center font-display font-bold text-ink text-[12px] italic">
-              VS
-            </div>
+            <img src="/images/logo-mark.svg" alt="" aria-hidden className="h-7 w-auto" />
             <span className="font-display italic font-semibold text-[16px] text-cream/80 tracking-tight">
               Versa<span className="text-gold">Solve</span> Consulting
             </span>

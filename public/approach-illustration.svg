@@ -52,19 +52,19 @@
         fill="#7a4f15">VS</text>
 
   <!-- ── Floating labels around the rings ──────────────────────────────── -->
-  <!-- Holistic — angle -35°, distance 160 → (351, 128) -->
+  <!-- Holistic , angle -35°, distance 160 → (351, 128) -->
   <text x="351" y="132" text-anchor="middle"
         font-family="ui-monospace, 'Menlo', monospace"
         font-size="10" letter-spacing="1.5"
         fill="#7a6650">HOLISTIC</text>
 
-  <!-- Expertise — angle 90°, distance 160 → (220, 380) -->
+  <!-- Expertise , angle 90°, distance 160 → (220, 380) -->
   <text x="220" y="384" text-anchor="middle"
         font-family="ui-monospace, 'Menlo', monospace"
         font-size="10" letter-spacing="1.5"
         fill="#7a6650">EXPERTISE</text>
 
-  <!-- Partnership — angle 210°, distance 160 → (81, 140) -->
+  <!-- Partnership , angle 210°, distance 160 → (81, 140) -->
   <text x="81" y="144" text-anchor="middle"
         font-family="ui-monospace, 'Menlo', monospace"
         font-size="10" letter-spacing="1.5"

@@ -16,16 +16,16 @@ const projects: Project[] = [
   {
     name: 'New American Association of Massachusetts',
     domain: 'naamass.org',
-    href: '#',
+    href: 'https://naamass.org/',
     tagline: 'Empowering New Beginnings for Refugees and Immigrants',
-    desc: 'Brand identity and a welcoming digital home for a nonprofit serving refugees and immigrants across Massachusetts — built to inform, engage, and drive donations.',
+    desc: 'Brand identity and a welcoming digital home for a nonprofit serving refugees and immigrants across Massachusetts , built to inform, engage, and drive donations.',
     accent: 'gold',
     image: '/porfolio/portfolio1.png',
   },
   {
     name: 'NAAM Artisans',
     domain: 'naamartisans.org',
-    href: '#',
+    href: 'https://naamartisans.org',
     tagline: 'Empowering Women through Skill Training, Community, and Opportunity',
     desc: 'A vibrant storefront and program site celebrating the craft and stories of New American women artisans.',
     accent: 'gold',
@@ -34,25 +34,25 @@ const projects: Project[] = [
   {
     name: 'Everwell Allyship',
     domain: 'everwellallyship.org',
-    href: '#',
+    href: 'https://everwellallyship.com/',
     tagline: 'Building Healthier Futures Together',
     desc: 'A warm, trustworthy site for a healthcare allyship mobilizing professionals to expand access to care and health education across the community.',
     accent: 'rust',
     image: '/porfolio/portfolio5.png',
   },
   {
-    name: 'University of Southern Maine — ROCC',
+    name: 'University of Southern Maine , ROCC',
     domain: 'usm.maine.edu',
-    href: '#',
+    href: 'https://usm.maine.edu/recovery-oriented-campus-center/recovery-oriented-campus-center/',
     tagline: 'Comprehensive marketing & web strategy for higher education',
-    desc: 'Marketing and web strategy support for the Recovery Oriented Campus Center — surfacing programs, events, and student impact.',
+    desc: 'Marketing and web strategy support for the Recovery Oriented Campus Center , surfacing programs, events, and student impact.',
     accent: 'gold',
     image: '/porfolio/portfolio6.png',
   },
   {
     name: 'Meridian CFO',
     domain: 'meridiancfo.com',
-    href: '#',
+    href: 'https://versasolve-portfolio-3.vercel.app/',
     tagline: 'Senior financial leadership, without the senior salary.',
     desc: 'A sharp, credibility-first site positioning fractional CFO services for founder-led companies.',
     accent: 'rust',
@@ -61,7 +61,7 @@ const projects: Project[] = [
   {
     name: 'Coastal Family Health Network',
     domain: 'coastalfamilyhealth.org',
-    href: '#',
+    href: 'https://versasolve-portfolio-2.vercel.app/',
     tagline: 'Healthcare that meets you where you are.',
     desc: 'Patient-centered web design for a coastal Maine community health nonprofit.',
     accent: 'gold',
@@ -70,7 +70,7 @@ const projects: Project[] = [
   {
     name: 'Northern Compass Workforce Initiative',
     domain: 'northerncompass.org',
-    href: '#',
+    href: 'https://versasolve-portfolio-4.vercel.app/',
     tagline: "Connecting Northern New England's workforce to the jobs of the next decade.",
     desc: 'A clear, mission-driven platform connecting workers to in-demand careers and training.',
     accent: 'rust',
@@ -172,7 +172,7 @@ export default function Portfolio() {
             </h2>
           </div>
           <p className="font-body text-[15.5px] leading-relaxed text-deep-soft lg:max-w-sm lg:pb-1.5">
-            From promotional films to full websites, every project we take on is a partnership —
+            From promotional films to full websites, every project we take on is a partnership ,
             and every result reflects the strategy, intention, and craft behind it.
           </p>
         </div>

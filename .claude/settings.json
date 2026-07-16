@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --headless=new --disable-gpu --hide-scrollbars --window-size=1440,9200 --virtual-time-budget=6000 --screenshot=/tmp/claude-501/about-tall.png http://localhost:3137/)",
+      "Bash(python3 -c \"from PIL import Image; im=Image.open\\('/tmp/claude-501/about-tall.png'\\); print\\(im.size\\)\")",
+      "Bash(sips -g pixelWidth -g pixelHeight /tmp/claude-501/about-tall.png)",
+      "Bash(sips -c 2400 1440 --cropOffset 5200 0 about-tall.png --out about-crop1.png)",
+      "Bash(sips -g pixelHeight about-crop1.png)",
+      "Bash(printf '\\\\n/* TEMP-SHOT */\\\\n.reveal{animation:none!important;opacity:1!important;transform:none!important}\\\\n')",
+      "Bash('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --headless=new --disable-gpu --hide-scrollbars --window-size=1440,9600 --virtual-time-budget=7000 --screenshot=/tmp/claude-501/page2.png http://localhost:3137/)",
+      "Bash(git checkout *)",
+      "Bash(curl -sI --max-time 8 \"https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=200\")",
+      "Bash(echo \"EXIT:$?\")",
+      "Bash(curl -sL --max-time 25 \"https://images.unsplash.com/photo-1739298061740-5ed03045b280?q=80&w=900&fit=crop&ar=4:3\" -o cand_meeting.jpg)",
+      "Bash(curl -sL --max-time 25 \"https://images.unsplash.com/photo-1739303987830-ca19742b19bc?q=80&w=900&fit=crop&ar=4:3\" -o cand_laptops.jpg)",
+      "Bash(curl -sL --max-time 30 \"https://images.unsplash.com/photo-1739298061740-5ed03045b280?q=80&w=1400&fit=crop\" -o community-team.jpg)",
+      "Bash(rm -f community.jpg)",
+      "Bash(nohup npx next dev -p 3137)",
+      "Bash(grep -q \"Ready in\" nextdev2.log)",
+      "Bash('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --headless=new --disable-gpu --hide-scrollbars --window-size=1440,9600 --virtual-time-budget=7000 --screenshot=/tmp/claude-501/page3.png http://localhost:3137/)"
+    ]
+  }
+}

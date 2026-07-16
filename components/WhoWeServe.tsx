@@ -37,11 +37,11 @@ export default function WhoWeServe() {
           </h2>
           <p className="font-body text-[15.5px] leading-relaxed text-deep-soft max-w-md mb-5 reveal reveal-d2">
             We believe a digital presence should be treated like critical organizational
-            infrastructure — not a one-time project. Many organizations invest heavily in their
+            infrastructure , not a one-time project. Many organizations invest heavily in their
             websites and branding, yet lack the systems to maintain and improve them over time.
           </p>
           <p className="font-body text-[15.5px] leading-relaxed text-deep-soft max-w-md reveal reveal-d2">
-            Our goal is to bridge that gap — helping clients move from{' '}
+            Our goal is to bridge that gap , helping clients move from{' '}
             <b className="font-semibold text-deep">digital uncertainty</b> to{' '}
             <b className="font-semibold text-deep">digital clarity</b> through strategic design,
             ongoing support, and actionable insights.

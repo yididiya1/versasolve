@@ -2,26 +2,54 @@
 import { useState } from 'react'
 
 const features = [
-  { title: 'Performance tracking', desc: 'Monitor how your digital presence performs over time.' },
-  { title: 'AI-assisted analysis', desc: 'Surface opportunities and risks with intelligent review.' },
-  { title: 'Structured insights', desc: 'Turn scattered data into clear, organized signals.' },
-  { title: 'Strategic recommendations', desc: 'Know exactly what to improve, and why it matters.' },
+  { title: "Website health that's real", desc: 'Live Core Web Vitals from Google , not vanity scores.' },
+  { title: 'Show up in AI answers', desc: 'Get found in ChatGPT, Perplexity, and Google AI Overviews.' },
+  { title: 'Fix it with AI', desc: 'One-click improvements, drafted in your brand voice.' },
+  { title: 'Measure what matters', desc: 'Watch the impact land in your traffic, rankings, and sales.' },
 ]
 
 export default function VersaVantage() {
   const [email, setEmail] = useState('')
-  const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle')
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
+  const [errorMsg, setErrorMsg] = useState('Please enter a valid email address.')
 
-  const onSubmit = (e: React.FormEvent) => {
+  const formspreeId = process.env.NEXT_PUBLIC_FORMSPREE_ID
+
+  const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    const valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())
-    if (!valid) {
+
+    const value = email.trim()
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+      setErrorMsg('Please enter a valid email address.')
       setStatus('error')
       return
     }
-    // TODO: connect to a real backend — e.g. Formspree, Mailchimp,
-    // or a Next.js route handler at app/api/waitlist/route.ts.
-    setStatus('success')
+
+    if (!formspreeId) {
+      console.error('Missing NEXT_PUBLIC_FORMSPREE_ID — set it in .env.local')
+      setErrorMsg('Something went wrong. Please try again later.')
+      setStatus('error')
+      return
+    }
+
+    try {
+      setStatus('loading')
+      const res = await fetch(`https://formspree.io/f/${formspreeId}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({ email: value }),
+      })
+      if (res.ok) {
+        setStatus('success')
+        setEmail('')
+      } else {
+        setErrorMsg('Something went wrong. Please try again.')
+        setStatus('error')
+      }
+    } catch {
+      setErrorMsg('Network error. Please check your connection and try again.')
+      setStatus('error')
+    }
   }
 
   return (
@@ -60,11 +88,12 @@ export default function VersaVantage() {
             </span>
           </h2>
 
-          <p className="mt-6 max-w-[520px] text-[17px] leading-relaxed text-[#B6A990] reveal reveal-d2">
-            <b className="font-semibold text-[#F6F0E6]">VersaVantage™</b> is our digital infrastructure
-            intelligence initiative — helping organizations measure, understand, and improve their digital
-            presence through structured insights, performance tracking, AI-assisted analysis, and strategic
-            recommendations.
+          <p className="mt-6 max-w-[540px] text-[17px] leading-relaxed text-[#B6A990] reveal reveal-d2">
+            <b className="font-semibold text-[#F6F0E6]">VersaVantage™</b> is the AI growth platform for
+            small businesses , one place to see exactly where your website and channels stand, fix what&apos;s
+            holding them back, and prove the impact. Real performance data, visibility across search and AI
+            assistants, and improvements drafted in your own voice.{' '}
+            <span className="text-[#F6F0E6]">Growth that compounds, not marketing that exhausts you.</span>
           </p>
 
           <div className="mt-9 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-5 max-w-[560px] reveal reveal-d3">
@@ -96,7 +125,7 @@ export default function VersaVantage() {
             <div className="rounded-xl border border-[#5BD08A]/25 bg-[#5BD08A]/[.08] p-5 text-center">
               <div className="mb-1 text-[15px] font-semibold text-[#F6F0E6]">You&apos;re on the list! 🎉</div>
               <p className="text-[13.5px] leading-relaxed text-[#B6A990]">
-                Thanks for your interest — we&apos;ll reach out the moment early access opens.
+                Thanks for your interest , we&apos;ll reach out the moment early access opens.
               </p>
             </div>
           ) : (
@@ -116,17 +145,18 @@ export default function VersaVantage() {
                 className="w-full rounded-xl border border-white/[.1] bg-white/[.04] px-4 py-3 text-[15px] text-[#F6F0E6] placeholder:text-[#7E7460] outline-none transition focus:border-[#E8A33D]/45 focus:bg-white/[.06]"
               />
               {status === 'error' && (
-                <p className="mt-2 text-[12.5px] text-[#d07558]">Please enter a valid email address.</p>
+                <p className="mt-2 text-[12.5px] text-[#d07558]">{errorMsg}</p>
               )}
               <button
                 type="submit"
-                className="mt-4 w-full rounded-xl px-6 py-3 text-[15px] font-semibold text-[#1A140D] transition hover:-translate-y-px"
+                disabled={status === 'loading'}
+                className="mt-4 w-full rounded-xl px-6 py-3 text-[15px] font-semibold text-[#1A140D] transition hover:-translate-y-px disabled:cursor-not-allowed disabled:opacity-70 disabled:hover:translate-y-0"
                 style={{ background: 'linear-gradient(135deg,#F0B454 0%,#D98A2B 48%,#C75B39 100%)', boxShadow: '0 10px 28px rgba(216,138,43,.28), inset 0 1px 0 rgba(255,255,255,.45)' }}
               >
-                Join the waitlist
+                {status === 'loading' ? 'Joining…' : 'Join the waitlist'}
               </button>
               <p className="mt-3 text-center text-[11.5px] text-[#7E7460]">
-                No spam — just one note when we launch.
+                No spam , just one note when we launch.
               </p>
             </form>
           )}

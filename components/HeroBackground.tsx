@@ -2,7 +2,7 @@
 
 interface HeroBackgroundProps {
   /**
-   * Path to a video file in /public — e.g. "/hero-bg.mp4"
+   * Path to a video file in /public , e.g. "/hero-bg.mp4"
    * Leave undefined to use the animated gradient mesh fallback.
    */
   videoSrc?: string
@@ -54,7 +54,7 @@ export default function HeroBackground({
         }}
       />
 
-      {/* ── Radial vignette — keeps text readable ─────────────────── */}
+      {/* ── Radial vignette , keeps text readable ─────────────────── */}
       <div
         className="absolute inset-0"
         style={{
@@ -71,7 +71,7 @@ export default function HeroBackground({
         }}
       />
 
-      {/* ── Top darkening — nav legibility ────────────────────────── */}
+      {/* ── Top darkening , nav legibility ────────────────────────── */}
       <div
         className="absolute top-0 left-0 right-0 h-32"
         style={{

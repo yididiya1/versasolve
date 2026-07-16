@@ -31,17 +31,14 @@ export default function Nav() {
       >
         <div className="mx-auto max-w-7xl px-6 sm:px-8">
           <div className="flex items-center justify-between py-5">
-            <Link href="/" className="flex items-center gap-3 no-underline">
-              <span
-                className="grid h-10 w-10 place-items-center rounded-xl font-serif text-lg font-semibold text-[#1A140D]"
-                style={{
-                  background: 'linear-gradient(135deg,#F0B454 0%,#D98A2B 48%,#C75B39 100%)',
-                  boxShadow: '0 8px 24px rgba(216,138,43,.32), inset 0 1px 0 rgba(255,255,255,.4)',
-                }}
-              >
-                VS
-              </span>
-              <span className="font-serif text-xl font-medium">
+            <Link href="/" className="flex items-center gap-2.5 no-underline">
+              <img
+                src="/images/logo-mark.svg"
+                alt=""
+                aria-hidden
+                className="h-9 w-auto"
+              />
+              <span className="font-serif text-xl font-medium text-[#F6F0E6]">
                 Versa<span className="text-[#E8A33D]">Solve</span>
               </span>
             </Link>

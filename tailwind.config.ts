@@ -26,7 +26,7 @@ const config: Config = {
           light: '#d07558',
           dark: '#8a3f22',
         },
-        // Natural complementary accents — break the warm duotone
+        // Natural complementary accents , break the warm duotone
         sage: {
           DEFAULT: '#4f9e72',
           light: '#88c79f',

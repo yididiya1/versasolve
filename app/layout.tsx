@@ -28,7 +28,7 @@ const spaceMono = Space_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'VersaSolve Consulting Consulting — Digital Branding Optimization',
+  title: 'VersaSolve Consulting Consulting , Digital Branding Optimization',
   description:
     'VersaSolve Consulting Consulting helps nonprofits, small businesses, and mission-driven organizations build stronger digital foundations through strategy, branding, web design, AI-assisted insights, and ongoing support.',
 }

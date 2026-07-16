@@ -8,7 +8,7 @@ const options = [
     ),
     label: 'Submit a Request',
     action: 'Project Request Form',
-    href: '#',
+    href: 'https://docs.google.com/forms/d/e/1FAIpQLSfOPUV_q__sEe-CNxtFpxYUR5ENSsFuJ14vrlO_ocZ_YoYyYg/viewform',
     accent: 'gold',
   },
   {
@@ -32,7 +32,7 @@ const options = [
     ),
     label: 'All Links',
     action: 'LinkTree (More Info)',
-    href: '#',
+    href: 'https://linktr.ee/Versasolveconsulting',
     accent: 'gold',
   },
 ] as const

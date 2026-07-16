@@ -95,7 +95,7 @@ export default function Impact() {
                 University of Southern Maine ROCC
               </h3>
               <p className="mt-3 max-w-xl text-[15px] leading-relaxed text-[#B6A990]">
-                Strategic partner — delivering comprehensive marketing and web strategy solutions
+                Strategic partner , delivering comprehensive marketing and web strategy solutions
                 for higher-education initiatives.
               </p>
             </div>
