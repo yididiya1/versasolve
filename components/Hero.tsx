@@ -10,19 +10,29 @@ export default function Hero() {
     <section className="relative overflow-hidden bg-[#120E09] text-[#F6F0E6]">
       {/* ---- background: connected earth (gold city lights) ---- */}
       <div className="pointer-events-none absolute inset-0 z-0">
-        <Image
-          src="/images/bg4.avif"
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-center opacity-[0.85]"
-        />
-        {/* keep the headline side dark, let the globe glow behind the panels */}
+        {/* slowly drifting globe (Ken Burns) */}
+        <div className="earth-anim absolute inset-0 opacity-[0.98]">
+          <Image
+            src="/images/bg4.avif"
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center"
+          />
+        </div>
+        {/* keep the headline side dark, let the globe + blue atmosphere show on the right */}
         <div className="absolute inset-0"
-          style={{ background: "linear-gradient(90deg, #120E09 0%, rgba(18,14,9,.82) 28%, rgba(18,14,9,.38) 64%, rgba(18,14,9,.55) 100%)" }} />
+          style={{ background: "linear-gradient(90deg, #120E09 0%, rgba(18,14,9,.80) 26%, rgba(18,14,9,.20) 58%, rgba(18,14,9,.28) 100%)" }} />
         <div className="absolute inset-0"
-          style={{ background: "linear-gradient(180deg, #120E09 0%, transparent 20%, transparent 70%, #120E09 100%)" }} />
+          style={{ background: "linear-gradient(180deg, #120E09 0%, transparent 24%, transparent 74%, #120E09 100%)" }} />
+
+        {/* slowly changing city-light glows over the globe (screen-blended, over the bright clusters) */}
+        <div className="light-glow light-glow-1" />
+        <div className="light-glow light-glow-2" />
+        <div className="light-glow light-glow-3" />
+        {/* breathing blue atmosphere along the horizon */}
+        <div className="atmos-glow" />
       </div>
 
       {/* ---- atmosphere ---- */}
@@ -200,6 +210,70 @@ export default function Hero() {
         @keyframes heroFade { from { opacity: 0; transform: scale(.97); } to { opacity: 1; transform: scale(1); } }
         .hero-rise { opacity: 0; animation: heroRise .9s cubic-bezier(.2,.7,.2,1) forwards; }
         .hero-fade { opacity: 0; animation: heroFade 1.1s .35s ease forwards; }
+
+        /* ── living earth background ─────────────────────────────── */
+        /* slow drifting pan + zoom so the globe feels like it turns */
+        @keyframes earthDrift {
+          0%   { transform: scale(1.10) translate3d(0, 0, 0); }
+          50%  { transform: scale(1.16) translate3d(-1.6%, -0.9%, 0); }
+          100% { transform: scale(1.10) translate3d(0, 0, 0); }
+        }
+        .earth-anim {
+          will-change: transform;
+          animation: earthDrift 46s ease-in-out infinite;
+        }
+
+        /* soft gold glows that slowly breathe like city lights coming and going */
+        @keyframes lightBreath {
+          0%, 100% { opacity: 0.30; transform: scale(0.96); }
+          50%      { opacity: 0.85; transform: scale(1.16); }
+        }
+        .light-glow {
+          position: absolute;
+          border-radius: 9999px;
+          filter: blur(38px);
+          mix-blend-mode: screen;
+          will-change: opacity, transform;
+          pointer-events: none;
+        }
+        /* positioned over the actual bright city-light clusters in the lower half */
+        .light-glow-1 {
+          top: 58%; left: 60%; width: 280px; height: 280px;
+          background: radial-gradient(circle, rgba(245,190,96,0.95) 0%, rgba(217,138,43,0.40) 45%, transparent 70%);
+          animation: lightBreath 15s ease-in-out infinite;
+        }
+        .light-glow-2 {
+          top: 64%; left: 76%; width: 240px; height: 240px;
+          background: radial-gradient(circle, rgba(232,163,61,0.9) 0%, rgba(199,91,57,0.34) 48%, transparent 72%);
+          animation: lightBreath 21s ease-in-out infinite 3s;
+        }
+        .light-glow-3 {
+          top: 54%; left: 46%; width: 210px; height: 210px;
+          background: radial-gradient(circle, rgba(250,215,150,0.8) 0%, rgba(217,138,43,0.28) 50%, transparent 74%);
+          animation: lightBreath 27s ease-in-out infinite 6s;
+        }
+
+        /* the blue atmospheric rim, slowly brightening so the light shifts read */
+        @keyframes atmosBreath {
+          0%, 100% { opacity: 0.25; }
+          50%      { opacity: 0.60; }
+        }
+        .atmos-glow {
+          position: absolute;
+          top: 30%; left: 52%; width: 62%; height: 130px;
+          transform: translateX(-50%) rotate(-6deg);
+          border-radius: 9999px;
+          filter: blur(34px);
+          mix-blend-mode: screen;
+          pointer-events: none;
+          will-change: opacity;
+          background: radial-gradient(ellipse 60% 100% at 50% 50%, rgba(96,170,232,0.75) 0%, rgba(64,132,201,0.30) 45%, transparent 72%);
+          animation: atmosBreath 19s ease-in-out infinite 1.5s;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .earth-anim, .light-glow, .atmos-glow { animation: none !important; }
+        }
       `}</style>
     </section>
   );

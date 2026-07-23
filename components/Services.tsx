@@ -1,5 +1,5 @@
-type Hue = 'gold' | 'azure' | 'plum' | 'sage'
-type IconName = 'branding' | 'web' | 'media' | 'care'
+type Hue = 'gold' | 'azure' | 'plum' | 'sage' | 'teal'
+type IconName = 'branding' | 'web' | 'media' | 'care' | 'community'
 
 function ServiceIcon({ name, size = 30 }: { name: IconName; size?: number }) {
   const common = {
@@ -44,6 +44,15 @@ function ServiceIcon({ name, size = 30 }: { name: IconName; size?: number }) {
           <path d="M8.8 12l2 2 4-4.4" />
         </svg>
       )
+    case 'community':
+      return (
+        <svg {...common}>
+          <circle cx="9" cy="8" r="2.6" />
+          <path d="M4 19v-1a5 5 0 0 1 10 0v1" />
+          <path d="M16.5 6.4a2.4 2.4 0 0 1 0 4.6" />
+          <path d="M17 13.4a5 5 0 0 1 3 4.6v1" />
+        </svg>
+      )
   }
 }
 
@@ -52,6 +61,7 @@ const palette: Record<Hue, { solid: string; mark: string; glow: string }> = {
   azure: { solid: '#2f6ea3', mark: 'rgba(58,143,201,0.14)', glow: 'rgba(58,143,201,0.10)' },
   plum:  { solid: '#6f54b8', mark: 'rgba(139,111,214,0.14)', glow: 'rgba(139,111,214,0.10)' },
   sage:  { solid: '#3a7457', mark: 'rgba(79,158,114,0.15)', glow: 'rgba(79,158,114,0.10)' },
+  teal:  { solid: '#1f7a86', mark: 'rgba(45,164,178,0.14)', glow: 'rgba(45,164,178,0.10)' },
 }
 
 const services: ReadonlyArray<{
@@ -88,6 +98,14 @@ const services: ReadonlyArray<{
     desc: 'Our recurring digital support system provides ongoing website updates, optimization, reporting, and strategic guidance , so your digital presence keeps improving long after launch.',
     tags: ['Ongoing Support', 'Optimization', 'Reporting'],
     hue: 'sage',
+  },
+  {
+    num: '05',
+    icon: 'community',
+    name: 'Impact-Driven Solutions',
+    desc: 'We help businesses and nonprofits bring people together through thoughtfully planned, well-executed initiatives , from community events to hands-on AI training for teams , designed to foster genuine engagement, strengthen relationships, and drive measurable, lasting impact.',
+    tags: ['Community Initiatives', 'Team AI Training', 'Engagement', 'Measurable Impact'],
+    hue: 'teal',
   },
 ]
 

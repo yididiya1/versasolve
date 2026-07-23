@@ -3,7 +3,7 @@ import Link from 'next/link'
 const links = [
   { label: 'Services', href: '#services' },
   { label: 'Ecosystem', href: '#approach' },
-  { label: 'Work', href: '#portfolio' },
+  { label: 'Portfolio', href: '#portfolio' },
   { label: 'Impact', href: '#impact' },
   { label: 'VersaVantage', href: '#versavantage' },
   { label: 'About', href: '#about' },
@@ -18,7 +18,7 @@ export default function Footer() {
         <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5 no-underline">
-            <img src="/images/logo-mark.svg" alt="" aria-hidden className="h-7 w-auto" />
+            <img src="/images/logo-mark-gold.svg" alt="" aria-hidden className="h-7 w-auto" />
             <span className="font-display italic font-semibold text-[16px] text-cream/80 tracking-tight">
               Versa<span className="text-gold">Solve</span> Consulting
             </span>

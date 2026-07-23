@@ -5,7 +5,7 @@ import Link from 'next/link'
 const navLinks = [
   { label: 'Home', href: '/' },
   { label: 'Services', href: '/#services' },
-  { label: 'Work', href: '/#portfolio' },
+  { label: 'Portfolio', href: '/#portfolio' },
   { label: 'About', href: '/#about' },
   { label: 'VersaVantage', href: '/#versavantage' },
 ]
@@ -33,7 +33,7 @@ export default function Nav() {
           <div className="flex items-center justify-between py-5">
             <Link href="/" className="flex items-center gap-2.5 no-underline">
               <img
-                src="/images/logo-mark.svg"
+                src="/images/logo-mark-gold.svg"
                 alt=""
                 aria-hidden
                 className="h-9 w-auto"
