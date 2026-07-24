@@ -21,11 +21,12 @@ export default function Hero() {
             className="object-cover object-center"
           />
         </div>
-        {/* keep the headline side dark, let the globe + blue atmosphere show on the right */}
+        {/* keep the headline side readable, but lighter overall so it doesn't feel heavy */}
         <div className="absolute inset-0"
-          style={{ background: "linear-gradient(90deg, #120E09 0%, rgba(18,14,9,.80) 26%, rgba(18,14,9,.20) 58%, rgba(18,14,9,.28) 100%)" }} />
+          style={{ background: "linear-gradient(90deg, #120E09 0%, rgba(18,14,9,.60) 24%, rgba(18,14,9,.10) 56%, rgba(18,14,9,.14) 100%)" }} />
+        {/* airy light wash up near the nav, deepening to a clean dark base at the bottom */}
         <div className="absolute inset-0"
-          style={{ background: "linear-gradient(180deg, #120E09 0%, transparent 24%, transparent 74%, #120E09 100%)" }} />
+          style={{ background: "linear-gradient(180deg, rgba(243,234,216,.40) 0%, rgba(233,222,200,.14) 14%, transparent 30%, transparent 82%, #120E09 100%)" }} />
 
         {/* slowly changing city-light glows over the globe (screen-blended, over the bright clusters) */}
         <div className="light-glow light-glow-1" />
