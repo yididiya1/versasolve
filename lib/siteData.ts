@@ -8,16 +8,15 @@
  * - No public telephone — contact is email + Google Meet booking link only.
  * - The 300% figure is Christopher Corson's attributed statement, never a first-party claim.
  *
- * TEMPORARY: EMAIL is the fallback (hello@versaresolve.com) while
- * hello@versasolveconsulting.com propagates in Google Workspace. Swap when confirmed.
+ * EMAIL is the canonical public role address on the canonical domain.
  */
 
 /** Standard call-to-action label used on every booking button across the site. */
 export const CTA_LABEL = 'Book a free 15-min consultation'
 /** Google Meet appointment booking link (Google Calendar appointment schedule). */
 export const BOOKING_URL = 'https://calendar.app.google/TRNg4J99aZ2spjC88'
-/** FALLBACK email until hello@versasolveconsulting.com confirms working. */
-export const EMAIL = 'hello@versaresolve.com'
+/** Canonical public email (role address on the canonical domain). */
+export const EMAIL = 'hello@versasolveconsulting.com'
 
 export const SITE = {
   name: 'VersaSolve Consulting',
@@ -187,6 +186,6 @@ export const FAQS: ReadonlyArray<{ q: string; a: string }> = [
   },
   {
     q: 'How do I get in touch?',
-    a: 'Book a free 15-minute consultation through the Google Meet scheduling link on versasolveconsulting.com, or email hello@versaresolve.com. VersaSolve Consulting is based in Portland, Maine and works with clients across New England.',
+    a: 'Book a free 15-minute consultation through the Google Meet scheduling link on versasolveconsulting.com, or email hello@versasolveconsulting.com. VersaSolve Consulting is based in Portland, Maine and works with clients across New England.',
   },
 ]

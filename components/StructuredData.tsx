@@ -11,8 +11,6 @@ import { SITE, FOUNDER, SERVICES, TESTIMONIALS, EMAIL, BOOKING_URL, type Service
  * - telephone           → no public phone; contact is email + Google Meet booking only.
  * - aggregateRating     → no rating scale exists; fabricating one is a violation.
  * - VersaVantage        → separate entity (founder's startup), not a VersaSolve service.
- *
- * NOTE: EMAIL is the fallback (hello@versaresolve.com) until the canonical mailbox propagates.
  */
 const ORG_ID = `${SITE.url}/#organization`
 const PERSON_ID = `${SITE.url}/#abedom`
