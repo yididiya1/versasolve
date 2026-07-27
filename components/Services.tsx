@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { SERVICES, type ServiceKey } from '@/lib/siteData'
 
 type Hue = 'gold' | 'azure' | 'plum' | 'sage' | 'teal' | 'rust'
@@ -175,6 +176,20 @@ export default function Services() {
                       </span>
                     ))}
                   </div>
+
+                  {s.key === 'visibility' && (
+                    <Link
+                      href="/ai-search-visibility"
+                      className="mt-6 inline-flex items-center gap-1.5 font-body font-semibold text-[13.5px] no-underline"
+                      style={{ color: c.solid }}
+                    >
+                      How AI search visibility works
+                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden
+                        className="transition-transform duration-200 group-hover:translate-x-1">
+                        <path d="M2 7h10M8 3.5 11.5 7 8 10.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    </Link>
+                  )}
                 </div>
               </div>
             )

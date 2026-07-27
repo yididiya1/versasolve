@@ -1,13 +1,15 @@
 import Link from 'next/link'
+import { EMAIL } from '@/lib/siteData'
 
 const links = [
-  { label: 'Services', href: '#services' },
-  { label: 'Ecosystem', href: '#approach' },
-  { label: 'Portfolio', href: '#portfolio' },
-  { label: 'Impact', href: '#impact' },
-  { label: 'VersaVantage', href: '#versavantage' },
-  { label: 'About', href: '#about' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Services', href: '/#services' },
+  { label: 'AI Search', href: '/ai-search-visibility' },
+  { label: 'Portfolio', href: '/#portfolio' },
+  { label: 'Impact', href: '/#impact' },
+  { label: 'VersaVantage', href: '/#versavantage' },
+  { label: 'FAQ', href: '/faq' },
+  { label: 'About', href: '/#about' },
+  { label: 'Contact', href: '/#contact' },
 ]
 
 export default function Footer() {
@@ -48,10 +50,10 @@ export default function Footer() {
           </p>
           <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-1.5">
             <a
-              href="mailto:VersaSolve@gmail.com"
+              href={`mailto:${EMAIL}`}
               className="font-mono text-[10.5px] tracking-wide text-warm/60 hover:text-gold transition-colors duration-200 no-underline"
             >
-              VersaSolve@gmail.com
+              {EMAIL}
             </a>
             <a
               href="https://www.versasolveconsulting.com"
