@@ -3,7 +3,7 @@ import { EMAIL } from '@/lib/siteData'
 
 const links = [
   { label: 'Services', href: '/#services' },
-  { label: 'AI Search', href: '/ai-search-visibility' },
+  { label: 'AI Visibility', href: '/ai-search-visibility' },
   { label: 'Portfolio', href: '/#portfolio' },
   { label: 'Impact', href: '/#impact' },
   { label: 'VersaVantage', href: '/#versavantage' },
@@ -32,7 +32,7 @@ export default function Footer() {
               <Link
                 key={label}
                 href={href}
-                className="font-mono text-[10px] tracking-[1.5px] uppercase text-warm/60 hover:text-cream/80 transition-colors duration-200 no-underline"
+                className="font-mono text-[10px] tracking-[1.5px] uppercase text-gold/80 hover:text-gold transition-colors duration-200 no-underline"
               >
                 {label}
               </Link>

@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation'
 const navLinks = [
   { label: 'Home', href: '/' },
   { label: 'Services', href: '/#services' },
+  { label: 'AI Visibility', href: '/ai-search-visibility' },
   { label: 'Portfolio', href: '/#portfolio' },
   { label: 'About', href: '/#about' },
   { label: 'VersaVantage', href: '/#versavantage' },
@@ -53,7 +54,7 @@ export default function Nav() {
                 <Link
                   key={item.label}
                   href={item.href}
-                  className="rounded-lg px-4 py-2 text-[15px] font-medium text-[#B6A990] no-underline transition hover:bg-white/5 hover:text-[#F6F0E6]"
+                  className="rounded-lg px-3 py-2 text-[14.5px] font-medium text-[#B6A990] no-underline transition hover:bg-white/5 hover:text-[#F6F0E6]"
                 >
                   {item.label}
                 </Link>

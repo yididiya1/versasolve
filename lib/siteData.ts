@@ -58,7 +58,7 @@ export const FOUNDER = {
     'Abedom Gebreyesus is the Founder and Principal Consultant of VersaSolve Consulting, where he helps mission-driven organizations across New England build digital foundations that support long-term growth and visibility. He holds a Master of Arts in Leadership and Organizational Studies from the University of Southern Maine.',
 } as const
 
-export type ServiceKey = 'website' | 'brand' | 'video' | 'visibility' | 'versacare' | 'adgrant'
+export type ServiceKey = 'website' | 'brand' | 'video' | 'visibility' | 'versacare'
 
 export const SERVICES: ReadonlyArray<{ key: ServiceKey; name: string; description: string }> = [
   {
@@ -89,12 +89,6 @@ export const SERVICES: ReadonlyArray<{ key: ServiceKey; name: string; descriptio
     name: 'VersaCare — Monthly Digital Care',
     description:
       'An ongoing monthly retainer that keeps your site secure, current, and improving, with reporting — instead of a site that quietly decays after launch.',
-  },
-  {
-    key: 'adgrant',
-    name: 'Google Ad Grant Setup',
-    description:
-      'Setup and configuration to unlock up to $10,000 per month in free Google advertising for eligible nonprofits.',
   },
 ]
 

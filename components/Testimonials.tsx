@@ -46,10 +46,11 @@ export default function Testimonials() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {TESTIMONIALS.map((t, i) => {
             const accent = accents[i % accents.length]
+            const orphan = i === TESTIMONIALS.length - 1 && TESTIMONIALS.length % 2 === 1
             return (
               <figure
                 key={t.author}
-                className={`reveal reveal-d${Math.min(i + 1, 5)} glass-card card-lift rounded-2xl p-8 xl:p-10 flex flex-col`}
+                className={`reveal reveal-d${Math.min(i + 1, 5)} glass-card card-lift rounded-2xl p-8 xl:p-10 flex flex-col${orphan ? ' md:col-span-2 md:mx-auto md:w-[calc(50%_-_10px)]' : ''}`}
               >
                 <QuoteMark color={accent} />
                 <blockquote className="mt-5 font-body text-[15.5px] leading-relaxed text-deep-soft flex-1">

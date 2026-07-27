@@ -50,10 +50,12 @@ export default function WhoWeServe() {
 
         {/* Right: audiences */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {audiences.map((a, i) => (
+          {audiences.map((a, i) => {
+            const orphan = i === audiences.length - 1 && audiences.length % 2 === 1
+            return (
             <div
               key={a.name}
-              className={`reveal reveal-d${Math.min(i + 1, 5)} glass-card card-lift rounded-2xl p-6`}
+              className={`reveal reveal-d${Math.min(i + 1, 5)} glass-card card-lift rounded-2xl p-6${orphan ? ' sm:col-span-2 sm:mx-auto sm:w-[calc(50%_-_8px)]' : ''}`}
             >
               <div className="flex items-center gap-2.5 mb-2">
                 <span className="h-2 w-2 rounded-full flex-shrink-0" style={{ background: a.dot }} />
@@ -65,7 +67,8 @@ export default function WhoWeServe() {
                 {a.tagline}
               </p>
             </div>
-          ))}
+            )
+          })}
         </div>
       </div>
     </section>

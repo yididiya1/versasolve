@@ -81,7 +81,6 @@ const meta: Record<ServiceKey, { icon: IconName; hue: Hue; tags: string[] }> = {
   video:     { icon: 'media',      hue: 'plum',  tags: ['Short-form video', 'Reels', 'Social-ready'] },
   visibility:{ icon: 'visibility', hue: 'teal',  tags: ['SEO', 'AEO', 'GEO'] },
   versacare: { icon: 'care',       hue: 'sage',  tags: ['Security & updates', 'Backups', 'Monthly reporting'] },
-  adgrant:   { icon: 'grant',      hue: 'rust',  tags: ['Nonprofit eligible', 'Up to $10K/mo', 'Setup & config'] },
 }
 
 export default function Services() {
@@ -124,10 +123,12 @@ export default function Services() {
             const m = meta[s.key]
             const c = palette[m.hue]
             const num = String(i + 1).padStart(2, '0')
+            // center a lone last card when the count is odd (2-col grid, gap-5)
+            const orphan = i === SERVICES.length - 1 && SERVICES.length % 2 === 1
             return (
               <div
                 key={s.key}
-                className={`reveal reveal-d${Math.min(i + 1, 5)} glass-card card-lift group relative rounded-2xl overflow-hidden`}
+                className={`reveal reveal-d${Math.min(i + 1, 5)} glass-card card-lift group relative rounded-2xl overflow-hidden${orphan ? ' md:col-span-2 md:mx-auto md:w-[calc(50%_-_10px)]' : ''}`}
               >
                 {/* Hover glow */}
                 <div
