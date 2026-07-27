@@ -275,9 +275,10 @@ export default function AiSearchVisibilityPage() {
           <p className="max-w-2xl font-body text-[16.5px] leading-relaxed text-deep-soft mb-6">
             VersaSolve Consulting builds SEO, AEO, and GEO into every website from the start —
             not as a later upsell. For nonprofits, small businesses, and mission-driven organizations
-            across <b className="font-semibold text-deep">Portland, Maine</b>, <b className="font-semibold text-deep">Greater Boston</b>,
-            and New England, that means structured entity data, answer-first content, and a maintenance
-            path that keeps you citable as the models keep changing.
+            across <b className="font-semibold text-deep">Cumberland County, Maine</b> (Portland) and
+            <b className="font-semibold text-deep"> Essex County, Massachusetts</b> (Lynn and Greater Boston),
+            that means structured entity data, answer-first content, and a maintenance path that keeps
+            you citable as the models keep changing.
           </p>
           <p className="max-w-2xl font-body text-[15.5px] leading-relaxed text-deep-mute">
             See the full{' '}

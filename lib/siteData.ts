@@ -31,7 +31,17 @@ export const SITE = {
   locality: 'Portland',
   region: 'ME',
   country: 'US',
-  areaServed: ['New England', 'Maine', 'Massachusetts'],
+  // Declared service areas (NOT landing pages — thin per-county pages read as doorway pages).
+  // Named county anchors = where real client work exists (Cumberland: USM, coworkHERS ·
+  // Essex: NAAM/Lynn). Broad state coverage supports remote + Upwork work. York/Androscoggin
+  // stay unlisted until a case study there earns the mention.
+  areaServed: [
+    'New England',
+    'Maine',
+    'Massachusetts',
+    'Cumberland County, Maine',
+    'Essex County, Massachusetts',
+  ],
   // sameAs: only public, login-free, canonical profile URLs. GBP is PENDING (omitted).
   sameAs: [
     'https://www.linkedin.com/company/versasolve-consulting/',
@@ -133,7 +143,7 @@ export const FAQS: ReadonlyArray<{ q: string; a: string }> = [
   },
   {
     q: 'What areas does VersaSolve Consulting serve?',
-    a: 'VersaSolve Consulting serves clients across New England, with primary presence in Portland, Maine and Greater Boston, Massachusetts. Work is handled remotely through video calls, email, and shared documents, with in-person meetings available in both areas.',
+    a: 'VersaSolve Consulting serves clients across Maine and Massachusetts, anchored in Cumberland County, Maine (Portland and Greater Portland) and Essex County, Massachusetts (the Lynn and Greater Boston area), where it has ongoing client work. Projects are handled remotely through video calls, email, and shared documents, with in-person meetings available in both states.',
   },
   {
     q: 'What is AEO and GEO, and how are they different from SEO?',
