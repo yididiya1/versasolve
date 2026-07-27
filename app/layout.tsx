@@ -28,9 +28,51 @@ const spaceMono = Space_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'VersaSolve Consulting Consulting , Digital Branding Optimization',
+  metadataBase: new URL('https://versasolveconsulting.com'),
+  title: {
+    default: 'VersaSolve Consulting — Web Design, Branding & AI-Search Visibility in New England',
+    template: '%s · VersaSolve Consulting',
+  },
   description:
-    'VersaSolve Consulting Consulting helps nonprofits, small businesses, and mission-driven organizations build stronger digital foundations through strategy, branding, web design, AI-assisted insights, and ongoing support.',
+    'New England web design, branding, and AI-search visibility for nonprofits, small businesses, and mission-driven organizations. Built to be found — and maintained so it stays that way.',
+  applicationName: 'VersaSolve Consulting',
+  authors: [{ name: 'Abedom Gebreyesus', url: 'https://www.linkedin.com/in/abedom-gebreyesus-697102175/' }],
+  creator: 'Abedom Gebreyesus',
+  publisher: 'VersaSolve Consulting',
+  keywords: [
+    'nonprofit web design Maine',
+    'nonprofit website design New England',
+    'small business web design Portland Maine',
+    'web design for mission-driven organizations',
+    'Portland Maine web design',
+    'AEO services New England',
+    'how to rank in ChatGPT and Perplexity',
+    'what is AEO vs SEO',
+    'Google Ad Grant setup for nonprofits',
+    'website maintenance retainer New England',
+  ],
+  alternates: { canonical: '/' },
+  openGraph: {
+    type: 'website',
+    siteName: 'VersaSolve Consulting',
+    title: 'VersaSolve Consulting — Web Design, Branding & AI-Search Visibility in New England',
+    description:
+      'New England web design, branding, and AI-search visibility for nonprofits, small businesses, and mission-driven organizations. Built to be found — and maintained so it stays that way.',
+    url: 'https://versasolveconsulting.com',
+    locale: 'en_US',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'VersaSolve Consulting — New England Web Design & AI-Search Visibility',
+    description:
+      'Web design, branding, and SEO/AEO/GEO for nonprofits and mission-driven organizations across New England.',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1 },
+  },
+  category: 'Web Design & Digital Marketing',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

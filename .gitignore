@@ -29,3 +29,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Internal reference — not for the public repo
+site-facts.md

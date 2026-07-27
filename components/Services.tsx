@@ -1,5 +1,7 @@
-type Hue = 'gold' | 'azure' | 'plum' | 'sage' | 'teal'
-type IconName = 'branding' | 'web' | 'media' | 'care' | 'community'
+import { SERVICES, type ServiceKey } from '@/lib/siteData'
+
+type Hue = 'gold' | 'azure' | 'plum' | 'sage' | 'teal' | 'rust'
+type IconName = 'web' | 'branding' | 'media' | 'visibility' | 'care' | 'grant'
 
 function ServiceIcon({ name, size = 30 }: { name: IconName; size?: number }) {
   const common = {
@@ -14,13 +16,6 @@ function ServiceIcon({ name, size = 30 }: { name: IconName; size?: number }) {
     'aria-hidden': true,
   }
   switch (name) {
-    case 'branding':
-      return (
-        <svg {...common}>
-          <path d="M12 3l1.7 4.8L18.5 9.5 13.7 11.2 12 16l-1.7-4.8L5.5 9.5 10.3 7.8 12 3z" />
-          <path d="M18.5 14.5l.6 1.7 1.7.6-1.7.6-.6 1.7-.6-1.7-1.7-.6 1.7-.6.6-1.7z" />
-        </svg>
-      )
     case 'web':
       return (
         <svg {...common}>
@@ -30,11 +25,26 @@ function ServiceIcon({ name, size = 30 }: { name: IconName; size?: number }) {
           <line x1="12" y1="17" x2="12" y2="21" />
         </svg>
       )
+    case 'branding':
+      return (
+        <svg {...common}>
+          <path d="M12 3l1.7 4.8L18.5 9.5 13.7 11.2 12 16l-1.7-4.8L5.5 9.5 10.3 7.8 12 3z" />
+          <path d="M18.5 14.5l.6 1.7 1.7.6-1.7.6-.6 1.7-.6-1.7-1.7-.6 1.7-.6.6-1.7z" />
+        </svg>
+      )
     case 'media':
       return (
         <svg {...common}>
           <rect x="3" y="5" width="18" height="14" rx="2" />
           <path d="M10.5 9.2l4.2 2.8-4.2 2.8V9.2z" />
+        </svg>
+      )
+    case 'visibility':
+      return (
+        <svg {...common}>
+          <circle cx="10.5" cy="10.5" r="6" />
+          <line x1="15" y1="15" x2="20.5" y2="20.5" />
+          <path d="M10.5 7.6l.7 1.9 1.9.7-1.9.7-.7 1.9-.7-1.9-1.9-.7 1.9-.7.7-1.9z" />
         </svg>
       )
     case 'care':
@@ -44,13 +54,12 @@ function ServiceIcon({ name, size = 30 }: { name: IconName; size?: number }) {
           <path d="M8.8 12l2 2 4-4.4" />
         </svg>
       )
-    case 'community':
+    case 'grant':
       return (
         <svg {...common}>
-          <circle cx="9" cy="8" r="2.6" />
-          <path d="M4 19v-1a5 5 0 0 1 10 0v1" />
-          <path d="M16.5 6.4a2.4 2.4 0 0 1 0 4.6" />
-          <path d="M17 13.4a5 5 0 0 1 3 4.6v1" />
+          <circle cx="12" cy="9" r="5.5" />
+          <path d="M12 6.8v4.4M10.6 7.9h2a1.1 1.1 0 010 2.2h-1.2a1.1 1.1 0 000 2.2h2" />
+          <path d="M8.4 15.2 7 21l5-2.4L17 21l-1.4-5.8" />
         </svg>
       )
   }
@@ -62,52 +71,17 @@ const palette: Record<Hue, { solid: string; mark: string; glow: string }> = {
   plum:  { solid: '#6f54b8', mark: 'rgba(139,111,214,0.14)', glow: 'rgba(139,111,214,0.10)' },
   sage:  { solid: '#3a7457', mark: 'rgba(79,158,114,0.15)', glow: 'rgba(79,158,114,0.10)' },
   teal:  { solid: '#1f7a86', mark: 'rgba(45,164,178,0.14)', glow: 'rgba(45,164,178,0.10)' },
+  rust:  { solid: '#a64a2a', mark: 'rgba(191,94,58,0.14)',  glow: 'rgba(191,94,58,0.10)' },
 }
 
-const services: ReadonlyArray<{
-  num: string; icon: IconName; name: string; desc: string; tags: string[]; hue: Hue
-}> = [
-  {
-    num: '01',
-    icon: 'branding',
-    name: 'Digital Branding Optimization',
-    desc: 'We strengthen your online presence through strategic positioning, SEO, visual consistency, and data-driven marketing , using modern tools, including AI-assisted analysis, to surface opportunities and guide informed decisions.',
-    tags: ['Logo & Branding', 'SEO', 'Marketing Strategy', 'Community Consulting'],
-    hue: 'gold',
-  },
-  {
-    num: '02',
-    icon: 'web',
-    name: 'Website Design',
-    desc: 'We design clean, professional, conversion-focused websites , optimized for user experience , that help organizations establish trust, communicate their mission, and engage their audiences effectively.',
-    tags: ['Conversion-Optimized', 'Responsive', 'User-Focused'],
-    hue: 'azure',
-  },
-  {
-    num: '03',
-    icon: 'media',
-    name: 'Promotional Media',
-    desc: 'We create promotional videos, reels, and visual content that help organizations tell their story, increase engagement, and build lasting brand awareness.',
-    tags: ['Video & Reels', 'Storytelling', 'Brand Awareness'],
-    hue: 'plum',
-  },
-  {
-    num: '04',
-    icon: 'care',
-    name: 'VersaCare™',
-    desc: 'Our recurring digital support system provides ongoing website updates, optimization, reporting, and strategic guidance , so your digital presence keeps improving long after launch.',
-    tags: ['Ongoing Support', 'Optimization', 'Reporting'],
-    hue: 'sage',
-  },
-  {
-    num: '05',
-    icon: 'community',
-    name: 'Impact-Driven Solutions',
-    desc: 'We help businesses and nonprofits bring people together through thoughtfully planned, well-executed initiatives , from community events to hands-on AI training for teams , designed to foster genuine engagement, strengthen relationships, and drive measurable, lasting impact.',
-    tags: ['Community Initiatives', 'Team AI Training', 'Engagement', 'Measurable Impact'],
-    hue: 'teal',
-  },
-]
+const meta: Record<ServiceKey, { icon: IconName; hue: Hue; tags: string[] }> = {
+  website:   { icon: 'web',        hue: 'azure', tags: ['Mobile-first', 'Conversion-focused', 'Modern stack'] },
+  brand:     { icon: 'branding',   hue: 'gold',  tags: ['Logo & identity', 'Color & type', 'Messaging'] },
+  video:     { icon: 'media',      hue: 'plum',  tags: ['Short-form video', 'Reels', 'Social-ready'] },
+  visibility:{ icon: 'visibility', hue: 'teal',  tags: ['SEO', 'AEO', 'GEO'] },
+  versacare: { icon: 'care',       hue: 'sage',  tags: ['Security & updates', 'Backups', 'Monthly reporting'] },
+  adgrant:   { icon: 'grant',      hue: 'rust',  tags: ['Nonprofit eligible', 'Up to $10K/mo', 'Setup & config'] },
+}
 
 export default function Services() {
   return (
@@ -138,18 +112,20 @@ export default function Services() {
             </h2>
           </div>
           <p className="font-body text-[16px] leading-relaxed text-deep-mute lg:max-w-xs lg:pb-1.5">
-            From your first website to ongoing optimization, we combine strategy, branding,
-            design, and AI-assisted insights to help your organization grow with clarity.
+            From your first website to ongoing care, we build, maintain, and make your organization
+            visible — in Google search and in AI assistants like ChatGPT, Claude, and Perplexity.
           </p>
         </div>
 
         {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-          {services.map((s, i) => {
-            const c = palette[s.hue]
+          {SERVICES.map((s, i) => {
+            const m = meta[s.key]
+            const c = palette[m.hue]
+            const num = String(i + 1).padStart(2, '0')
             return (
               <div
-                key={s.num}
+                key={s.key}
                 className={`reveal reveal-d${Math.min(i + 1, 5)} glass-card card-lift group relative rounded-2xl overflow-hidden`}
               >
                 {/* Hover glow */}
@@ -163,17 +139,17 @@ export default function Services() {
                   className="absolute top-0 right-4 z-20 font-display font-bold italic select-none pointer-events-none leading-none hidden sm:block"
                   style={{ fontSize: '7rem', color: c.mark }}
                 >
-                  {s.num}
+                  {num}
                 </span>
 
                 {/* Text content */}
                 <div className="relative z-10 p-8 xl:p-10">
                   <div className="flex items-center gap-3 mb-5">
                     <span style={{ color: c.solid }}>
-                      <ServiceIcon name={s.icon} size={30} />
+                      <ServiceIcon name={m.icon} size={30} />
                     </span>
                     <span className="font-mono text-[10px] tracking-[2.5px] uppercase" style={{ color: c.solid, opacity: 0.75 }}>
-                      Service {s.num}
+                      Service {num}
                     </span>
                   </div>
 
@@ -185,11 +161,11 @@ export default function Services() {
                   </h3>
 
                   <p className="font-body text-[15px] leading-relaxed text-deep-soft">
-                    {s.desc}
+                    {s.description}
                   </p>
 
                   <div className="flex flex-wrap gap-2 mt-6">
-                    {s.tags.map((tag) => (
+                    {m.tags.map((tag) => (
                       <span
                         key={tag}
                         className="inline-flex items-center gap-1.5 font-mono text-[10px] tracking-[1.5px] uppercase px-3 py-1.5 rounded-full border border-edge bg-white/60 text-deep-soft backdrop-blur-sm"

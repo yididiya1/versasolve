@@ -52,11 +52,15 @@ export default function Impact() {
           {/* Left: stat + proofs */}
           <div className="panel-dark reveal reveal-d2 flex flex-col justify-center rounded-2xl p-8 md:p-10">
             <div className="font-serif text-[clamp(3.5rem,7vw,5.5rem)] font-medium leading-none">
-              <span className="bg-gradient-to-br from-[#F0B454] via-[#D98A2B] to-[#C75B39] bg-clip-text text-transparent">30+</span>
+              <span className="bg-gradient-to-br from-[#F0B454] via-[#D98A2B] to-[#C75B39] bg-clip-text text-transparent">300%</span>
             </div>
-            <div className="mt-2 font-display italic text-[22px] font-semibold">Brands Served</div>
+            <div className="mt-2 font-display italic text-[22px] font-semibold">Growth in digital footprint</div>
             <p className="mt-2 text-[14.5px] leading-relaxed text-[#B6A990]">
-              Nonprofits and small businesses transformed through strategic consulting.
+              &ldquo;A significant jump in our digital footprint through website enhancements and
+              digital marketing by over 300 percent.&rdquo;
+            </p>
+            <p className="mt-2.5 font-mono text-[10.5px] uppercase tracking-[1.5px] text-[#7E7460]">
+              Christopher Corson · USM ROCC
             </p>
 
             <div className="my-7 h-px bg-white/[.1]" />

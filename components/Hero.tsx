@@ -83,24 +83,44 @@ export default function Hero() {
             </p>
 
             <div className="hero-rise mt-9 flex flex-wrap items-center gap-3.5" style={{ animationDelay: "500ms" }}>
+              {/* Primary: gold by default, softens to light gold on hover */}
               <a href="https://calendar.app.google/TRNg4J99aZ2spjC88" target="_blank" rel="noopener noreferrer"
-                className="group inline-flex items-center gap-2 rounded-[13px] px-7 py-[15px] text-base font-semibold text-[#1A140D] transition hover:-translate-y-px"
+                className="group relative inline-flex items-center gap-2 overflow-hidden rounded-[13px] px-7 py-[15px] text-base font-semibold text-[#1A140D] transition hover:-translate-y-px"
                 style={{ background: "linear-gradient(135deg,#F0B454 0%,#D98A2B 48%,#C75B39 100%)", boxShadow: "0 10px 28px rgba(216,138,43,.28), inset 0 1px 0 rgba(255,255,255,.45)" }}>
-                Book a free consultation
-                <ArrowRight className="transition group-hover:translate-x-0.5" />
+                <span className="absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                  style={{ background: "linear-gradient(165deg,#fbf1db 0%,#f5e7cc 100%)" }} />
+                <span className="relative inline-flex items-center gap-2">
+                  Book a free 15-min consultation
+                  <ArrowRight className="transition group-hover:translate-x-0.5" />
+                </span>
               </a>
-              <a href="#versavantage" className="inline-flex items-center gap-2 rounded-[13px] border border-[#E8A33D]/25 bg-white/[.02] px-7 py-[15px] text-base font-semibold transition hover:bg-white/5">
-                <PlayIcon />
-                Meet VersaVantage
+              {/* Secondary: slightly lighter by default, fills gold on hover */}
+              <a href="#versavantage"
+                className="group relative inline-flex items-center gap-2 overflow-hidden rounded-[13px] border border-[#E8A33D]/30 bg-white/[.06] px-7 py-[15px] text-base font-semibold text-[#F6F0E6] transition hover:-translate-y-px hover:border-transparent">
+                <span className="absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                  style={{ background: "linear-gradient(135deg,#F0B454 0%,#D98A2B 48%,#C75B39 100%)" }} />
+                <span className="relative inline-flex items-center gap-2 transition-colors duration-300 group-hover:text-[#1A140D]">
+                  <PlayIcon />
+                  Meet VersaVantage
+                </span>
               </a>
             </div>
 
-            <div className="hero-rise mt-11 flex flex-wrap items-center gap-7" style={{ animationDelay: "620ms" }}>
-              <Stat top="Build" label="Web, branding & media" />
-              <Divider />
-              <Stat top="Maintain" label="VersaCare support" />
-              <Divider />
-              <Stat top="Scale" label="VersaVantage insights" />
+            <div className="hero-rise mt-10 max-w-[540px] overflow-hidden rounded-2xl border border-[#E8A33D]/15 bg-white/[.03] px-5 py-4 backdrop-blur-sm sm:px-6 sm:py-5" style={{ animationDelay: "620ms" }}>
+              <div className="mb-4 flex items-center justify-between border-b border-white/[.08] pb-3">
+                <span className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[2.5px] text-[#7E7460]">
+                  <span className="h-1 w-1 rounded-full bg-[#E8A33D]" />
+                  How we work
+                </span>
+                <span className="font-mono text-[10px] uppercase tracking-[2px] text-[#E8A33D]/70">3 stages</span>
+              </div>
+              <div className="flex flex-col gap-y-4 sm:flex-row sm:items-start sm:gap-y-0">
+                <Stage n="01" top="Build" label="Web, branding & media" />
+                <Connector />
+                <Stage n="02" top="Maintain" label="VersaCare support" />
+                <Connector delay="1.4s" />
+                <Stage n="03" top="Scale" label="VersaVantage insights" />
+              </div>
             </div>
           </div>
 
@@ -272,8 +292,17 @@ export default function Hero() {
           animation: atmosBreath 19s ease-in-out infinite 1.5s;
         }
 
+        /* gold dot flowing along the Build → Maintain → Scale connectors */
+        @keyframes flowDot {
+          0%   { left: -2px; opacity: 0; }
+          15%  { opacity: 1; }
+          85%  { opacity: 1; }
+          100% { left: calc(100% + 2px); opacity: 0; }
+        }
+        .flow-dot { animation: flowDot 2.8s ease-in-out infinite; }
+
         @media (prefers-reduced-motion: reduce) {
-          .earth-anim, .light-glow, .atmos-glow { animation: none !important; }
+          .earth-anim, .light-glow, .atmos-glow, .flow-dot { animation: none !important; }
         }
       `}</style>
     </section>
@@ -281,15 +310,34 @@ export default function Hero() {
 }
 
 /* ---------- small pieces ---------- */
-function Stat({ top, label }: { top: React.ReactNode; label: string }) {
+function Stage({ n, top, label }: { n: string; top: string; label: string }) {
   return (
-    <div>
-      <div className="font-serif text-[27px] font-medium leading-none">{top}</div>
-      <div className="mt-1.5 text-[13px] text-[#7E7460]">{label}</div>
+    <div className="group min-w-0">
+      <div className="flex items-center gap-2">
+        <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full border border-[#E8A33D]/35 bg-[#E8A33D]/[.08] font-mono text-[10px] text-[#E8A33D] transition-all duration-300 group-hover:border-[#E8A33D]/70 group-hover:bg-[#E8A33D]/20">
+          {n}
+        </span>
+        <span className="whitespace-nowrap font-serif text-[23px] font-medium leading-none text-[#F6F0E6]">{top}</span>
+      </div>
+      <div className="mt-1.5 max-w-[150px] pl-8 text-[11.5px] leading-snug text-[#7E7460]">{label}</div>
     </div>
   );
 }
-function Divider() { return <div className="h-9 w-px bg-white/[.08]" />; }
+
+function Connector({ delay = "0s" }: { delay?: string }) {
+  return (
+    <div className="relative mx-3 mt-3.5 hidden h-px min-w-[26px] flex-1 self-start sm:block">
+      <div className="absolute inset-0 bg-gradient-to-r from-[#E8A33D]/45 via-[#E8A33D]/25 to-[#E8A33D]/12" />
+      <span
+        className="flow-dot absolute top-1/2 h-[5px] w-[5px] -translate-y-1/2 rounded-full bg-[#F0B454] shadow-[0_0_8px_rgba(240,180,84,.85)]"
+        style={{ animationDelay: delay }}
+      />
+      <svg className="absolute -right-[3px] top-1/2 -translate-y-1/2 text-[#E8A33D]/55" width="7" height="7" viewBox="0 0 8 8" fill="none" aria-hidden>
+        <path d="M2 1l3 3-3 3" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    </div>
+  );
+}
 function Tile({ className, accent, icon, label, big, sub }: { className: string; accent: string; icon: React.ReactNode; label: string; big: string; sub: string; }) {
   return (
     <div className={`panel absolute p-[15px] px-4 animate-[float_7.5s_ease-in-out_infinite_.3s] ${className}`}>

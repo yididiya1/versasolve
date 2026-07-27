@@ -237,6 +237,49 @@
     inset 0 1px 0 rgba(245, 239, 230, 0.05);
 }
 
+/* ─── Founder photo , "touch of AI" treatment ────────────────── */
+/* slow scanner sweep passing down the portrait */
+@keyframes aiScan {
+  0%   { transform: translateY(-130%); opacity: 0; }
+  8%   { opacity: 1; }
+  92%  { opacity: 1; }
+  100% { transform: translateY(360%); opacity: 0; }
+}
+.ai-scan { animation: aiScan 7.5s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
+
+/* pulsing neural nodes */
+@keyframes aiNode {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50%      { opacity: 1;   transform: scale(1.35); }
+}
+.ai-node { animation: aiNode 2.6s ease-in-out infinite; transform-origin: center; }
+
+/* softly breathing focus-reticle corners */
+@keyframes aiReticle {
+  0%, 100% { opacity: 0.45; }
+  50%      { opacity: 0.9; }
+}
+.ai-reticle { animation: aiReticle 3.4s ease-in-out infinite; }
+
+/* portrait ⇄ toon crossfade, synced to the scanner:
+   15s loop = two 7.5s scans; each portrait holds for one scan, swaps on the pass boundary. */
+@keyframes portraitA {
+  0%, 42% { opacity: 1; }
+  50%, 92% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes portraitB {
+  0%, 42% { opacity: 0; }
+  50%, 92% { opacity: 1; }
+  100% { opacity: 0; }
+}
+.portrait-a { animation: portraitA 15s ease-in-out infinite; }
+.portrait-b { animation: portraitB 15s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .ai-scan, .ai-node, .ai-reticle, .portrait-a, .portrait-b { animation: none !important; }
+}
+
 /* ─── Scrollbar ───────────────────────────────────────────────── */
 ::-webkit-scrollbar           { width: 3px; }
 ::-webkit-scrollbar-track     { background: #f3ead8; }

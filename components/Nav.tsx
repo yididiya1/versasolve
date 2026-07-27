@@ -1,6 +1,7 @@
 'use client'
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 const navLinks = [
   { label: 'Home', href: '/' },
@@ -8,11 +9,15 @@ const navLinks = [
   { label: 'Portfolio', href: '/#portfolio' },
   { label: 'About', href: '/#about' },
   { label: 'VersaVantage', href: '/#versavantage' },
+  { label: 'FAQ', href: '/faq' },
 ]
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const pathname = usePathname()
+  // Non-home routes (e.g. /faq) are light at the top, so the nav needs a solid backdrop.
+  const solid = scrolled || pathname !== '/'
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 48)
@@ -24,7 +29,7 @@ export default function Nav() {
     <>
       <nav
         className={`fixed top-0 left-0 right-0 z-50 text-[#F6F0E6] transition-all duration-500 ${
-          scrolled
+          solid
             ? 'bg-[#120E09]/90 backdrop-blur-xl border-b border-[#E8A33D]/10 shadow-[0_8px_30px_rgba(0,0,0,.45)]'
             : 'bg-transparent'
         }`}
@@ -66,7 +71,7 @@ export default function Nav() {
                   boxShadow: '0 10px 28px rgba(216,138,43,.28), inset 0 1px 0 rgba(255,255,255,.45)',
                 }}
               >
-                Book a call
+                Book a 15-min call
                 <ArrowRight className="transition group-hover:translate-x-0.5" />
               </a>
 
@@ -110,7 +115,7 @@ export default function Nav() {
             className="mt-4 rounded-xl px-6 py-3 text-center text-sm font-semibold text-[#1A140D] no-underline"
             style={{ background: 'linear-gradient(135deg,#F0B454 0%,#D98A2B 48%,#C75B39 100%)' }}
           >
-            Book a call
+            Book a free 15-min consultation
           </a>
         </div>
       </div>

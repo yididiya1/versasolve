@@ -204,22 +204,76 @@ export default function About() {
                   border: '1px solid rgba(160,106,31,0.18)',
                 }}
               >
+                {/* real headshot (base layer) */}
                 <Image
-                  src="/images/abedom.avif"
-                  alt="Abedom Gebreyesus , Founder & Principal Consultant"
+                  src="/images/abedom.jpg"
+                  alt="Abedom Gebreyesus, Founder & CEO of VersaSolve Consulting"
                   fill
-                  className="object-cover object-top"
+                  sizes="(max-width: 1024px) 100vw, 440px"
+                  className="portrait-a object-cover"
+                  style={{ objectPosition: '50% 25%' }}
                   priority
                 />
+                {/* 3D avatar , crossfades in every third scanner pass */}
+                <Image
+                  src="/images/abedom-toon.jpg"
+                  alt=""
+                  aria-hidden
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 440px"
+                  className="portrait-b object-cover opacity-0"
+                  style={{ objectPosition: '50% 45%' }}
+                />
 
-                {/* Decorative diagonal stripe */}
+                {/* ── "touch of AI" treatment ── */}
+                {/* faint tech grid */}
                 <div
-                  className="absolute inset-0 pointer-events-none"
+                  className="pointer-events-none absolute inset-0"
                   style={{
-                    background:
-                      'repeating-linear-gradient(135deg, transparent, transparent 40px, rgba(212,149,58,0.02) 40px, rgba(212,149,58,0.02) 41px)',
+                    backgroundImage:
+                      'linear-gradient(rgba(212,149,58,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(212,149,58,0.05) 1px, transparent 1px)',
+                    backgroundSize: '30px 30px',
                   }}
                 />
+
+                {/* scanner sweep */}
+                <div
+                  className="ai-scan pointer-events-none absolute inset-x-0 top-0 h-16"
+                  style={{
+                    background:
+                      'linear-gradient(180deg, transparent, rgba(240,180,84,0.25) 55%, rgba(240,180,84,0.55) 80%, transparent)',
+                    mixBlendMode: 'screen',
+                  }}
+                />
+
+                {/* focus-reticle corners */}
+                <span className="ai-reticle pointer-events-none absolute left-3 top-3 h-5 w-5 border-l-2 border-t-2 border-[#F0B454]" />
+                <span className="ai-reticle pointer-events-none absolute right-3 top-3 h-5 w-5 border-r-2 border-t-2 border-[#F0B454]" />
+                <span className="ai-reticle pointer-events-none absolute left-3 bottom-3 h-5 w-5 border-l-2 border-b-2 border-[#F0B454]" />
+                <span className="ai-reticle pointer-events-none absolute right-3 bottom-3 h-5 w-5 border-r-2 border-b-2 border-[#F0B454]" />
+
+                {/* neural node cluster */}
+                <svg className="pointer-events-none absolute bottom-5 left-5 h-20 w-24" viewBox="0 0 96 80" fill="none" aria-hidden>
+                  <g stroke="#F0B454" strokeOpacity="0.4" strokeWidth="1">
+                    <line x1="12" y1="60" x2="40" y2="38" />
+                    <line x1="40" y1="38" x2="70" y2="50" />
+                    <line x1="40" y1="38" x2="54" y2="12" />
+                    <line x1="70" y1="50" x2="84" y2="22" />
+                  </g>
+                  <g fill="#F0B454">
+                    <circle className="ai-node" cx="12" cy="60" r="3" style={{ animationDelay: '0s' }} />
+                    <circle className="ai-node" cx="40" cy="38" r="3.5" style={{ animationDelay: '0.5s' }} />
+                    <circle className="ai-node" cx="70" cy="50" r="3" style={{ animationDelay: '1s' }} />
+                    <circle className="ai-node" cx="54" cy="12" r="2.5" style={{ animationDelay: '1.4s' }} />
+                    <circle className="ai-node" cx="84" cy="22" r="2.5" style={{ animationDelay: '0.8s' }} />
+                  </g>
+                </svg>
+
+                {/* AI-driven chip */}
+                <span className="pointer-events-none absolute left-1/2 top-3 -translate-x-1/2 inline-flex items-center gap-1.5 rounded-full bg-[#0d0a06]/55 px-2.5 py-1 font-mono text-[9px] uppercase tracking-[2px] text-cream backdrop-blur-sm">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#5BD08A] animate-dot-pulse" />
+                  AI-Driven
+                </span>
               </div>
 
               {/* Credential badge , floating */}
@@ -248,7 +302,7 @@ export default function About() {
               Abedom<br /><span className="text-gradient-warm">Gebreyesus</span>
             </h2>
             <p className="font-mono text-[11px] tracking-[2.5px] uppercase text-gold-dark/80 mb-8 reveal reveal-d1">
-              Founder & Principal Consultant
+              Founder & CEO
             </p>
 
             <div className="space-y-4 font-body text-[15.5px] leading-relaxed text-deep-soft mb-8 reveal reveal-d2">
@@ -290,7 +344,7 @@ export default function About() {
               rel="noopener noreferrer"
               className="btn-warm reveal reveal-d4 inline-flex items-center gap-2 font-body font-semibold text-[14px] px-7 py-3.5 rounded-full no-underline"
             >
-              Work With Abedom
+              Book a free 15-min consultation
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden>
                 <path
                   d="M2 7h10M8 3.5 11.5 7 8 10.5"
