@@ -28,7 +28,7 @@ export default function FAQ() {
           </h2>
           <p className="font-body text-[15.5px] leading-relaxed text-deep-soft max-w-sm reveal reveal-d2">
             Straight answers on how VersaSolve Consulting works , from AEO and GEO to VersaCare,
-            Google Ad Grants, and getting started.
+            pricing, and getting started.
           </p>
         </div>
 

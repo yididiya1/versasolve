@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { SERVICES, type ServiceKey } from '@/lib/siteData'
 
 type Hue = 'gold' | 'azure' | 'plum' | 'sage' | 'teal' | 'rust'
-type IconName = 'web' | 'branding' | 'media' | 'visibility' | 'care' | 'grant'
+type IconName = 'web' | 'branding' | 'media' | 'visibility' | 'care'
 
 function ServiceIcon({ name, size = 30 }: { name: IconName; size?: number }) {
   const common = {
@@ -53,14 +53,6 @@ function ServiceIcon({ name, size = 30 }: { name: IconName; size?: number }) {
         <svg {...common}>
           <path d="M12 3l7 3v5.5c0 4.2-3 6.7-7 8.5-4-1.8-7-4.3-7-8.5V6l7-3z" />
           <path d="M8.8 12l2 2 4-4.4" />
-        </svg>
-      )
-    case 'grant':
-      return (
-        <svg {...common}>
-          <circle cx="12" cy="9" r="5.5" />
-          <path d="M12 6.8v4.4M10.6 7.9h2a1.1 1.1 0 010 2.2h-1.2a1.1 1.1 0 000 2.2h2" />
-          <path d="M8.4 15.2 7 21l5-2.4L17 21l-1.4-5.8" />
         </svg>
       )
   }

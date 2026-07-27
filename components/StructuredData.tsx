@@ -49,7 +49,6 @@ const graph = [
       'Answer Engine Optimization',
       'Generative Engine Optimization',
       'Nonprofit marketing',
-      'Google Ad Grants',
     ],
     sameAs: SITE.sameAs,
     contactPoint: {

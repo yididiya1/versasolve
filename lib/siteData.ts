@@ -132,7 +132,7 @@ export const TESTIMONIALS: ReadonlyArray<{
 export const FAQS: ReadonlyArray<{ q: string; a: string }> = [
   {
     q: 'Do you work with nonprofits?',
-    a: "Yes. Nonprofits and mission-driven organizations are the core of VersaSolve Consulting's client base, including community organizations, social enterprises, and higher-education programs. VersaSolve also handles Google Ad Grant setup, which can unlock up to $10,000 per month in free Google advertising for eligible nonprofits.",
+    a: "Yes. Nonprofits and mission-driven organizations are the core of VersaSolve Consulting's client base, including community organizations, social enterprises, and higher-education programs. From brand identity to websites and AI-search visibility, the focus is on building a digital presence that earns trust and keeps working long after launch.",
   },
   {
     q: 'What areas does VersaSolve Consulting serve?',
@@ -148,7 +148,7 @@ export const FAQS: ReadonlyArray<{ q: string; a: string }> = [
   },
   {
     q: "What's included in VersaCare?",
-    a: 'VersaCare is VersaSolve Consulting’s monthly digital care retainer. The Premium tier covers hosting oversight, security and software updates, backups, and a monthly allowance of content edits and fixes. The Elite tier adds active growth work — SEO, GEO and AEO management, Google Ad Grant management where applicable, and a monthly performance dashboard.',
+    a: 'VersaCare is VersaSolve Consulting’s monthly digital care retainer. The Premium tier covers hosting oversight, security and software updates, backups, and a monthly allowance of content edits and fixes. The Elite tier adds active growth work — SEO, GEO, and AEO management, plus a monthly performance dashboard.',
   },
   {
     q: 'Why do I need a website if I already have social media?',
@@ -176,7 +176,7 @@ export const FAQS: ReadonlyArray<{ q: string; a: string }> = [
   },
   {
     q: 'How much does VersaCare cost?',
-    a: 'VersaCare monthly plans start at $450 for Premium — hosting oversight, security and software updates, backups, and a monthly allowance of content edits — and $900 for Elite, which adds active SEO, GEO, and AEO management, Google Ad Grant management where applicable, and a monthly performance dashboard.',
+    a: 'VersaCare monthly plans start at $450 for Premium — hosting oversight, security and software updates, backups, and a monthly allowance of content edits — and $900 for Elite, which adds active SEO, GEO, and AEO management plus a monthly performance dashboard.',
   },
   {
     q: 'How do I get in touch?',

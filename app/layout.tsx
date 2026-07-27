@@ -48,7 +48,6 @@ export const metadata: Metadata = {
     'AEO services New England',
     'how to rank in ChatGPT and Perplexity',
     'what is AEO vs SEO',
-    'Google Ad Grant setup for nonprofits',
     'website maintenance retainer New England',
   ],
   alternates: { canonical: '/' },

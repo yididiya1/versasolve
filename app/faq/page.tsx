@@ -6,7 +6,7 @@ import { FAQS, SITE } from '@/lib/siteData'
 export const metadata: Metadata = {
   title: 'Frequently Asked Questions',
   description:
-    'Answers on how VersaSolve Consulting works — AEO and GEO, SEO, VersaCare monthly care, Google Ad Grants, pricing, timelines, and getting started. Serving nonprofits and businesses across New England.',
+    'Answers on how VersaSolve Consulting works — AEO and GEO, SEO, VersaCare monthly care, pricing, timelines, and getting started. Serving nonprofits and businesses across New England.',
   alternates: { canonical: '/faq' },
   openGraph: {
     type: 'website',
