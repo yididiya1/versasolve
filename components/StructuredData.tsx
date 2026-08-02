@@ -30,7 +30,15 @@ const graph = [
     alternateName: SITE.alternateName,
     legalName: SITE.legalName,
     url: SITE.url,
-    logo: `${SITE.url}/images/logo-mark-gold.svg`,
+    // Raster, not SVG: Google's Organization logo is consumed far more reliably as a
+    // PNG. The SVG is kept for in-page rendering (Nav/Footer) where it stays crisp.
+    logo: {
+      '@type': 'ImageObject',
+      url: `${SITE.url}/images/logo-mark-gold.png`,
+      width: 512,
+      height: 512,
+      caption: SITE.name,
+    },
     image: `${SITE.url}/opengraph-image`,
     description: SITE.elevatorPitch,
     slogan: 'Built to be found — and maintained so it stays that way.',
