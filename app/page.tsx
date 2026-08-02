@@ -9,12 +9,14 @@ import About from '@/components/About'
 import VersaVantage from '@/components/VersaVantage'
 import FAQ from '@/components/FAQ'
 import Contact from '@/components/Contact'
-import StructuredData from '@/components/StructuredData'
+import ServiceCatalog from '@/components/ServiceCatalog'
 
 export default function Home() {
   return (
     <main>
-      <StructuredData />
+      {/* Org/Person/WebSite nodes come from app/layout.tsx so they exist on every page.
+          The Service catalog is homepage-only — each /services/* page emits its own node. */}
+      <ServiceCatalog />
       <Hero />
       <Services />
       <WhoWeServe />

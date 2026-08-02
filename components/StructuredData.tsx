@@ -1,8 +1,18 @@
-import { SITE, FOUNDER, SERVICES, TESTIMONIALS, EMAIL, BOOKING_URL, type ServiceKey } from '@/lib/siteData'
+import { SITE, FOUNDER, TESTIMONIALS, EMAIL, BOOKING_URL, ORG_ID, PERSON_ID, WEBSITE_ID } from '@/lib/siteData'
 
 /**
- * Site-wide JSON-LD. Encodes only publishable, corroborated facts:
- * - ProfessionalService (Organization) with founder, service-area, sameAs, services, reviews, contactPoint.
+ * Site-wide JSON-LD, rendered from the root layout so it appears on EVERY page.
+ * That placement is deliberate: /faq, /ai-search-visibility, and every /services/* page
+ * reference `#organization`, `#abedom`, and `#website` by @id, and those references only
+ * resolve if the defining node is present in the same document. This file is the single
+ * place those three nodes are defined — no other page may redefine them.
+ *
+ * Service nodes deliberately live OUTSIDE this component (see ServiceCatalog for the
+ * homepage, and serviceSchema() on each /services/* page). If they were emitted here as
+ * well, a service page would carry the same Service @id twice in one document.
+ *
+ * Encodes only publishable, corroborated facts:
+ * - ProfessionalService (Organization) with founder, service-area, sameAs, reviews, contactPoint.
  * - Person (founder) with credentials.
  * - WebSite.
  * (FAQPage lives on the dedicated /faq page to keep a single canonical FAQ resource.)
@@ -12,16 +22,6 @@ import { SITE, FOUNDER, SERVICES, TESTIMONIALS, EMAIL, BOOKING_URL, type Service
  * - aggregateRating     → no rating scale exists; fabricating one is a violation.
  * - VersaVantage        → separate entity (founder's startup), not a VersaSolve service.
  */
-const ORG_ID = `${SITE.url}/#organization`
-const PERSON_ID = `${SITE.url}/#abedom`
-const WEBSITE_ID = `${SITE.url}/#website`
-
-// Published starting prices → AggregateOffer ("from" ranges). USD.
-const OFFERS: Partial<Record<ServiceKey, { low: number; high: number }>> = {
-  website: { low: 900, high: 3000 },
-  versacare: { low: 450, high: 900 },
-}
-
 const graph = [
   {
     '@type': 'ProfessionalService',
@@ -91,26 +91,6 @@ const graph = [
     publisher: { '@id': ORG_ID },
     inLanguage: 'en-US',
   },
-  // Services as Service nodes; priced services carry an AggregateOffer ("from" range).
-  ...SERVICES.map((s) => {
-    const priced = OFFERS[s.key]
-    return {
-      '@type': 'Service',
-      '@id': `${SITE.url}/#service-${s.key}`,
-      name: s.name,
-      description: s.description,
-      provider: { '@id': ORG_ID },
-      areaServed: { '@type': 'AdministrativeArea', name: 'New England' },
-      ...(priced && {
-        offers: {
-          '@type': 'AggregateOffer',
-          priceCurrency: 'USD',
-          lowPrice: priced.low,
-          highPrice: priced.high,
-        },
-      }),
-    }
-  }),
 ]
 
 export default function StructuredData() {

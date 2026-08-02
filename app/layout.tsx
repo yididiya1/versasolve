@@ -4,6 +4,7 @@ import './globals.css'
 import ScrollRevealProvider from '@/components/ScrollRevealProvider'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
+import StructuredData from '@/components/StructuredData'
 
 const fraunces = Fraunces({
   subsets: ['latin'],
@@ -81,6 +82,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       className={`${fraunces.variable} ${hanken.variable} ${spaceMono.variable}`}
     >
       <body className="font-body bg-page text-deep antialiased overflow-x-hidden">
+        {/* Org / Person / WebSite / Service nodes. Must be site-wide: every page's JSON-LD
+            references these by @id, and an @id only resolves within the same document. */}
+        <StructuredData />
         <ScrollRevealProvider />
         <Nav />
         {children}

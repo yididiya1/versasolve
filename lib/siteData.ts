@@ -60,18 +60,31 @@ export const FOUNDER = {
 
 export type ServiceKey = 'website' | 'brand' | 'video' | 'visibility' | 'versacare'
 
-export const SERVICES: ReadonlyArray<{ key: ServiceKey; name: string; description: string }> = [
+/**
+ * `path` is the service's own route, when one exists. It drives both the schema.org
+ * @id and the `url` field, so the Service node emitted site-wide (StructuredData) and
+ * the detailed node emitted on the service page share one identifier and cannot drift.
+ * `video` has no standalone page and keeps a homepage-scoped @id.
+ */
+export const SERVICES: ReadonlyArray<{
+  key: ServiceKey
+  name: string
+  description: string
+  path?: string
+}> = [
   {
     key: 'website',
     name: 'Website Design & Build',
     description:
       'Fast, mobile-first websites built on a modern stack — designed to convert visitors into real conversations, not just look good.',
+    path: '/services/web-design',
   },
   {
     key: 'brand',
     name: 'Brand Identity',
     description:
       'Logo, color, type, and messaging so your organization looks consistent everywhere someone encounters you.',
+    path: '/services/brand-identity',
   },
   {
     key: 'video',
@@ -83,14 +96,83 @@ export const SERVICES: ReadonlyArray<{ key: ServiceKey; name: string; descriptio
     name: 'Visibility — SEO, AEO & GEO',
     description:
       "Optimization so you're found in Google search, surfaced in featured snippets and answer boxes, and cited by AI assistants like ChatGPT, Claude, and Perplexity.",
+    path: '/services/seo-aeo-geo',
   },
   {
     key: 'versacare',
     name: 'VersaCare — Monthly Digital Care',
     description:
       'An ongoing monthly retainer that keeps your site secure, current, and improving, with reporting — instead of a site that quietly decays after launch.',
+    path: '/services/versacare',
   },
 ]
+
+/** Canonical node identifiers. Every page references these; only the org graph defines them. */
+export const ORG_ID = `${SITE.url}/#organization`
+export const PERSON_ID = `${SITE.url}/#abedom`
+export const WEBSITE_ID = `${SITE.url}/#website`
+
+/**
+ * Published starting prices → AggregateOffer ("from" ranges), USD.
+ * Only services with a published figure appear here; the rest carry no Offer node.
+ */
+export const SERVICE_OFFERS: Partial<Record<ServiceKey, { low: number; high: number }>> = {
+  website: { low: 900, high: 3000 },
+  versacare: { low: 450, high: 900 },
+}
+
+/** Stable @id for a service — page-scoped when the service has its own route. */
+export function serviceId(s: { key: ServiceKey; path?: string }): string {
+  return s.path ? `${SITE.url}${s.path}#service` : `${SITE.url}/#service-${s.key}`
+}
+
+/** Look up a service by key; throws at build time if the key is wrong. */
+export function getService(key: ServiceKey) {
+  const s = SERVICES.find((x) => x.key === key)
+  if (!s) throw new Error(`Unknown service key: ${key}`)
+  return s
+}
+
+/** BreadcrumbList from a trail of { name, path }; use path '' for the site root. */
+export function breadcrumbList(trail: ReadonlyArray<{ name: string; path: string }>) {
+  return {
+    '@type': 'BreadcrumbList',
+    itemListElement: trail.map((t, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: t.name,
+      item: `${SITE.url}${t.path}`,
+    })),
+  }
+}
+
+/**
+ * Service node for a service page. Shares its @id with the site-wide node and reuses the
+ * same name/description/offer constants, so the two merge instead of conflicting.
+ * `provider` references the organization by @id — the org node itself is never duplicated.
+ */
+export function serviceSchema(key: ServiceKey, extra?: Record<string, unknown>) {
+  const s = getService(key)
+  const offer = SERVICE_OFFERS[key]
+  return {
+    '@type': 'Service',
+    '@id': serviceId(s),
+    name: s.name,
+    description: s.description,
+    provider: { '@id': ORG_ID },
+    areaServed: { '@type': 'AdministrativeArea', name: 'New England' },
+    ...(s.path && { url: `${SITE.url}${s.path}`, mainEntityOfPage: `${SITE.url}${s.path}` }),
+    ...(offer && {
+      offers: {
+        '@type': 'AggregateOffer',
+        priceCurrency: 'USD',
+        lowPrice: offer.low,
+        highPrice: offer.high,
+      },
+    }),
+    ...extra,
+  }
+}
 
 export const TESTIMONIALS: ReadonlyArray<{
   quote: string
