@@ -26,7 +26,7 @@ export default function VersaVantage() {
     }
 
     if (!formspreeId) {
-      console.error('Missing NEXT_PUBLIC_FORMSPREE_ID — set it in .env.local')
+      console.error('Missing NEXT_PUBLIC_FORMSPREE_ID: set it in .env.local')
       setErrorMsg('Something went wrong. Please try again later.')
       setStatus('error')
       return

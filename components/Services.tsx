@@ -105,7 +105,7 @@ export default function Services() {
           </div>
           <p className="font-body text-[16px] leading-relaxed text-deep-mute lg:max-w-xs lg:pb-1.5">
             From your first website to ongoing care, we build, maintain, and make your organization
-            visible — in Google search and in AI assistants like ChatGPT, Claude, and Perplexity.
+            visible in Google search and in AI assistants like ChatGPT, Claude, and Perplexity.
           </p>
         </div>
 

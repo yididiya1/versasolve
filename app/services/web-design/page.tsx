@@ -7,7 +7,7 @@ import CtaBand from '@/components/page/CtaBand'
 import { SITE, breadcrumbList, serviceSchema } from '@/lib/siteData'
 
 const DESC =
-  'VersaSolve Consulting LLC — website design and build for nonprofits, small businesses, and mission-driven organizations across Maine and Massachusetts. Fast, mobile-first sites from $900, launched in 5–10 business days with SEO, AEO, and GEO built in.'
+  'VersaSolve Consulting LLC: website design and build for nonprofits, small businesses, and mission-driven organizations across Maine and Massachusetts. Fast, mobile-first sites from $900, launched in 5–10 business days with SEO, AEO, and GEO built in.'
 
 export const metadata: Metadata = {
   title: 'Website Design & Build',
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/services/web-design' },
   openGraph: {
     type: 'website',
-    title: 'Website Design & Build — VersaSolve Consulting',
+    title: 'Website Design & Build · VersaSolve Consulting',
     description: DESC,
     url: `${SITE.url}/services/web-design`,
   },
@@ -128,7 +128,7 @@ export default function WebDesignPage() {
           <p>
             Every VersaSolve Consulting website is fast, mobile-first, and built on a modern static-first stack rather
             than a page-builder template. The design target is conversion, not decoration: the site is structured to turn
-            visitors into real conversations — a booked call, a submitted form, a donation — instead of simply looking
+            visitors into real conversations (a booked call, a submitted form, a donation) instead of simply looking
             good on a portfolio screenshot.
           </p>
           <p>
@@ -154,7 +154,7 @@ export default function WebDesignPage() {
             VersaSolve Consulting builds on a current static-first architecture instead. Pages are generated ahead of
             time and served as finished markup, which makes them fast to load and clean for crawlers and AI assistants to
             read. The practical difference is that the structure a search engine or answer engine sees is the same
-            structure a visitor sees — nothing important is assembled by scripts after the page arrives. The same
+            structure a visitor sees. Nothing important is assembled by scripts after the page arrives. The same
             static-first approach is what makes VersaSolve Consulting builds mobile-first in practice rather than in
             name: pages that are light for crawlers are also light on a phone.
           </p>
@@ -174,7 +174,7 @@ export default function WebDesignPage() {
             The typical starting point is an organization whose current website is outdated or identical to a widely used
             template, that does not appear in AI-powered search, and that has had no one maintaining the site since it
             launched. A build is the right move when the existing foundation cannot support the organization&apos;s
-            current work — not merely when the design feels dated. VersaSolve Consulting also builds for real estate
+            current work, not merely when the design feels dated. VersaSolve Consulting also builds for real estate
             agents, agent teams, boutique brokerages, and property management companies across Maine and Massachusetts,
             though that is a newer strategic area rather than an established client roster.
           </p>

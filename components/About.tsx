@@ -307,7 +307,7 @@ export default function About() {
 
             <div className="space-y-4 font-body text-[15.5px] leading-relaxed text-deep-soft mb-8 reveal reveal-d2">
               <p>
-                Abedom Gebreyesus is the Founder and Principal Consultant of VersaSolve
+                Abedom Gebreyesus is the Founder and CEO of VersaSolve
                 Consulting LLC. His journey began across Ethiopia, Eritrea, and Kenya before
                 bringing him to the United States, where he spent his formative years in
                 Massachusetts before making his home in Maine.

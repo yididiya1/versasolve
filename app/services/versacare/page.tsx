@@ -10,12 +10,12 @@ const DESC =
   'VersaCare is VersaSolve Consulting’s monthly digital care retainer. Premium from $450/month covers hosting oversight, security updates, backups, and content edits. Elite from $900/month adds SEO, GEO, and AEO management.'
 
 export const metadata: Metadata = {
-  title: 'VersaCare — Monthly Digital Care',
+  title: 'VersaCare: Monthly Digital Care',
   description: DESC,
   alternates: { canonical: '/services/versacare' },
   openGraph: {
     type: 'website',
-    title: 'VersaCare — Monthly Digital Care · VersaSolve Consulting',
+    title: 'VersaCare: Monthly Digital Care · VersaSolve Consulting',
     description: DESC,
     url: `${SITE.url}/services/versacare`,
   },
@@ -58,12 +58,12 @@ export default function VersaCarePage() {
         eyebrow="Service · VersaCare Monthly Digital Care"
         title={
           <>
-            VersaCare — <span className="text-gradient-warm">monthly digital care</span>
+            VersaCare: <span className="text-gradient-warm">monthly digital care</span>
           </>
         }
         lead={
           <>
-            VersaCare is VersaSolve Consulting&apos;s monthly digital care retainer — an ongoing plan that keeps a
+            VersaCare is VersaSolve Consulting&apos;s monthly digital care retainer, an ongoing plan that keeps a
             website secure, current, and improving instead of quietly decaying after launch. Two tiers are available:
             Premium, starting at $450 per month, covers hosting oversight, security and software updates, backups, and
             content edits. Elite, starting at $900 per month, adds active SEO, GEO, and AEO management.
@@ -97,7 +97,7 @@ export default function VersaCarePage() {
         intro={
           <p>
             VersaCare monthly plans start at the figures below. Both are ongoing monthly retainers rather than one-time
-            fees, and each is a starting price — final scope is set during the free 15-minute consultation.
+            fees, and each is a starting price. Final scope is set during the free 15-minute consultation.
           </p>
         }
       >
@@ -115,7 +115,7 @@ export default function VersaCarePage() {
           <p>
             A website is not a finished object. Software dependencies need security patches, hosting configurations
             change, and content goes out of date as programs, staff, and services change. Left alone, a site that
-            launched in good shape becomes slower, less accurate, and eventually less secure — usually without anyone
+            launched in good shape becomes slower, less accurate, and eventually less secure, usually without anyone
             noticing until something breaks.
           </p>
           <p>

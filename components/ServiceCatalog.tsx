@@ -5,7 +5,7 @@ import { SERVICES, serviceSchema } from '@/lib/siteData'
  *
  * Each /services/* page emits its own node for that one service via serviceSchema(), using
  * the same @id. Rendering this component on a service page too would put that @id in the
- * document twice — so it stays on the homepage, which is the one page that presents all
+ * document twice, so it stays on the homepage, which is the one page that presents all
  * five services and has no per-service node of its own.
  */
 export default function ServiceCatalog() {

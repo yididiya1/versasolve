@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { BOOKING_URL, CTA_LABEL } from '@/lib/siteData'
 
 /**
- * Standalone-page hero. `lead` carries the page's extraction answer — the 40–70 word
+ * Standalone-page hero. `lead` carries the page's extraction answer: the 40–70 word
  * direct response to the page's core question, with no preamble, so an answer engine can
  * lift it whole. Keep it self-contained: explicit nouns, no reference back to the H1.
  */

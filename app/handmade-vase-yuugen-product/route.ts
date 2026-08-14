@@ -7,7 +7,7 @@
  * should be dropped from the index, which 404 does not communicate as decisively.
  */
 export function GET() {
-  return new Response('410 Gone — this product page no longer exists.', {
+  return new Response('410 Gone. This product page no longer exists.', {
     status: 410,
     headers: {
       'Content-Type': 'text/plain; charset=utf-8',

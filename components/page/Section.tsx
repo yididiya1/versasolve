@@ -1,6 +1,6 @@
 /**
  * A self-contained answer block. The H2 is phrased as a real user query and the body is
- * written to survive being quoted out of context — explicit nouns, no dangling pronouns
+ * written to survive being quoted out of context: explicit nouns, no dangling pronouns
  * pointing at the previous section.
  *
  * `tone` alternates the background so consecutive sections stay visually separated.

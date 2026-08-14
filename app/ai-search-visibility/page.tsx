@@ -5,7 +5,7 @@ import { SITE, FOUNDER, BOOKING_URL } from '@/lib/siteData'
 const PUBLISHED = '2026-07-27'
 const TITLE = 'AI Search Visibility: How to Get Found in Google, ChatGPT, Claude & Perplexity'
 const DESC =
-  'A plain-English guide to SEO, AEO, and GEO — how to rank in Google, win featured snippets, and get cited by AI assistants like ChatGPT, Claude, and Perplexity. Written for New England organizations.'
+  'A plain-English guide to SEO, AEO, and GEO: how to rank in Google, win featured snippets, and get cited by AI assistants like ChatGPT, Claude, and Perplexity. Written for New England organizations.'
 
 export const metadata: Metadata = {
   title: 'AI Search Visibility (SEO, AEO & GEO) in New England',
@@ -56,7 +56,7 @@ const citeSteps = [
   {
     n: '02',
     h: 'Answer real questions, directly',
-    p: 'Write the exact questions your customers ask as headings, and lead each with a direct answer — no preamble. Answer-first content is what gets extracted into snippets and quoted by assistants.',
+    p: 'Write the exact questions your customers ask as headings, and lead each with a direct answer and no preamble. Answer-first content is what gets extracted into snippets and quoted by assistants.',
   },
   {
     n: '03',
@@ -131,7 +131,7 @@ export default function AiSearchVisibilityPage() {
           <p className="mx-auto mt-7 max-w-2xl font-body text-[17px] md:text-[18.5px] leading-relaxed text-deep-soft">
             AI search visibility means being found in three places at once: Google’s traditional results (<b className="font-semibold text-deep">SEO</b>),
             the answer boxes above them (<b className="font-semibold text-deep">AEO</b>), and the AI assistants people now ask directly (<b className="font-semibold text-deep">GEO</b>).
-            Most websites are built for the first and invisible in the other two. Here’s how all three work — and how to be cited in every one.
+            Most websites are built for the first and invisible in the other two. Here’s how all three work, and how to be cited in every one.
           </p>
           <div className="mt-9 flex flex-wrap items-center justify-center gap-3.5">
             <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer"
@@ -219,7 +219,7 @@ export default function AiSearchVisibilityPage() {
             How do you get cited by ChatGPT, Claude, or Perplexity?
           </h2>
           <p className="max-w-2xl font-body text-[16px] leading-relaxed text-deep-soft mb-12">
-            It takes two things working together — structured data on your own site, and corroborating
+            It takes two things working together: structured data on your own site, and corroborating
             signals off it. AI assistants cite what they can verify from more than one direction. Here’s the sequence.
           </p>
           <div className="space-y-4">
@@ -247,12 +247,12 @@ export default function AiSearchVisibilityPage() {
             <p>
               People increasingly begin their research inside an AI assistant instead of a search box.
               When someone asks ChatGPT or Perplexity to recommend a web designer, a nonprofit consultant,
-              or a service near them, the assistant answers with the handful of businesses it can verify —
+              or a service near them, the assistant answers with the handful of businesses it can verify,
               and quietly leaves out everyone it can’t.
             </p>
             <p>
               That’s the shift: being <span className="font-semibold text-deep">unranked</span> used to mean being on page two.
-              Now, being <span className="font-semibold text-deep">unverifiable</span> means being left out of the answer entirely —
+              Now, being <span className="font-semibold text-deep">unverifiable</span> means being left out of the answer entirely,
               at the exact moment someone is deciding who to contact. A site with clear entity data and
               corroborating signals gets named. A site without them doesn’t exist to the model.
             </p>
@@ -273,7 +273,7 @@ export default function AiSearchVisibilityPage() {
             Built for AI search from day one
           </h2>
           <p className="max-w-2xl font-body text-[16.5px] leading-relaxed text-deep-soft mb-6">
-            VersaSolve Consulting builds SEO, AEO, and GEO into every website from the start —
+            VersaSolve Consulting builds SEO, AEO, and GEO into every website from the start,
             not as a later upsell. For nonprofits, small businesses, and mission-driven organizations
             across <b className="font-semibold text-deep">Cumberland County, Maine</b> (Portland) and
             <b className="font-semibold text-deep"> Essex County, Massachusetts</b> (Lynn and Greater Boston),

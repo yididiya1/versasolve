@@ -7,7 +7,7 @@ import CtaBand from '@/components/page/CtaBand'
 import { SITE, breadcrumbList, serviceSchema } from '@/lib/siteData'
 
 const DESC =
-  'SEO, AEO, and GEO services for New England organizations — rank in Google, win featured snippets, and get cited by ChatGPT, Claude, and Perplexity. Built into every VersaSolve Consulting website from day one.'
+  'SEO, AEO, and GEO services for New England organizations: rank in Google, win featured snippets, and get cited by ChatGPT, Claude, and Perplexity. Built into every VersaSolve Consulting website from day one.'
 
 export const metadata: Metadata = {
   title: 'SEO, AEO & GEO Services',
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/services/seo-aeo-geo' },
   openGraph: {
     type: 'website',
-    title: 'SEO, AEO & GEO Services — VersaSolve Consulting',
+    title: 'SEO, AEO & GEO Services · VersaSolve Consulting',
     description: DESC,
     url: `${SITE.url}/services/seo-aeo-geo`,
   },
@@ -120,7 +120,7 @@ export default function SeoAeoGeoPage() {
           <p>
             Getting cited takes two things working together. The first is structured, machine-readable data on the
             organization&apos;s own site: schema markup, clear entity information, and direct answers to the real
-            questions people ask. The second is corroborating signals off that site — consistent business listings,
+            questions people ask. The second is corroborating signals off that site: consistent business listings,
             reviews, and third-party mentions that say the same thing.
           </p>
           <p>
@@ -189,7 +189,7 @@ export default function SeoAeoGeoPage() {
         <div className="space-y-5 font-body text-[16.5px] leading-relaxed text-deep-soft">
           <p>
             VersaSolve Consulting&apos;s visibility work is built for nonprofits, community organizations, social
-            enterprises, small businesses, and startups across Maine and Massachusetts — organizations that need to be
+            enterprises, small businesses, and startups across Maine and Massachusetts, organizations that need to be
             found by people searching for what they do, and that do not have an in-house marketing team to handle it.
           </p>
           <p>
@@ -197,7 +197,7 @@ export default function SeoAeoGeoPage() {
             where structuring for AI search during the build costs far less than retrofitting it afterward. The second is
             an organization with a functioning site that simply never appears in AI-assistant answers, where the gap is
             usually missing entity data and thin corroboration rather than the design itself. Both situations are handled
-            the same way — structured entity data on the site, answer-first content, and corroborating signals off it —
+            the same way (structured entity data on the site, answer-first content, and corroborating signals off it),
             but the second usually moves faster, because the site itself does not need rebuilding first.
           </p>
         </div>

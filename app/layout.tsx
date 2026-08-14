@@ -31,11 +31,11 @@ const spaceMono = Space_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://versasolveconsulting.com'),
   title: {
-    default: 'VersaSolve Consulting — Web Design, Branding & AI-Search Visibility in New England',
+    default: 'VersaSolve Consulting · Web Design, Branding & AI-Search Visibility in New England',
     template: '%s · VersaSolve Consulting',
   },
   description:
-    'New England web design, branding, and AI-search visibility for nonprofits, small businesses, and mission-driven organizations. Built to be found — and maintained so it stays that way.',
+    'New England web design, branding, and AI-search visibility for nonprofits, small businesses, and mission-driven organizations. Built to be found, and maintained so it stays that way.',
   applicationName: 'VersaSolve Consulting',
   authors: [{ name: 'Abedom Gebreyesus', url: 'https://www.linkedin.com/in/abedom-gebreyesus-697102175/' }],
   creator: 'Abedom Gebreyesus',
@@ -55,15 +55,15 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     siteName: 'VersaSolve Consulting',
-    title: 'VersaSolve Consulting — Web Design, Branding & AI-Search Visibility in New England',
+    title: 'VersaSolve Consulting · Web Design, Branding & AI-Search Visibility in New England',
     description:
-      'New England web design, branding, and AI-search visibility for nonprofits, small businesses, and mission-driven organizations. Built to be found — and maintained so it stays that way.',
+      'New England web design, branding, and AI-search visibility for nonprofits, small businesses, and mission-driven organizations. Built to be found, and maintained so it stays that way.',
     url: 'https://versasolveconsulting.com',
     locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'VersaSolve Consulting — New England Web Design & AI-Search Visibility',
+    title: 'VersaSolve Consulting · New England Web Design & AI-Search Visibility',
     description:
       'Web design, branding, and SEO/AEO/GEO for nonprofits and mission-driven organizations across New England.',
   },

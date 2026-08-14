@@ -1,5 +1,5 @@
 /**
- * Comparative content renders as a real <table>, not prose — tables are far more reliably
+ * Comparative content renders as a real <table>, not prose; tables are far more reliably
  * extracted and quoted than a paragraph describing the same relationships.
  * Cells accept ReactNode so a row can carry a link or emphasis without losing structure.
  */

@@ -8,7 +8,7 @@ const navLinks = [
   { label: 'Services', href: '/#services' },
   { label: 'AI Visibility', href: '/ai-search-visibility' },
   { label: 'Portfolio', href: '/#portfolio' },
-  // Real routes, not homepage anchors — /about and /contact are standalone pages.
+  // Real routes, not homepage anchors; /about and /contact are standalone pages.
   { label: 'About', href: '/about' },
   { label: 'VersaVantage', href: '/#versavantage' },
   { label: 'FAQ', href: '/faq' },

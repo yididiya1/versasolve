@@ -4,12 +4,12 @@ const BASE = 'https://versasolveconsulting.com'
 
 /**
  * lastModified reflects the date each route's source was last changed, taken from git
- * rather than `new Date()` — a build-time timestamp would claim every page changed on
+ * rather than `new Date()`; a build-time timestamp would claim every page changed on
  * every deploy, which trains crawlers to ignore the field.
  */
 const EXISTING = '2026-07-27'
 // Last actual content change to the Phase 1 pages (entity-disambiguation pass).
-// This is a content date, not a deploy date — bump it only when the copy changes.
+// This is a content date, not a deploy date; bump it only when the copy changes.
 const PHASE_1 = '2026-08-01'
 
 export default function sitemap(): MetadataRoute.Sitemap {

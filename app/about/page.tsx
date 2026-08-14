@@ -7,7 +7,7 @@ import CtaBand from '@/components/page/CtaBand'
 import { SITE, FOUNDER, breadcrumbList } from '@/lib/siteData'
 
 const DESC =
-  'VersaSolve Consulting LLC — Portland, Maine web design, branding, and AI-search visibility for mission-driven organizations. Founder-led, serving nonprofits and businesses across Maine and Massachusetts.'
+  'VersaSolve Consulting LLC: Portland, Maine web design, branding, and AI-search visibility for mission-driven organizations. Founder-led, serving nonprofits and businesses across Maine and Massachusetts.'
 
 export const metadata: Metadata = {
   title: 'About VersaSolve Consulting',
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/about' },
   openGraph: {
     type: 'website',
-    title: 'About VersaSolve Consulting — Portland, Maine',
+    title: 'About VersaSolve Consulting · Portland, Maine',
     description: DESC,
     url: `${SITE.url}/about`,
   },
@@ -35,7 +35,7 @@ const differentiators = [
   {
     n: '03',
     h: 'Founder-led delivery',
-    p: 'One accountable person on every project — no account-manager relay, no offshore handoff.',
+    p: 'One accountable person on every project: no account-manager relay, no offshore handoff.',
   },
   {
     n: '04',
@@ -45,7 +45,7 @@ const differentiators = [
   {
     n: '05',
     h: 'Modern performance stack',
-    p: 'Built on a current static-first architecture rather than bloated page-builder templates — faster load times, better search performance.',
+    p: 'Built on a current static-first architecture rather than bloated page-builder templates, for faster load times and better search performance.',
   },
 ]
 
@@ -63,7 +63,7 @@ const audiences: React.ReactNode[][] = [
 ]
 
 const credentials: React.ReactNode[][] = [
-  ['BS, Health Sciences — minors in Psychology and Holistic Health (2022)', 'University of Southern Maine'],
+  ['BS, Health Sciences, with minors in Psychology and Holistic Health (2022)', 'University of Southern Maine'],
   ['MA, Leadership and Organizational Studies (2023)', 'University of Southern Maine'],
   ['Study abroad', 'University of Winchester, England'],
   ['Annual speaker, Loan Executive Program', 'United Way'],
@@ -73,29 +73,29 @@ const work: React.ReactNode[][] = [
   [
     'New American Association of Massachusetts',
     'Nonprofit · Massachusetts',
-    'Brand identity and website for an organization serving refugees and immigrants — naamass.org',
+    'Brand identity and website for an organization serving refugees and immigrants (naamass.org)',
   ],
   [
     'NAAM Artisans',
     'Nonprofit program',
-    'Storefront and program site for New American women artisans — naamartisans.org',
+    'Storefront and program site for New American women artisans (naamartisans.org)',
   ],
   [
     'Everwell Allyship',
     'Healthcare nonprofit',
-    'Website for a healthcare allyship expanding access to care and health education — everwellallyship.com',
+    'Website for a healthcare allyship expanding access to care and health education (everwellallyship.com)',
   ],
   [
     'USM Recovery Oriented Campus Center',
     'Higher-ed nonprofit · Portland, ME',
-    'Multi-year digital partnership — website, digital marketing, and student training',
+    'Multi-year digital partnership: website, digital marketing, and student training',
   ],
   [
     'Kennedy Park FC',
     'Community sports nonprofit · Portland, ME',
-    'Full website design and build — kennedyparkfc.com',
+    'Full website design and build (kennedyparkfc.com)',
   ],
-  ['coworkHERS', 'Small business', 'Website review and SEO improvements — coworkhers.com'],
+  ['coworkHERS', 'Small business', 'Website review and SEO improvements (coworkhers.com)'],
 ]
 
 export default function AboutPage() {
@@ -124,7 +124,7 @@ export default function AboutPage() {
           <>
             VersaSolve Consulting LLC is a Portland, Maine consultancy providing web design, branding, and AI-search
             visibility for mission-driven organizations. Founded and led by Abedom Gebreyesus, it builds websites, brand
-            identity, and video for nonprofits and growing businesses across Maine and Massachusetts — then maintains
+            identity, and video for nonprofits and growing businesses across Maine and Massachusetts, then maintains
             them through ongoing monthly care instead of handing off and vanishing.
           </>
         }
@@ -140,15 +140,15 @@ export default function AboutPage() {
           </div>
           <div className="space-y-5 font-body text-[16px] leading-relaxed text-deep-soft">
             <p>
-              Abedom Gebreyesus is the Founder and Principal Consultant of VersaSolve Consulting LLC. His journey began
+              Abedom Gebreyesus is the Founder and CEO of VersaSolve Consulting LLC. His journey began
               across Ethiopia, Eritrea, and Kenya before bringing him to the United States, where he spent his formative
               years in Massachusetts before making his home in Maine.
             </p>
             <p>
               Abedom earned a Bachelor of Science in Health Sciences with minors in Psychology and Holistic Health (2022)
               and a Master of Arts in Leadership and Organizational Studies (2023) from the University of Southern Maine.
-              His passion for learning and cultural understanding has taken him across five continents — Africa, Asia,
-              Europe, North America, and South America — including a study abroad experience at the University of
+              His passion for learning and cultural understanding has taken him across five continents (Africa, Asia,
+              Europe, North America, and South America), including a study abroad experience at the University of
               Winchester in England. These experiences have shaped his belief that meaningful growth happens when
               strategy, innovation, and human connection come together. Through VersaSolve, he helps organizations build
               stronger digital foundations that support long-term growth, visibility, and impact.
@@ -232,7 +232,7 @@ export default function AboutPage() {
             Those three problems compound. A template site gives search engines and AI assistants nothing distinctive to
             verify, so the organization does not surface in the searches where people are deciding who to contact. And
             because nobody owns the site after launch, the content drifts out of date, which erodes whatever visibility
-            did exist. VersaSolve treats all three as one engagement — rebuild the foundation, structure it so
+            did exist. VersaSolve treats all three as one engagement: rebuild the foundation, structure it so
             machines can read it, then keep it current through an ongoing{' '}
             <Link
               href="/services/versacare"
@@ -259,7 +259,7 @@ export default function AboutPage() {
             Projects run remotely through video calls, email, and shared documents, which is how most engagements are
             handled from first consultation through launch. In-person meetings are available in both the Portland and
             Greater Boston areas when a project calls for them. VersaSolve does not publish separate landing
-            pages for towns or counties where it has no client work — thin geographic pages read as doorway pages and get
+            pages for towns or counties where it has no client work, because thin geographic pages read as doorway pages and get
             demoted. A new location earns its own page when a real case study supports it.
           </p>
         </div>

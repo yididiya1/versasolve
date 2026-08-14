@@ -5,7 +5,7 @@ import { SITE, FOUNDER, TESTIMONIALS, EMAIL, BOOKING_URL, ORG_ID, PERSON_ID, WEB
  * That placement is deliberate: /faq, /ai-search-visibility, and every /services/* page
  * reference `#organization`, `#abedom`, and `#website` by @id, and those references only
  * resolve if the defining node is present in the same document. This file is the single
- * place those three nodes are defined — no other page may redefine them.
+ * place those three nodes are defined; no other page may redefine them.
  *
  * Service nodes deliberately live OUTSIDE this component (see ServiceCatalog for the
  * homepage, and serviceSchema() on each /services/* page). If they were emitted here as
@@ -41,7 +41,7 @@ const graph = [
     },
     image: `${SITE.url}/opengraph-image`,
     description: SITE.elevatorPitch,
-    slogan: 'Built to be found — and maintained so it stays that way.',
+    slogan: 'Built to be found, and maintained so it stays that way.',
     founder: { '@id': PERSON_ID },
     address: {
       '@type': 'PostalAddress',

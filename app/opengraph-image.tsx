@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og'
 
 export const runtime = 'edge'
-export const alt = 'VersaSolve Consulting — Web design, branding & AI-search visibility in New England'
+export const alt = 'VersaSolve Consulting · Web design, branding & AI-search visibility in New England'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 
@@ -52,7 +52,7 @@ export default function OgImage() {
             Web design, branding &amp; AI-search visibility
           </div>
           <div style={{ fontSize: '30px', color: '#D8A22B', fontWeight: 500 }}>
-            Built to be found — and maintained so it stays that way.
+            Built to be found, and maintained so it stays that way.
           </div>
         </div>
 

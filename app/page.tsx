@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <main>
       {/* Org/Person/WebSite nodes come from app/layout.tsx so they exist on every page.
-          The Service catalog is homepage-only — each /services/* page emits its own node. */}
+          The Service catalog is homepage-only; each /services/* page emits its own node. */}
       <ServiceCatalog />
       <Hero />
       <Services />

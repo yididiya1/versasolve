@@ -6,11 +6,11 @@ import { FAQS, SITE } from '@/lib/siteData'
 export const metadata: Metadata = {
   title: 'Frequently Asked Questions',
   description:
-    'Answers on how VersaSolve Consulting works — AEO and GEO, SEO, VersaCare monthly care, pricing, timelines, and getting started. Serving nonprofits and businesses across New England.',
+    'Answers on how VersaSolve Consulting works: AEO and GEO, SEO, VersaCare monthly care, pricing, timelines, and getting started. Serving nonprofits and businesses across New England.',
   alternates: { canonical: '/faq' },
   openGraph: {
     type: 'website',
-    title: 'VersaSolve Consulting — Frequently Asked Questions',
+    title: 'VersaSolve Consulting · Frequently Asked Questions',
     description:
       'Straight answers on web design, AI-search visibility (SEO/AEO/GEO), VersaCare, pricing, and timelines for New England organizations.',
     url: `${SITE.url}/faq`,
@@ -25,7 +25,7 @@ export default function FaqPage() {
         '@type': 'FAQPage',
         '@id': `${SITE.url}/faq#faqpage`,
         url: `${SITE.url}/faq`,
-        name: 'VersaSolve Consulting — Frequently Asked Questions',
+        name: 'VersaSolve Consulting · Frequently Asked Questions',
         isPartOf: { '@id': `${SITE.url}/#website` },
         about: { '@id': `${SITE.url}/#organization` },
         mainEntity: FAQS.map((f) => ({

@@ -5,7 +5,7 @@
  *
  * RULES ENCODED HERE (do not violate):
  * - No AggregateRating (no rating scale exists).
- * - No public telephone — contact is email + Google Meet booking link only.
+ * - No public telephone; contact is email + Google Meet booking link only.
  * - The 300% figure is Christopher Corson's attributed statement, never a first-party claim.
  *
  * EMAIL is the canonical public role address on the canonical domain.
@@ -24,13 +24,13 @@ export const SITE = {
   legalName: 'VersaSolve Consulting LLC',
   url: 'https://versasolveconsulting.com',
   descriptor:
-    'New England web design, branding, and AI-search visibility for nonprofits, small businesses, and mission-driven organizations. Built to be found — and maintained so it stays that way.',
+    'New England web design, branding, and AI-search visibility for nonprofits, small businesses, and mission-driven organizations. Built to be found, and maintained so it stays that way.',
   elevatorPitch:
-    'VersaSolve Consulting builds and maintains the digital presence that mission-driven organizations and growing businesses across New England need to be found — websites, brand identity, video, and AI-search visibility — backed by ongoing monthly care instead of a one-and-done handoff.',
+    'VersaSolve Consulting builds and maintains the digital presence that mission-driven organizations and growing businesses across New England need to be found: websites, brand identity, video, and AI-search visibility, backed by ongoing monthly care instead of a one-and-done handoff.',
   locality: 'Portland',
   region: 'ME',
   country: 'US',
-  // Declared service areas (NOT landing pages — thin per-county pages read as doorway pages).
+  // Declared service areas (NOT landing pages; thin per-county pages read as doorway pages).
   // Named county anchors = where real client work exists (Cumberland: USM, coworkHERS ·
   // Essex: NAAM/Lynn). Broad state coverage supports remote + Upwork work. York/Androscoggin
   // stay unlisted until a case study there earns the mention.
@@ -55,7 +55,7 @@ export const FOUNDER = {
   jobTitle: 'Founder & CEO',
   linkedin: 'https://www.linkedin.com/in/abedom-gebreyesus-697102175/',
   shortBio:
-    'Abedom Gebreyesus is the Founder and Principal Consultant of VersaSolve Consulting, where he helps mission-driven organizations across New England build digital foundations that support long-term growth and visibility. He holds a Master of Arts in Leadership and Organizational Studies from the University of Southern Maine.',
+    'Abedom Gebreyesus is the Founder and CEO of VersaSolve Consulting, where he helps mission-driven organizations across New England build digital foundations that support long-term growth and visibility. He holds a Master of Arts in Leadership and Organizational Studies from the University of Southern Maine.',
 } as const
 
 export type ServiceKey = 'website' | 'brand' | 'video' | 'visibility' | 'versacare'
@@ -76,7 +76,7 @@ export const SERVICES: ReadonlyArray<{
     key: 'website',
     name: 'Website Design & Build',
     description:
-      'Fast, mobile-first websites built on a modern stack — designed to convert visitors into real conversations, not just look good.',
+      'Fast, mobile-first websites built on a modern stack, designed to convert visitors into real conversations, not just look good.',
     path: '/services/web-design',
   },
   {
@@ -93,16 +93,16 @@ export const SERVICES: ReadonlyArray<{
   },
   {
     key: 'visibility',
-    name: 'Visibility — SEO, AEO & GEO',
+    name: 'Visibility: SEO, AEO & GEO',
     description:
       "Optimization so you're found in Google search, surfaced in featured snippets and answer boxes, and cited by AI assistants like ChatGPT, Claude, and Perplexity.",
     path: '/services/seo-aeo-geo',
   },
   {
     key: 'versacare',
-    name: 'VersaCare — Monthly Digital Care',
+    name: 'VersaCare: Monthly Digital Care',
     description:
-      'An ongoing monthly retainer that keeps your site secure, current, and improving, with reporting — instead of a site that quietly decays after launch.',
+      'An ongoing monthly retainer that keeps your site secure, current, and improving, with reporting, instead of a site that quietly decays after launch.',
     path: '/services/versacare',
   },
 ]
@@ -121,7 +121,7 @@ export const SERVICE_OFFERS: Partial<Record<ServiceKey, { low: number; high: num
   versacare: { low: 450, high: 900 },
 }
 
-/** Stable @id for a service — page-scoped when the service has its own route. */
+/** Stable @id for a service; page-scoped when the service has its own route. */
 export function serviceId(s: { key: ServiceKey; path?: string }): string {
   return s.path ? `${SITE.url}${s.path}#service` : `${SITE.url}/#service-${s.key}`
 }
@@ -149,7 +149,7 @@ export function breadcrumbList(trail: ReadonlyArray<{ name: string; path: string
 /**
  * Service node for a service page. Shares its @id with the site-wide node and reuses the
  * same name/description/offer constants, so the two merge instead of conflicting.
- * `provider` references the organization by @id — the org node itself is never duplicated.
+ * `provider` references the organization by @id; the org node itself is never duplicated.
  */
 export function serviceSchema(key: ServiceKey, extra?: Record<string, unknown>) {
   const s = getService(key)
@@ -189,7 +189,7 @@ export const TESTIMONIALS: ReadonlyArray<{
   },
   {
     quote:
-      "VersaSolve Consulting LLC reviewed and offered adjustments and recommendations that updated my website and boosted my SEO. I'm seeing higher rankings, more traffic, and more business. Professional, effective, and easy to work with — highly recommend!",
+      "VersaSolve Consulting LLC reviewed and offered adjustments and recommendations that updated my website and boosted my SEO. I'm seeing higher rankings, more traffic, and more business. Professional, effective, and easy to work with. Highly recommend!",
     author: 'Heather Ashby',
     title: 'Founder & CEO',
     org: 'coworkHERS',
@@ -203,14 +203,14 @@ export const TESTIMONIALS: ReadonlyArray<{
   },
   {
     quote:
-      'VersaSolve does a great job not only serving but educating their clients about marketing — social media, AEO, SEO — and everything in between. They are very helpful.',
+      'VersaSolve does a great job not only serving but educating their clients about marketing, social media, AEO, SEO, and everything in between. They are very helpful.',
     author: 'Bilien Woldeyonas',
     title: 'Executive Director',
     org: 'Everwell Allyship',
   },
 ]
 
-/** AEO payload — answers lead with the direct answer so each can be extracted as a standalone snippet. */
+/** AEO payload: answers lead with the direct answer so each can be extracted as a standalone snippet. */
 export const FAQS: ReadonlyArray<{ q: string; a: string }> = [
   {
     q: 'Do you work with nonprofits?',
@@ -222,15 +222,15 @@ export const FAQS: ReadonlyArray<{ q: string; a: string }> = [
   },
   {
     q: 'What is AEO and GEO, and how are they different from SEO?',
-    a: "SEO gets you ranked in Google's traditional search results. AEO, or Answer Engine Optimization, structures your content so it gets pulled into featured snippets and answer boxes. GEO, or Generative Engine Optimization, makes your business citable by AI assistants like ChatGPT, Claude, and Perplexity — increasingly where people start their research. VersaSolve builds all three into every site.",
+    a: "SEO gets you ranked in Google's traditional search results. AEO, or Answer Engine Optimization, structures your content so it gets pulled into featured snippets and answer boxes. GEO, or Generative Engine Optimization, makes your business citable by AI assistants like ChatGPT, Claude, and Perplexity, increasingly where people start their research. VersaSolve builds all three into every site.",
   },
   {
     q: 'How do you get a business cited by ChatGPT, Claude, or Perplexity?',
-    a: 'It takes two things working together: structured, machine-readable data on your own site — schema markup, clear entity information, and direct answers to real questions — plus corroborating signals off your site, like consistent business listings, reviews, and third-party mentions. AI assistants cite sources they can verify from more than one direction. Schema markup alone is not enough.',
+    a: 'It takes two things working together: structured, machine-readable data on your own site (schema markup, clear entity information, and direct answers to real questions), plus corroborating signals off your site, like consistent business listings, reviews, and third-party mentions. AI assistants cite sources they can verify from more than one direction. Schema markup alone is not enough.',
   },
   {
     q: "What's included in VersaCare?",
-    a: 'VersaCare is VersaSolve Consulting’s monthly digital care retainer. The Premium tier covers hosting oversight, security and software updates, backups, and a monthly allowance of content edits and fixes. The Elite tier adds active growth work — SEO, GEO, and AEO management, plus a monthly performance dashboard.',
+    a: 'VersaCare is VersaSolve Consulting’s monthly digital care retainer. The Premium tier covers hosting oversight, security and software updates, backups, and a monthly allowance of content edits and fixes. The Elite tier adds active growth work: SEO, GEO, and AEO management, plus a monthly performance dashboard.',
   },
   {
     q: 'Why do I need a website if I already have social media?',
@@ -242,15 +242,15 @@ export const FAQS: ReadonlyArray<{ q: string; a: string }> = [
   },
   {
     q: 'How is AI used in your work?',
-    a: "AI is used to accelerate production — build scaffolding, content drafting, and research — while every strategic decision, design choice, and final deliverable is reviewed by a human. It's also central to what VersaSolve optimizes for: making sure clients are visible in AI-powered search, not just traditional search. Clients get the speed benefit without an AI-generated result.",
+    a: "AI is used to accelerate production (build scaffolding, content drafting, and research), while every strategic decision, design choice, and final deliverable is reviewed by a human. It's also central to what VersaSolve optimizes for: making sure clients are visible in AI-powered search, not just traditional search. Clients get the speed benefit without an AI-generated result.",
   },
   {
     q: 'What do you need from me to get started?',
-    a: 'A signed service agreement, a deposit, and access to your domain and any existing accounts. From there VersaSolve needs your content — photos, bio, program or service information — plus timely feedback at defined review points. Everything else is handled.',
+    a: 'A signed service agreement, a deposit, and access to your domain and any existing accounts. From there VersaSolve needs your content (photos, bio, program or service information), plus timely feedback at defined review points. Everything else is handled.',
   },
   {
     q: 'How much does a website cost?',
-    a: 'Website projects start at $900 for a Starter build, $1,600 for Growth, and $3,000 for a Full build. A Visibility Launch Bundle — a website built with SEO, AEO, and GEO from day one — starts at $1,950. Every project routes into an ongoing VersaCare care path so the site keeps working after launch.',
+    a: 'Website projects start at $900 for a Starter build, $1,600 for Growth, and $3,000 for a Full build. A Visibility Launch Bundle, a website built with SEO, AEO, and GEO from day one, starts at $1,950. Every project routes into an ongoing VersaCare care path so the site keeps working after launch.',
   },
   {
     q: 'How long does it take to build a website?',
@@ -258,7 +258,7 @@ export const FAQS: ReadonlyArray<{ q: string; a: string }> = [
   },
   {
     q: 'How much does VersaCare cost?',
-    a: 'VersaCare monthly plans start at $450 for Premium — hosting oversight, security and software updates, backups, and a monthly allowance of content edits — and $900 for Elite, which adds active SEO, GEO, and AEO management plus a monthly performance dashboard.',
+    a: 'VersaCare monthly plans start at $450 for Premium (hosting oversight, security and software updates, backups, and a monthly allowance of content edits) and $900 for Elite, which adds active SEO, GEO, and AEO management plus a monthly performance dashboard.',
   },
   {
     q: 'How do I get in touch?',

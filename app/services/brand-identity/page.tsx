@@ -7,7 +7,7 @@ import CtaBand from '@/components/page/CtaBand'
 import { SITE, breadcrumbList, serviceSchema } from '@/lib/siteData'
 
 const DESC =
-  'VersaSolve Consulting LLC — brand identity for nonprofits, small businesses, and mission-driven organizations across Maine and Massachusetts — logo, color, type, and messaging that stay consistent everywhere someone encounters your organization.'
+  'VersaSolve Consulting LLC provides brand identity for nonprofits, small businesses, and mission-driven organizations across Maine and Massachusetts: logo, color, type, and messaging that stay consistent everywhere someone encounters your organization.'
 
 export const metadata: Metadata = {
   title: 'Brand Identity',
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/services/brand-identity' },
   openGraph: {
     type: 'website',
-    title: 'Brand Identity — VersaSolve Consulting',
+    title: 'Brand Identity · VersaSolve Consulting',
     description: DESC,
     url: `${SITE.url}/services/brand-identity`,
   },
@@ -32,12 +32,12 @@ const work: React.ReactNode[][] = [
   [
     'New American Association of Massachusetts',
     'Nonprofit · Massachusetts',
-    'Brand identity and website for an organization serving refugees and immigrants — naamass.org',
+    'Brand identity and website for an organization serving refugees and immigrants (naamass.org)',
   ],
   [
     'NAAM Artisans',
     'Nonprofit program',
-    'Storefront and program site for New American women artisans — naamartisans.org',
+    'Storefront and program site for New American women artisans (naamartisans.org)',
   ],
 ]
 
