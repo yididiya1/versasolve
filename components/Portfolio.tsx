@@ -15,14 +15,23 @@ type Project = {
   image?: string
 }
 
-// Real client work , only projects with a live, working URL owned by the client.
+// Real client work: only projects with a live, working URL owned by the client.
 const clients: Project[] = [
+  {
+    name: 'Black Owned Maine',
+    domain: 'blackownedmaine.com',
+    href: 'https://blackownedmaine.com/',
+    tagline: 'Connecting entrepreneurs, communities, stories, and opportunities across Maine',
+    desc: 'Full website design and build for a statewide nonprofit working at the intersection of entrepreneurship, culture, and economic justice, structured to surface stories, impact, and ways to get involved.',
+    accent: 'rust',
+    image: '/porfolio/blackownedmaine.png',
+  },
   {
     name: 'New American Association of Massachusetts',
     domain: 'naamass.org',
     href: 'https://naamass.org/',
     tagline: 'Empowering New Beginnings for Refugees and Immigrants',
-    desc: 'Brand identity and a welcoming digital home for a nonprofit serving refugees and immigrants across Massachusetts , built to inform, engage, and drive donations.',
+    desc: 'Brand identity and a welcoming digital home for a nonprofit serving refugees and immigrants across Massachusetts, built to inform, engage, and drive donations.',
     accent: 'gold',
     image: '/porfolio/portfolio1.png',
   },
@@ -45,11 +54,11 @@ const clients: Project[] = [
     image: '/porfolio/portfolio5.png',
   },
   {
-    name: 'University of Southern Maine , ROCC',
+    name: 'University of Southern Maine ROCC',
     domain: 'usm.maine.edu',
     href: 'https://usm.maine.edu/recovery-oriented-campus-center/recovery-oriented-campus-center/',
     tagline: 'Comprehensive marketing & web strategy for higher education',
-    desc: 'A multi-year digital partnership with the Recovery Oriented Campus Center , website, digital marketing, and student training , surfacing programs, events, and impact.',
+    desc: 'A multi-year digital partnership with the Recovery Oriented Campus Center: website, digital marketing, and student training, surfacing programs, events, and impact.',
     accent: 'gold',
     image: '/porfolio/portfolio6.png',
   },
@@ -58,20 +67,22 @@ const clients: Project[] = [
     domain: 'kennedyparkfc.com',
     href: 'https://kennedyparkfc.com/',
     tagline: 'Community soccer, rooted in Portland, Maine',
-    desc: 'Full website design and build for a community sports nonprofit , surfacing programs, schedules, and clear ways to get involved.',
+    desc: 'Full website design and build for a community sports nonprofit, surfacing programs, schedules, and clear ways to get involved.',
     accent: 'rust',
+    image: '/porfolio/kennedyparkfc.png',
   },
   {
-    name: 'CoworHERS',
+    name: 'coworkHERS',
     domain: 'coworkhers.com',
     href: 'https://coworkhers.com/',
     tagline: 'A coworking community built for women',
-    desc: 'Website review and SEO improvements , boosting search rankings, traffic, and inbound business for a growing small business.',
+    desc: 'Website review and SEO improvements, boosting search rankings, traffic, and inbound business for a growing small business.',
     accent: 'gold',
+    image: '/porfolio/coworkhers.png',
   },
 ]
 
-// Concept builds , not client work. Shown with a visible "Concept Project" label and no client-owned domain.
+// Concept builds, not client work. Shown with a visible "Concept Project" label and no client-owned domain.
 const concepts: Project[] = [
   {
     name: 'Meridian CFO',
@@ -135,7 +146,7 @@ function SitePreview({ project }: { project: Project }) {
             src={project.image}
             alt={project.concept ? `${project.name} concept design` : `${project.name} website`}
             fill
-            sizes="(max-width: 768px) 100vw, 50vw"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
           />
         ) : (
@@ -170,13 +181,27 @@ function SitePreview({ project }: { project: Project }) {
   )
 }
 
-function ProjectCard({ p, i }: { p: Project; i: number }) {
+function ProjectCard({ p, i, total }: { p: Project; i: number; total: number }) {
+  // Center a lone trailing card so a row never ends off-balance. The grid is 2-up at sm
+  // and 3-up at lg, so each breakpoint needs its own check, and a card that is an orphan
+  // at sm but not at lg has to be reset back to a normal cell.
+  const last = i === total - 1
+  const smOrphan = last && total % 2 === 1
+  const lgOrphan = last && total % 3 === 1
+  const orphan =
+    (smOrphan ? ' sm:col-span-2 sm:mx-auto sm:w-[calc(50%_-_12px)]' : '') +
+    (lgOrphan
+      ? ' lg:col-span-3 lg:mx-auto lg:w-[calc(33.333%_-_16px)]'
+      : smOrphan
+        ? ' lg:col-span-1 lg:mx-0 lg:w-auto'
+        : '')
+
   return (
     <a
       href={p.href}
       target={p.href.startsWith('http') ? '_blank' : undefined}
       rel={p.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-      className={`reveal reveal-d${Math.min(i + 1, 5)} glass-card card-lift group block overflow-hidden rounded-2xl no-underline`}
+      className={`reveal reveal-d${Math.min(i + 1, 5)} glass-card card-lift group block overflow-hidden rounded-2xl no-underline${orphan}`}
     >
       <SitePreview project={p} />
       <div className="p-6 xl:p-7">
@@ -230,26 +255,19 @@ export default function Portfolio() {
             </h2>
           </div>
           <p className="font-body text-[15.5px] leading-relaxed text-deep-soft lg:max-w-sm lg:pb-1.5">
-            From promotional films to full websites, every project we take on is a partnership ,
+            From full websites to promotional films, every project we take on is a partnership,
             and every result reflects the strategy, intention, and craft behind it.
           </p>
         </div>
 
-        {/* Promotional media */}
-        <div className="mb-6 flex items-center gap-3 reveal">
-          <span className="font-mono text-[10.5px] uppercase tracking-[2.5px] text-gold-dark">Promotional Media</span>
-          <span className="h-px flex-1 bg-edge" />
-        </div>
-        <PromoVideos />
-
         {/* Client websites */}
-        <div className="mt-16 mb-6 flex items-center gap-3 reveal">
+        <div className="mb-6 flex items-center gap-3 reveal">
           <span className="font-mono text-[10.5px] uppercase tracking-[2.5px] text-gold-dark">Client Websites</span>
           <span className="h-px flex-1 bg-edge" />
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {clients.map((p, i) => (
-            <ProjectCard key={p.name} p={p} i={i} />
+            <ProjectCard key={p.name} p={p} i={i} total={clients.length} />
           ))}
         </div>
 
@@ -259,14 +277,21 @@ export default function Portfolio() {
           <span className="h-px flex-1 bg-edge" />
         </div>
         <p className="mb-6 max-w-2xl font-body text-[13.5px] leading-relaxed text-deep-mute reveal">
-          Self-directed concept builds that show our range. These are demonstrations , not client
-          engagements , and are not affiliated with any organization of a similar name.
+          Self-directed concept builds that show our range. These are demonstrations, not client
+          engagements, and are not affiliated with any organization of a similar name.
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {concepts.map((p, i) => (
-            <ProjectCard key={p.name} p={p} i={i} />
+            <ProjectCard key={p.name} p={p} i={i} total={concepts.length} />
           ))}
         </div>
+
+        {/* Promotional media */}
+        <div className="mt-16 mb-6 flex items-center gap-3 reveal">
+          <span className="font-mono text-[10.5px] uppercase tracking-[2.5px] text-gold-dark">Promotional Media</span>
+          <span className="h-px flex-1 bg-edge" />
+        </div>
+        <PromoVideos />
       </div>
     </section>
   )
