@@ -71,15 +71,6 @@ const clients: Project[] = [
     accent: 'rust',
     image: '/porfolio/kennedyparkfc.png',
   },
-  {
-    name: 'coworkHERS',
-    domain: 'coworkhers.com',
-    href: 'https://coworkhers.com/',
-    tagline: 'A coworking community built for women',
-    desc: 'Website review and SEO improvements, boosting search rankings, traffic, and inbound business for a growing small business.',
-    accent: 'gold',
-    image: '/porfolio/coworkhers.png',
-  },
 ]
 
 // Concept builds, not client work. Shown with a visible "Concept Project" label and no client-owned domain.
