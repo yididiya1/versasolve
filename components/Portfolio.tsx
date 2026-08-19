@@ -18,13 +18,13 @@ type Project = {
 // Real client work: only projects with a live, working URL owned by the client.
 const clients: Project[] = [
   {
-    name: 'Black Owned Maine',
-    domain: 'blackownedmaine.com',
-    href: 'https://blackownedmaine.com/',
-    tagline: 'Connecting entrepreneurs, communities, stories, and opportunities across Maine',
-    desc: 'Full website design and build for a statewide nonprofit working at the intersection of entrepreneurship, culture, and economic justice, structured to surface stories, impact, and ways to get involved.',
+    name: 'Everwell Allyship',
+    domain: 'everwellallyship.com',
+    href: 'https://everwellallyship.com/',
+    tagline: 'Building Healthier Futures Together',
+    desc: 'A warm, trustworthy site for a healthcare allyship mobilizing professionals to expand access to care and health education across the community.',
     accent: 'rust',
-    image: '/porfolio/blackownedmaine.png',
+    image: '/porfolio/portfolio5.png',
   },
   {
     name: 'New American Association of Massachusetts',
@@ -45,13 +45,13 @@ const clients: Project[] = [
     image: '/porfolio/portfolio0.png',
   },
   {
-    name: 'Everwell Allyship',
-    domain: 'everwellallyship.com',
-    href: 'https://everwellallyship.com/',
-    tagline: 'Building Healthier Futures Together',
-    desc: 'A warm, trustworthy site for a healthcare allyship mobilizing professionals to expand access to care and health education across the community.',
+    name: 'Black Owned Maine',
+    domain: 'blackownedmaine.com',
+    href: 'https://blackownedmaine.com/',
+    tagline: 'Connecting entrepreneurs, communities, stories, and opportunities across Maine',
+    desc: 'Full website design and build for a statewide nonprofit working at the intersection of entrepreneurship, culture, and economic justice, structured to surface stories, impact, and ways to get involved.',
     accent: 'rust',
-    image: '/porfolio/portfolio5.png',
+    image: '/porfolio/blackownedmaine.png',
   },
   {
     name: 'University of Southern Maine ROCC',
